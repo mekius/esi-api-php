@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,10 +67,10 @@ class GetCharactersCharacterIdCorporationhistory200Ok implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'corporation_id' => 'int',
-        'is_deleted' => 'bool',
-        'record_id' => 'int',
-        'start_date' => '\DateTime'
+        'corporationId' => 'int',
+        'isDeleted' => 'bool',
+        'recordId' => 'int',
+        'startDate' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -83,10 +83,10 @@ class GetCharactersCharacterIdCorporationhistory200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'corporation_id' => 'corporation_id',
-        'is_deleted' => 'is_deleted',
-        'record_id' => 'record_id',
-        'start_date' => 'start_date'
+        'corporationId' => 'corporation_id',
+        'isDeleted' => 'is_deleted',
+        'recordId' => 'record_id',
+        'startDate' => 'start_date'
     ];
 
 
@@ -95,10 +95,10 @@ class GetCharactersCharacterIdCorporationhistory200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'corporation_id' => 'setCorporationId',
-        'is_deleted' => 'setIsDeleted',
-        'record_id' => 'setRecordId',
-        'start_date' => 'setStartDate'
+        'corporationId' => 'setCorporationId',
+        'isDeleted' => 'setIsDeleted',
+        'recordId' => 'setRecordId',
+        'startDate' => 'setStartDate'
     ];
 
 
@@ -107,10 +107,10 @@ class GetCharactersCharacterIdCorporationhistory200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'corporation_id' => 'getCorporationId',
-        'is_deleted' => 'getIsDeleted',
-        'record_id' => 'getRecordId',
-        'start_date' => 'getStartDate'
+        'corporationId' => 'getCorporationId',
+        'isDeleted' => 'getIsDeleted',
+        'recordId' => 'getRecordId',
+        'startDate' => 'getStartDate'
     ];
 
     public static function attributeMap()
@@ -144,10 +144,10 @@ class GetCharactersCharacterIdCorporationhistory200Ok implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['corporation_id'] = isset($data['corporation_id']) ? $data['corporation_id'] : null;
-        $this->container['is_deleted'] = isset($data['is_deleted']) ? $data['is_deleted'] : null;
-        $this->container['record_id'] = isset($data['record_id']) ? $data['record_id'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['corporationId'] = isset($data['corporationId']) ? $data['corporationId'] : null;
+        $this->container['isDeleted'] = isset($data['isDeleted']) ? $data['isDeleted'] : null;
+        $this->container['recordId'] = isset($data['recordId']) ? $data['recordId'] : null;
+        $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
     }
 
     /**
@@ -174,85 +174,85 @@ class GetCharactersCharacterIdCorporationhistory200Ok implements ArrayAccess
 
 
     /**
-     * Gets corporation_id
+     * Gets corporationId
      * @return int
      */
     public function getCorporationId()
     {
-        return $this->container['corporation_id'];
+        return $this->container['corporationId'];
     }
 
     /**
-     * Sets corporation_id
-     * @param int $corporation_id corporation_id integer
+     * Sets corporationId
+     * @param int $corporationId corporation_id integer
      * @return $this
      */
-    public function setCorporationId($corporation_id)
+    public function setCorporationId($corporationId)
     {
-        $this->container['corporation_id'] = $corporation_id;
+        $this->container['corporationId'] = $corporationId;
 
         return $this;
     }
 
     /**
-     * Gets is_deleted
+     * Gets isDeleted
      * @return bool
      */
     public function getIsDeleted()
     {
-        return $this->container['is_deleted'];
+        return $this->container['isDeleted'];
     }
 
     /**
-     * Sets is_deleted
-     * @param bool $is_deleted True if the corporation has been deleted
+     * Sets isDeleted
+     * @param bool $isDeleted True if the corporation has been deleted
      * @return $this
      */
-    public function setIsDeleted($is_deleted)
+    public function setIsDeleted($isDeleted)
     {
-        $this->container['is_deleted'] = $is_deleted;
+        $this->container['isDeleted'] = $isDeleted;
 
         return $this;
     }
 
     /**
-     * Gets record_id
+     * Gets recordId
      * @return int
      */
     public function getRecordId()
     {
-        return $this->container['record_id'];
+        return $this->container['recordId'];
     }
 
     /**
-     * Sets record_id
-     * @param int $record_id An incrementing ID that can be used to canonically establish order of records in cases where dates may be ambiguous
+     * Sets recordId
+     * @param int $recordId An incrementing ID that can be used to canonically establish order of records in cases where dates may be ambiguous
      * @return $this
      */
-    public function setRecordId($record_id)
+    public function setRecordId($recordId)
     {
-        $this->container['record_id'] = $record_id;
+        $this->container['recordId'] = $recordId;
 
         return $this;
     }
 
     /**
-     * Gets start_date
+     * Gets startDate
      * @return \DateTime
      */
     public function getStartDate()
     {
-        return $this->container['start_date'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets start_date
-     * @param \DateTime $start_date start_date string
+     * Sets startDate
+     * @param \DateTime $startDate start_date string
      * @return $this
      */
-    public function setStartDate($start_date)
+    public function setStartDate($startDate)
     {
-        $this->container['start_date'] = $start_date;
+        $this->container['startDate'] = $startDate;
 
         return $this;
     }
@@ -308,9 +308,9 @@ class GetCharactersCharacterIdCorporationhistory200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

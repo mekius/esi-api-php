@@ -20,11 +20,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+      "url": "https://github.com/mekius/esi-api-php.git"
     }
   ],
   "require": {
-    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
+    "mekius/esi-api-php": "*@dev"
   }
 }
 ```
@@ -57,15 +57,15 @@ Please follow the [installation procedure](#installation--usage) and then run th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\CalendarApi();
-$character_id = 789; // int | The character to retrieve events from
-$from_event = 56; // int | The event ID to retrieve events from
+$api_instance = new ESI\Api\CalendarApi();
+$characterId = 789; // int | The character to retrieve events from
+$fromEvent = 56; // int | The event ID to retrieve events from
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdCalendar($character_id, $from_event, $datasource);
+    $result = $api_instance->getCharactersCharacterIdCalendar($characterId, $fromEvent, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CalendarApi->getCharactersCharacterIdCalendar: ', $e->getMessage(), PHP_EOL;

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,8 +67,8 @@ class GetCharactersCharacterIdSkillsOk implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'skills' => '\Swagger\Client\Model\GetCharactersCharacterIdSkillsSkill[]',
-        'total_sp' => 'int'
+        'skills' => '\ESI\Model\GetCharactersCharacterIdSkillsSkill[]',
+        'totalSp' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -82,7 +82,7 @@ class GetCharactersCharacterIdSkillsOk implements ArrayAccess
      */
     protected static $attributeMap = [
         'skills' => 'skills',
-        'total_sp' => 'total_sp'
+        'totalSp' => 'total_sp'
     ];
 
 
@@ -92,7 +92,7 @@ class GetCharactersCharacterIdSkillsOk implements ArrayAccess
      */
     protected static $setters = [
         'skills' => 'setSkills',
-        'total_sp' => 'setTotalSp'
+        'totalSp' => 'setTotalSp'
     ];
 
 
@@ -102,7 +102,7 @@ class GetCharactersCharacterIdSkillsOk implements ArrayAccess
      */
     protected static $getters = [
         'skills' => 'getSkills',
-        'total_sp' => 'getTotalSp'
+        'totalSp' => 'getTotalSp'
     ];
 
     public static function attributeMap()
@@ -137,7 +137,7 @@ class GetCharactersCharacterIdSkillsOk implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['skills'] = isset($data['skills']) ? $data['skills'] : null;
-        $this->container['total_sp'] = isset($data['total_sp']) ? $data['total_sp'] : null;
+        $this->container['totalSp'] = isset($data['totalSp']) ? $data['totalSp'] : null;
     }
 
     /**
@@ -165,7 +165,7 @@ class GetCharactersCharacterIdSkillsOk implements ArrayAccess
 
     /**
      * Gets skills
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdSkillsSkill[]
+     * @return \ESI\Model\GetCharactersCharacterIdSkillsSkill[]
      */
     public function getSkills()
     {
@@ -174,7 +174,7 @@ class GetCharactersCharacterIdSkillsOk implements ArrayAccess
 
     /**
      * Sets skills
-     * @param \Swagger\Client\Model\GetCharactersCharacterIdSkillsSkill[] $skills skills array
+     * @param \ESI\Model\GetCharactersCharacterIdSkillsSkill[] $skills skills array
      * @return $this
      */
     public function setSkills($skills)
@@ -185,22 +185,22 @@ class GetCharactersCharacterIdSkillsOk implements ArrayAccess
     }
 
     /**
-     * Gets total_sp
+     * Gets totalSp
      * @return int
      */
     public function getTotalSp()
     {
-        return $this->container['total_sp'];
+        return $this->container['totalSp'];
     }
 
     /**
-     * Sets total_sp
-     * @param int $total_sp total_sp integer
+     * Sets totalSp
+     * @param int $totalSp total_sp integer
      * @return $this
      */
-    public function setTotalSp($total_sp)
+    public function setTotalSp($totalSp)
     {
-        $this->container['total_sp'] = $total_sp;
+        $this->container['totalSp'] = $totalSp;
 
         return $this;
     }
@@ -256,9 +256,9 @@ class GetCharactersCharacterIdSkillsOk implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

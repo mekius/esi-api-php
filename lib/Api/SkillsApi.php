@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ESI\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ESI\ApiClient;
+use \ESI\ApiException;
+use \ESI\Configuration;
+use \ESI\ObjectSerializer;
 
 /**
  * SkillsApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -59,16 +59,16 @@ class SkillsApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ESI\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ESI\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ESI\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -81,7 +81,7 @@ class SkillsApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ESI\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -91,11 +91,11 @@ class SkillsApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ESI\ApiClient $apiClient set the API client
      *
      * @return SkillsApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ESI\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -106,14 +106,14 @@ class SkillsApi
      *
      * Get character's skill queue
      *
-     * @param int $character_id Character id of the target character (required)
+     * @param int $characterId Character id of the target character (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[]
      */
-    public function getCharactersCharacterIdSkillqueue($character_id, $datasource = null)
+    public function getCharactersCharacterIdSkillqueue($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdSkillqueueWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdSkillqueueWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -122,16 +122,16 @@ class SkillsApi
      *
      * Get character's skill queue
      *
-     * @param int $character_id Character id of the target character (required)
+     * @param int $characterId Character id of the target character (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdSkillqueueWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdSkillqueueWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdSkillqueue');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdSkillqueue');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/skillqueue/";
@@ -150,10 +150,10 @@ class SkillsApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -179,23 +179,23 @@ class SkillsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[]',
+                '\ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[]',
                 '/characters/{character_id}/skillqueue/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillqueueForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillqueueForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillqueueInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillqueueInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -209,14 +209,14 @@ class SkillsApi
      *
      * Get character skills
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdSkillsOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdSkillsOk
      */
-    public function getCharactersCharacterIdSkills($character_id, $datasource = null)
+    public function getCharactersCharacterIdSkills($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdSkillsWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdSkillsWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -225,16 +225,16 @@ class SkillsApi
      *
      * Get character skills
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdSkillsOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdSkillsOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdSkillsWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdSkillsWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdSkills');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdSkills');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/skills/";
@@ -253,10 +253,10 @@ class SkillsApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -282,23 +282,23 @@ class SkillsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdSkillsOk',
+                '\ESI\Model\GetCharactersCharacterIdSkillsOk',
                 '/characters/{character_id}/skills/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdSkillsOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdSkillsOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillsOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillsOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillsForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillsForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillsInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillsInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

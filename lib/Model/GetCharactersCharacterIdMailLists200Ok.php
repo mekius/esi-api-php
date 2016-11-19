@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,7 +67,7 @@ class GetCharactersCharacterIdMailLists200Ok implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'mailing_list_id' => 'int'
+        'mailingListId' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class GetCharactersCharacterIdMailLists200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'mailing_list_id' => 'mailing_list_id'
+        'mailingListId' => 'mailing_list_id'
     ];
 
 
@@ -89,7 +89,7 @@ class GetCharactersCharacterIdMailLists200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'mailing_list_id' => 'setMailingListId'
+        'mailingListId' => 'setMailingListId'
     ];
 
 
@@ -98,7 +98,7 @@ class GetCharactersCharacterIdMailLists200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'mailing_list_id' => 'getMailingListId'
+        'mailingListId' => 'getMailingListId'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class GetCharactersCharacterIdMailLists200Ok implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['mailing_list_id'] = isset($data['mailing_list_id']) ? $data['mailing_list_id'] : null;
+        $this->container['mailingListId'] = isset($data['mailingListId']) ? $data['mailingListId'] : null;
     }
 
     /**
@@ -143,8 +143,8 @@ class GetCharactersCharacterIdMailLists200Ok implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if ($this->container['mailing_list_id'] === null) {
-            $invalid_properties[] = "'mailing_list_id' can't be null";
+        if ($this->container['mailingListId'] === null) {
+            $invalid_properties[] = "'mailingListId' can't be null";
         }
         return $invalid_properties;
     }
@@ -157,7 +157,7 @@ class GetCharactersCharacterIdMailLists200Ok implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['mailing_list_id'] === null) {
+        if ($this->container['mailingListId'] === null) {
             return false;
         }
         return true;
@@ -165,22 +165,22 @@ class GetCharactersCharacterIdMailLists200Ok implements ArrayAccess
 
 
     /**
-     * Gets mailing_list_id
+     * Gets mailingListId
      * @return int
      */
     public function getMailingListId()
     {
-        return $this->container['mailing_list_id'];
+        return $this->container['mailingListId'];
     }
 
     /**
-     * Sets mailing_list_id
-     * @param int $mailing_list_id Mailing list ID
+     * Sets mailingListId
+     * @param int $mailingListId Mailing list ID
      * @return $this
      */
-    public function setMailingListId($mailing_list_id)
+    public function setMailingListId($mailingListId)
     {
-        $this->container['mailing_list_id'] = $mailing_list_id;
+        $this->container['mailingListId'] = $mailingListId;
 
         return $this;
     }
@@ -236,9 +236,9 @@ class GetCharactersCharacterIdMailLists200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

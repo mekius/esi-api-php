@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description mail schema
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,9 +67,9 @@ class PostCharactersCharacterIdMailMail implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'approved_cost' => 'int',
+        'approvedCost' => 'int',
         'body' => 'string',
-        'recipients' => '\Swagger\Client\Model\PostCharactersCharacterIdMailRecipient[]',
+        'recipients' => '\ESI\Model\PostCharactersCharacterIdMailRecipient[]',
         'subject' => 'string'
     ];
 
@@ -83,7 +83,7 @@ class PostCharactersCharacterIdMailMail implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'approved_cost' => 'approved_cost',
+        'approvedCost' => 'approved_cost',
         'body' => 'body',
         'recipients' => 'recipients',
         'subject' => 'subject'
@@ -95,7 +95,7 @@ class PostCharactersCharacterIdMailMail implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'approved_cost' => 'setApprovedCost',
+        'approvedCost' => 'setApprovedCost',
         'body' => 'setBody',
         'recipients' => 'setRecipients',
         'subject' => 'setSubject'
@@ -107,7 +107,7 @@ class PostCharactersCharacterIdMailMail implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'approved_cost' => 'getApprovedCost',
+        'approvedCost' => 'getApprovedCost',
         'body' => 'getBody',
         'recipients' => 'getRecipients',
         'subject' => 'getSubject'
@@ -144,7 +144,7 @@ class PostCharactersCharacterIdMailMail implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['approved_cost'] = isset($data['approved_cost']) ? $data['approved_cost'] : 0;
+        $this->container['approvedCost'] = isset($data['approvedCost']) ? $data['approvedCost'] : 0;
         $this->container['body'] = isset($data['body']) ? $data['body'] : null;
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
         $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
@@ -206,22 +206,22 @@ class PostCharactersCharacterIdMailMail implements ArrayAccess
 
 
     /**
-     * Gets approved_cost
+     * Gets approvedCost
      * @return int
      */
     public function getApprovedCost()
     {
-        return $this->container['approved_cost'];
+        return $this->container['approvedCost'];
     }
 
     /**
-     * Sets approved_cost
-     * @param int $approved_cost approved_cost integer
+     * Sets approvedCost
+     * @param int $approvedCost approved_cost integer
      * @return $this
      */
-    public function setApprovedCost($approved_cost)
+    public function setApprovedCost($approvedCost)
     {
-        $this->container['approved_cost'] = $approved_cost;
+        $this->container['approvedCost'] = $approvedCost;
 
         return $this;
     }
@@ -253,7 +253,7 @@ class PostCharactersCharacterIdMailMail implements ArrayAccess
 
     /**
      * Gets recipients
-     * @return \Swagger\Client\Model\PostCharactersCharacterIdMailRecipient[]
+     * @return \ESI\Model\PostCharactersCharacterIdMailRecipient[]
      */
     public function getRecipients()
     {
@@ -262,7 +262,7 @@ class PostCharactersCharacterIdMailMail implements ArrayAccess
 
     /**
      * Sets recipients
-     * @param \Swagger\Client\Model\PostCharactersCharacterIdMailRecipient[] $recipients recipients array
+     * @param \ESI\Model\PostCharactersCharacterIdMailRecipient[] $recipients recipients array
      * @return $this
      */
     public function setRecipients($recipients)
@@ -348,9 +348,9 @@ class PostCharactersCharacterIdMailMail implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

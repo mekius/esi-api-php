@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description transaction
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,20 +67,20 @@ class GetCharactersCharacterIdWalletsJournal200Ok implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'argument_name' => 'string',
-        'argument_value' => 'int',
-        'first_party_id' => 'int',
-        'first_party_type' => 'string',
-        'post_transaction_balance' => 'int',
+        'argumentName' => 'string',
+        'argumentValue' => 'int',
+        'firstPartyId' => 'int',
+        'firstPartyType' => 'string',
+        'postTransactionBalance' => 'int',
         'reason' => 'string',
-        'ref_id' => 'int',
-        'ref_type' => 'string',
-        'second_party_id' => 'int',
-        'second_party_type' => 'string',
-        'tax_amount' => 'int',
-        'tax_reciever_id' => 'int',
-        'transaction_amount' => 'int',
-        'transaction_date' => '\DateTime'
+        'refId' => 'int',
+        'refType' => 'string',
+        'secondPartyId' => 'int',
+        'secondPartyType' => 'string',
+        'taxAmount' => 'int',
+        'taxRecieverId' => 'int',
+        'transactionAmount' => 'int',
+        'transactionDate' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -93,20 +93,20 @@ class GetCharactersCharacterIdWalletsJournal200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'argument_name' => 'argument_name',
-        'argument_value' => 'argument_value',
-        'first_party_id' => 'first_party_id',
-        'first_party_type' => 'first_party_type',
-        'post_transaction_balance' => 'post_transaction_balance',
+        'argumentName' => 'argument_name',
+        'argumentValue' => 'argument_value',
+        'firstPartyId' => 'first_party_id',
+        'firstPartyType' => 'first_party_type',
+        'postTransactionBalance' => 'post_transaction_balance',
         'reason' => 'reason',
-        'ref_id' => 'ref_id',
-        'ref_type' => 'ref_type',
-        'second_party_id' => 'second_party_id',
-        'second_party_type' => 'second_party_type',
-        'tax_amount' => 'tax_amount',
-        'tax_reciever_id' => 'tax_reciever_id',
-        'transaction_amount' => 'transaction_amount',
-        'transaction_date' => 'transaction_date'
+        'refId' => 'ref_id',
+        'refType' => 'ref_type',
+        'secondPartyId' => 'second_party_id',
+        'secondPartyType' => 'second_party_type',
+        'taxAmount' => 'tax_amount',
+        'taxRecieverId' => 'tax_reciever_id',
+        'transactionAmount' => 'transaction_amount',
+        'transactionDate' => 'transaction_date'
     ];
 
 
@@ -115,20 +115,20 @@ class GetCharactersCharacterIdWalletsJournal200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'argument_name' => 'setArgumentName',
-        'argument_value' => 'setArgumentValue',
-        'first_party_id' => 'setFirstPartyId',
-        'first_party_type' => 'setFirstPartyType',
-        'post_transaction_balance' => 'setPostTransactionBalance',
+        'argumentName' => 'setArgumentName',
+        'argumentValue' => 'setArgumentValue',
+        'firstPartyId' => 'setFirstPartyId',
+        'firstPartyType' => 'setFirstPartyType',
+        'postTransactionBalance' => 'setPostTransactionBalance',
         'reason' => 'setReason',
-        'ref_id' => 'setRefId',
-        'ref_type' => 'setRefType',
-        'second_party_id' => 'setSecondPartyId',
-        'second_party_type' => 'setSecondPartyType',
-        'tax_amount' => 'setTaxAmount',
-        'tax_reciever_id' => 'setTaxRecieverId',
-        'transaction_amount' => 'setTransactionAmount',
-        'transaction_date' => 'setTransactionDate'
+        'refId' => 'setRefId',
+        'refType' => 'setRefType',
+        'secondPartyId' => 'setSecondPartyId',
+        'secondPartyType' => 'setSecondPartyType',
+        'taxAmount' => 'setTaxAmount',
+        'taxRecieverId' => 'setTaxRecieverId',
+        'transactionAmount' => 'setTransactionAmount',
+        'transactionDate' => 'setTransactionDate'
     ];
 
 
@@ -137,20 +137,20 @@ class GetCharactersCharacterIdWalletsJournal200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'argument_name' => 'getArgumentName',
-        'argument_value' => 'getArgumentValue',
-        'first_party_id' => 'getFirstPartyId',
-        'first_party_type' => 'getFirstPartyType',
-        'post_transaction_balance' => 'getPostTransactionBalance',
+        'argumentName' => 'getArgumentName',
+        'argumentValue' => 'getArgumentValue',
+        'firstPartyId' => 'getFirstPartyId',
+        'firstPartyType' => 'getFirstPartyType',
+        'postTransactionBalance' => 'getPostTransactionBalance',
         'reason' => 'getReason',
-        'ref_id' => 'getRefId',
-        'ref_type' => 'getRefType',
-        'second_party_id' => 'getSecondPartyId',
-        'second_party_type' => 'getSecondPartyType',
-        'tax_amount' => 'getTaxAmount',
-        'tax_reciever_id' => 'getTaxRecieverId',
-        'transaction_amount' => 'getTransactionAmount',
-        'transaction_date' => 'getTransactionDate'
+        'refId' => 'getRefId',
+        'refType' => 'getRefType',
+        'secondPartyId' => 'getSecondPartyId',
+        'secondPartyType' => 'getSecondPartyType',
+        'taxAmount' => 'getTaxAmount',
+        'taxRecieverId' => 'getTaxRecieverId',
+        'transactionAmount' => 'getTransactionAmount',
+        'transactionDate' => 'getTransactionDate'
     ];
 
     public static function attributeMap()
@@ -216,20 +216,20 @@ class GetCharactersCharacterIdWalletsJournal200Ok implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['argument_name'] = isset($data['argument_name']) ? $data['argument_name'] : null;
-        $this->container['argument_value'] = isset($data['argument_value']) ? $data['argument_value'] : null;
-        $this->container['first_party_id'] = isset($data['first_party_id']) ? $data['first_party_id'] : null;
-        $this->container['first_party_type'] = isset($data['first_party_type']) ? $data['first_party_type'] : null;
-        $this->container['post_transaction_balance'] = isset($data['post_transaction_balance']) ? $data['post_transaction_balance'] : null;
+        $this->container['argumentName'] = isset($data['argumentName']) ? $data['argumentName'] : null;
+        $this->container['argumentValue'] = isset($data['argumentValue']) ? $data['argumentValue'] : null;
+        $this->container['firstPartyId'] = isset($data['firstPartyId']) ? $data['firstPartyId'] : null;
+        $this->container['firstPartyType'] = isset($data['firstPartyType']) ? $data['firstPartyType'] : null;
+        $this->container['postTransactionBalance'] = isset($data['postTransactionBalance']) ? $data['postTransactionBalance'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
-        $this->container['ref_id'] = isset($data['ref_id']) ? $data['ref_id'] : null;
-        $this->container['ref_type'] = isset($data['ref_type']) ? $data['ref_type'] : null;
-        $this->container['second_party_id'] = isset($data['second_party_id']) ? $data['second_party_id'] : null;
-        $this->container['second_party_type'] = isset($data['second_party_type']) ? $data['second_party_type'] : null;
-        $this->container['tax_amount'] = isset($data['tax_amount']) ? $data['tax_amount'] : null;
-        $this->container['tax_reciever_id'] = isset($data['tax_reciever_id']) ? $data['tax_reciever_id'] : null;
-        $this->container['transaction_amount'] = isset($data['transaction_amount']) ? $data['transaction_amount'] : null;
-        $this->container['transaction_date'] = isset($data['transaction_date']) ? $data['transaction_date'] : null;
+        $this->container['refId'] = isset($data['refId']) ? $data['refId'] : null;
+        $this->container['refType'] = isset($data['refType']) ? $data['refType'] : null;
+        $this->container['secondPartyId'] = isset($data['secondPartyId']) ? $data['secondPartyId'] : null;
+        $this->container['secondPartyType'] = isset($data['secondPartyType']) ? $data['secondPartyType'] : null;
+        $this->container['taxAmount'] = isset($data['taxAmount']) ? $data['taxAmount'] : null;
+        $this->container['taxRecieverId'] = isset($data['taxRecieverId']) ? $data['taxRecieverId'] : null;
+        $this->container['transactionAmount'] = isset($data['transactionAmount']) ? $data['transactionAmount'] : null;
+        $this->container['transactionDate'] = isset($data['transactionDate']) ? $data['transactionDate'] : null;
     }
 
     /**
@@ -241,23 +241,23 @@ class GetCharactersCharacterIdWalletsJournal200Ok implements ArrayAccess
     {
         $invalid_properties = [];
         $allowed_values = ["character", "corporation", "alliance"];
-        if (!in_array($this->container['first_party_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'first_party_type', must be one of #{allowed_values}.";
+        if (!in_array($this->container['firstPartyType'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'firstPartyType', must be one of #{allowed_values}.";
         }
 
-        if ($this->container['ref_id'] === null) {
-            $invalid_properties[] = "'ref_id' can't be null";
+        if ($this->container['refId'] === null) {
+            $invalid_properties[] = "'refId' can't be null";
         }
-        if ($this->container['ref_type'] === null) {
-            $invalid_properties[] = "'ref_type' can't be null";
+        if ($this->container['refType'] === null) {
+            $invalid_properties[] = "'refType' can't be null";
         }
         $allowed_values = ["character", "corporation", "alliance"];
-        if (!in_array($this->container['second_party_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'second_party_type', must be one of #{allowed_values}.";
+        if (!in_array($this->container['secondPartyType'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'secondPartyType', must be one of #{allowed_values}.";
         }
 
-        if ($this->container['transaction_date'] === null) {
-            $invalid_properties[] = "'transaction_date' can't be null";
+        if ($this->container['transactionDate'] === null) {
+            $invalid_properties[] = "'transactionDate' can't be null";
         }
         return $invalid_properties;
     }
@@ -271,20 +271,20 @@ class GetCharactersCharacterIdWalletsJournal200Ok implements ArrayAccess
     public function valid()
     {
         $allowed_values = ["character", "corporation", "alliance"];
-        if (!in_array($this->container['first_party_type'], $allowed_values)) {
+        if (!in_array($this->container['firstPartyType'], $allowed_values)) {
             return false;
         }
-        if ($this->container['ref_id'] === null) {
+        if ($this->container['refId'] === null) {
             return false;
         }
-        if ($this->container['ref_type'] === null) {
+        if ($this->container['refType'] === null) {
             return false;
         }
         $allowed_values = ["character", "corporation", "alliance"];
-        if (!in_array($this->container['second_party_type'], $allowed_values)) {
+        if (!in_array($this->container['secondPartyType'], $allowed_values)) {
             return false;
         }
-        if ($this->container['transaction_date'] === null) {
+        if ($this->container['transactionDate'] === null) {
             return false;
         }
         return true;
@@ -292,110 +292,110 @@ class GetCharactersCharacterIdWalletsJournal200Ok implements ArrayAccess
 
 
     /**
-     * Gets argument_name
+     * Gets argumentName
      * @return string
      */
     public function getArgumentName()
     {
-        return $this->container['argument_name'];
+        return $this->container['argumentName'];
     }
 
     /**
-     * Sets argument_name
-     * @param string $argument_name argument_name string
+     * Sets argumentName
+     * @param string $argumentName argument_name string
      * @return $this
      */
-    public function setArgumentName($argument_name)
+    public function setArgumentName($argumentName)
     {
-        $this->container['argument_name'] = $argument_name;
+        $this->container['argumentName'] = $argumentName;
 
         return $this;
     }
 
     /**
-     * Gets argument_value
+     * Gets argumentValue
      * @return int
      */
     public function getArgumentValue()
     {
-        return $this->container['argument_value'];
+        return $this->container['argumentValue'];
     }
 
     /**
-     * Sets argument_value
-     * @param int $argument_value argument_value integer
+     * Sets argumentValue
+     * @param int $argumentValue argument_value integer
      * @return $this
      */
-    public function setArgumentValue($argument_value)
+    public function setArgumentValue($argumentValue)
     {
-        $this->container['argument_value'] = $argument_value;
+        $this->container['argumentValue'] = $argumentValue;
 
         return $this;
     }
 
     /**
-     * Gets first_party_id
+     * Gets firstPartyId
      * @return int
      */
     public function getFirstPartyId()
     {
-        return $this->container['first_party_id'];
+        return $this->container['firstPartyId'];
     }
 
     /**
-     * Sets first_party_id
-     * @param int $first_party_id first_party_id integer
+     * Sets firstPartyId
+     * @param int $firstPartyId first_party_id integer
      * @return $this
      */
-    public function setFirstPartyId($first_party_id)
+    public function setFirstPartyId($firstPartyId)
     {
-        $this->container['first_party_id'] = $first_party_id;
+        $this->container['firstPartyId'] = $firstPartyId;
 
         return $this;
     }
 
     /**
-     * Gets first_party_type
+     * Gets firstPartyType
      * @return string
      */
     public function getFirstPartyType()
     {
-        return $this->container['first_party_type'];
+        return $this->container['firstPartyType'];
     }
 
     /**
-     * Sets first_party_type
-     * @param string $first_party_type first_party_type string
+     * Sets firstPartyType
+     * @param string $firstPartyType first_party_type string
      * @return $this
      */
-    public function setFirstPartyType($first_party_type)
+    public function setFirstPartyType($firstPartyType)
     {
         $allowed_values = array('character', 'corporation', 'alliance');
-        if (!is_null($first_party_type) && (!in_array($first_party_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'first_party_type', must be one of 'character', 'corporation', 'alliance'");
+        if (!is_null($firstPartyType) && (!in_array($firstPartyType, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'firstPartyType', must be one of 'character', 'corporation', 'alliance'");
         }
-        $this->container['first_party_type'] = $first_party_type;
+        $this->container['firstPartyType'] = $firstPartyType;
 
         return $this;
     }
 
     /**
-     * Gets post_transaction_balance
+     * Gets postTransactionBalance
      * @return int
      */
     public function getPostTransactionBalance()
     {
-        return $this->container['post_transaction_balance'];
+        return $this->container['postTransactionBalance'];
     }
 
     /**
-     * Sets post_transaction_balance
-     * @param int $post_transaction_balance post_transaction_balance integer
+     * Sets postTransactionBalance
+     * @param int $postTransactionBalance post_transaction_balance integer
      * @return $this
      */
-    public function setPostTransactionBalance($post_transaction_balance)
+    public function setPostTransactionBalance($postTransactionBalance)
     {
-        $this->container['post_transaction_balance'] = $post_transaction_balance;
+        $this->container['postTransactionBalance'] = $postTransactionBalance;
 
         return $this;
     }
@@ -422,173 +422,173 @@ class GetCharactersCharacterIdWalletsJournal200Ok implements ArrayAccess
     }
 
     /**
-     * Gets ref_id
+     * Gets refId
      * @return int
      */
     public function getRefId()
     {
-        return $this->container['ref_id'];
+        return $this->container['refId'];
     }
 
     /**
-     * Sets ref_id
-     * @param int $ref_id ref_id integer
+     * Sets refId
+     * @param int $refId ref_id integer
      * @return $this
      */
-    public function setRefId($ref_id)
+    public function setRefId($refId)
     {
-        $this->container['ref_id'] = $ref_id;
+        $this->container['refId'] = $refId;
 
         return $this;
     }
 
     /**
-     * Gets ref_type
+     * Gets refType
      * @return string
      */
     public function getRefType()
     {
-        return $this->container['ref_type'];
+        return $this->container['refType'];
     }
 
     /**
-     * Sets ref_type
-     * @param string $ref_type ref_type string
+     * Sets refType
+     * @param string $refType ref_type string
      * @return $this
      */
-    public function setRefType($ref_type)
+    public function setRefType($refType)
     {
-        $this->container['ref_type'] = $ref_type;
+        $this->container['refType'] = $refType;
 
         return $this;
     }
 
     /**
-     * Gets second_party_id
+     * Gets secondPartyId
      * @return int
      */
     public function getSecondPartyId()
     {
-        return $this->container['second_party_id'];
+        return $this->container['secondPartyId'];
     }
 
     /**
-     * Sets second_party_id
-     * @param int $second_party_id second_party_id integer
+     * Sets secondPartyId
+     * @param int $secondPartyId second_party_id integer
      * @return $this
      */
-    public function setSecondPartyId($second_party_id)
+    public function setSecondPartyId($secondPartyId)
     {
-        $this->container['second_party_id'] = $second_party_id;
+        $this->container['secondPartyId'] = $secondPartyId;
 
         return $this;
     }
 
     /**
-     * Gets second_party_type
+     * Gets secondPartyType
      * @return string
      */
     public function getSecondPartyType()
     {
-        return $this->container['second_party_type'];
+        return $this->container['secondPartyType'];
     }
 
     /**
-     * Sets second_party_type
-     * @param string $second_party_type second_party_type string
+     * Sets secondPartyType
+     * @param string $secondPartyType second_party_type string
      * @return $this
      */
-    public function setSecondPartyType($second_party_type)
+    public function setSecondPartyType($secondPartyType)
     {
         $allowed_values = array('character', 'corporation', 'alliance');
-        if (!is_null($second_party_type) && (!in_array($second_party_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'second_party_type', must be one of 'character', 'corporation', 'alliance'");
+        if (!is_null($secondPartyType) && (!in_array($secondPartyType, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'secondPartyType', must be one of 'character', 'corporation', 'alliance'");
         }
-        $this->container['second_party_type'] = $second_party_type;
+        $this->container['secondPartyType'] = $secondPartyType;
 
         return $this;
     }
 
     /**
-     * Gets tax_amount
+     * Gets taxAmount
      * @return int
      */
     public function getTaxAmount()
     {
-        return $this->container['tax_amount'];
+        return $this->container['taxAmount'];
     }
 
     /**
-     * Sets tax_amount
-     * @param int $tax_amount tax_amount integer
+     * Sets taxAmount
+     * @param int $taxAmount tax_amount integer
      * @return $this
      */
-    public function setTaxAmount($tax_amount)
+    public function setTaxAmount($taxAmount)
     {
-        $this->container['tax_amount'] = $tax_amount;
+        $this->container['taxAmount'] = $taxAmount;
 
         return $this;
     }
 
     /**
-     * Gets tax_reciever_id
+     * Gets taxRecieverId
      * @return int
      */
     public function getTaxRecieverId()
     {
-        return $this->container['tax_reciever_id'];
+        return $this->container['taxRecieverId'];
     }
 
     /**
-     * Sets tax_reciever_id
-     * @param int $tax_reciever_id tax_reciever_id integer
+     * Sets taxRecieverId
+     * @param int $taxRecieverId tax_reciever_id integer
      * @return $this
      */
-    public function setTaxRecieverId($tax_reciever_id)
+    public function setTaxRecieverId($taxRecieverId)
     {
-        $this->container['tax_reciever_id'] = $tax_reciever_id;
+        $this->container['taxRecieverId'] = $taxRecieverId;
 
         return $this;
     }
 
     /**
-     * Gets transaction_amount
+     * Gets transactionAmount
      * @return int
      */
     public function getTransactionAmount()
     {
-        return $this->container['transaction_amount'];
+        return $this->container['transactionAmount'];
     }
 
     /**
-     * Sets transaction_amount
-     * @param int $transaction_amount Positive if transferred to first party, negative if transferred to second party
+     * Sets transactionAmount
+     * @param int $transactionAmount Positive if transferred to first party, negative if transferred to second party
      * @return $this
      */
-    public function setTransactionAmount($transaction_amount)
+    public function setTransactionAmount($transactionAmount)
     {
-        $this->container['transaction_amount'] = $transaction_amount;
+        $this->container['transactionAmount'] = $transactionAmount;
 
         return $this;
     }
 
     /**
-     * Gets transaction_date
+     * Gets transactionDate
      * @return \DateTime
      */
     public function getTransactionDate()
     {
-        return $this->container['transaction_date'];
+        return $this->container['transactionDate'];
     }
 
     /**
-     * Sets transaction_date
-     * @param \DateTime $transaction_date transaction_date string
+     * Sets transactionDate
+     * @param \DateTime $transactionDate transaction_date string
      * @return $this
      */
-    public function setTransactionDate($transaction_date)
+    public function setTransactionDate($transactionDate)
     {
-        $this->container['transaction_date'] = $transaction_date;
+        $this->container['transactionDate'] = $transactionDate;
 
         return $this;
     }
@@ -644,9 +644,9 @@ class GetCharactersCharacterIdWalletsJournal200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,8 +67,8 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'labels' => '\Swagger\Client\Model\GetCharactersCharacterIdMailLabelsLabel[]',
-        'total_unread_count' => 'int'
+        'labels' => '\ESI\Model\GetCharactersCharacterIdMailLabelsLabel[]',
+        'totalUnreadCount' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -82,7 +82,7 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
      */
     protected static $attributeMap = [
         'labels' => 'labels',
-        'total_unread_count' => 'total_unread_count'
+        'totalUnreadCount' => 'total_unread_count'
     ];
 
 
@@ -92,7 +92,7 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
      */
     protected static $setters = [
         'labels' => 'setLabels',
-        'total_unread_count' => 'setTotalUnreadCount'
+        'totalUnreadCount' => 'setTotalUnreadCount'
     ];
 
 
@@ -102,7 +102,7 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
      */
     protected static $getters = [
         'labels' => 'getLabels',
-        'total_unread_count' => 'getTotalUnreadCount'
+        'totalUnreadCount' => 'getTotalUnreadCount'
     ];
 
     public static function attributeMap()
@@ -137,7 +137,7 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['labels'] = isset($data['labels']) ? $data['labels'] : null;
-        $this->container['total_unread_count'] = isset($data['total_unread_count']) ? $data['total_unread_count'] : null;
+        $this->container['totalUnreadCount'] = isset($data['totalUnreadCount']) ? $data['totalUnreadCount'] : null;
     }
 
     /**
@@ -148,8 +148,8 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if (!is_null($this->container['total_unread_count']) && ($this->container['total_unread_count'] < 0.0)) {
-            $invalid_properties[] = "invalid value for 'total_unread_count', must be bigger than or equal to 0.0.";
+        if (!is_null($this->container['totalUnreadCount']) && ($this->container['totalUnreadCount'] < 0.0)) {
+            $invalid_properties[] = "invalid value for 'totalUnreadCount', must be bigger than or equal to 0.0.";
         }
 
         return $invalid_properties;
@@ -163,7 +163,7 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['total_unread_count'] < 0.0) {
+        if ($this->container['totalUnreadCount'] < 0.0) {
             return false;
         }
         return true;
@@ -172,7 +172,7 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
 
     /**
      * Gets labels
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdMailLabelsLabel[]
+     * @return \ESI\Model\GetCharactersCharacterIdMailLabelsLabel[]
      */
     public function getLabels()
     {
@@ -181,7 +181,7 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
 
     /**
      * Sets labels
-     * @param \Swagger\Client\Model\GetCharactersCharacterIdMailLabelsLabel[] $labels labels array
+     * @param \ESI\Model\GetCharactersCharacterIdMailLabelsLabel[] $labels labels array
      * @return $this
      */
     public function setLabels($labels)
@@ -192,27 +192,27 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
     }
 
     /**
-     * Gets total_unread_count
+     * Gets totalUnreadCount
      * @return int
      */
     public function getTotalUnreadCount()
     {
-        return $this->container['total_unread_count'];
+        return $this->container['totalUnreadCount'];
     }
 
     /**
-     * Sets total_unread_count
-     * @param int $total_unread_count total_unread_count integer
+     * Sets totalUnreadCount
+     * @param int $totalUnreadCount total_unread_count integer
      * @return $this
      */
-    public function setTotalUnreadCount($total_unread_count)
+    public function setTotalUnreadCount($totalUnreadCount)
     {
 
-        if (!is_null($total_unread_count) && ($total_unread_count < 0.0)) {
-            throw new \InvalidArgumentException('invalid value for $total_unread_count when calling GetCharactersCharacterIdMailLabelsOk., must be bigger than or equal to 0.0.');
+        if (!is_null($totalUnreadCount) && ($totalUnreadCount < 0.0)) {
+            throw new \InvalidArgumentException('invalid value for $totalUnreadCount when calling GetCharactersCharacterIdMailLabelsOk., must be bigger than or equal to 0.0.');
         }
 
-        $this->container['total_unread_count'] = $total_unread_count;
+        $this->container['totalUnreadCount'] = $totalUnreadCount;
 
         return $this;
     }
@@ -268,9 +268,9 @@ class GetCharactersCharacterIdMailLabelsOk implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -68,9 +68,9 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'position' => '\Swagger\Client\Model\GetUniverseStructuresStructureIdPosition',
-        'solar_system_id' => 'int',
-        'type_id' => 'int'
+        'position' => '\ESI\Model\GetUniverseStructuresStructureIdPosition',
+        'solarSystemId' => 'int',
+        'typeId' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -85,8 +85,8 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
     protected static $attributeMap = [
         'name' => 'name',
         'position' => 'position',
-        'solar_system_id' => 'solar_system_id',
-        'type_id' => 'type_id'
+        'solarSystemId' => 'solar_system_id',
+        'typeId' => 'type_id'
     ];
 
 
@@ -97,8 +97,8 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
     protected static $setters = [
         'name' => 'setName',
         'position' => 'setPosition',
-        'solar_system_id' => 'setSolarSystemId',
-        'type_id' => 'setTypeId'
+        'solarSystemId' => 'setSolarSystemId',
+        'typeId' => 'setTypeId'
     ];
 
 
@@ -109,8 +109,8 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
     protected static $getters = [
         'name' => 'getName',
         'position' => 'getPosition',
-        'solar_system_id' => 'getSolarSystemId',
-        'type_id' => 'getTypeId'
+        'solarSystemId' => 'getSolarSystemId',
+        'typeId' => 'getTypeId'
     ];
 
     public static function attributeMap()
@@ -146,8 +146,8 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['position'] = isset($data['position']) ? $data['position'] : null;
-        $this->container['solar_system_id'] = isset($data['solar_system_id']) ? $data['solar_system_id'] : null;
-        $this->container['type_id'] = isset($data['type_id']) ? $data['type_id'] : null;
+        $this->container['solarSystemId'] = isset($data['solarSystemId']) ? $data['solarSystemId'] : null;
+        $this->container['typeId'] = isset($data['typeId']) ? $data['typeId'] : null;
     }
 
     /**
@@ -161,8 +161,8 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['solar_system_id'] === null) {
-            $invalid_properties[] = "'solar_system_id' can't be null";
+        if ($this->container['solarSystemId'] === null) {
+            $invalid_properties[] = "'solarSystemId' can't be null";
         }
         return $invalid_properties;
     }
@@ -178,7 +178,7 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
         if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['solar_system_id'] === null) {
+        if ($this->container['solarSystemId'] === null) {
             return false;
         }
         return true;
@@ -208,7 +208,7 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
 
     /**
      * Gets position
-     * @return \Swagger\Client\Model\GetUniverseStructuresStructureIdPosition
+     * @return \ESI\Model\GetUniverseStructuresStructureIdPosition
      */
     public function getPosition()
     {
@@ -217,7 +217,7 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
 
     /**
      * Sets position
-     * @param \Swagger\Client\Model\GetUniverseStructuresStructureIdPosition $position
+     * @param \ESI\Model\GetUniverseStructuresStructureIdPosition $position
      * @return $this
      */
     public function setPosition($position)
@@ -228,43 +228,43 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
     }
 
     /**
-     * Gets solar_system_id
+     * Gets solarSystemId
      * @return int
      */
     public function getSolarSystemId()
     {
-        return $this->container['solar_system_id'];
+        return $this->container['solarSystemId'];
     }
 
     /**
-     * Sets solar_system_id
-     * @param int $solar_system_id solar_system_id integer
+     * Sets solarSystemId
+     * @param int $solarSystemId solar_system_id integer
      * @return $this
      */
-    public function setSolarSystemId($solar_system_id)
+    public function setSolarSystemId($solarSystemId)
     {
-        $this->container['solar_system_id'] = $solar_system_id;
+        $this->container['solarSystemId'] = $solarSystemId;
 
         return $this;
     }
 
     /**
-     * Gets type_id
+     * Gets typeId
      * @return int
      */
     public function getTypeId()
     {
-        return $this->container['type_id'];
+        return $this->container['typeId'];
     }
 
     /**
-     * Sets type_id
-     * @param int $type_id type_id integer
+     * Sets typeId
+     * @param int $typeId type_id integer
      * @return $this
      */
-    public function setTypeId($type_id)
+    public function setTypeId($typeId)
     {
-        $this->container['type_id'] = $type_id;
+        $this->container['typeId'] = $typeId;
 
         return $this;
     }
@@ -320,9 +320,9 @@ class GetUniverseStructuresStructureIdOk implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

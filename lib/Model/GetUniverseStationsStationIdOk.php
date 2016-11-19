@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,8 +67,8 @@ class GetUniverseStationsStationIdOk implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'solar_system_id' => 'int',
-        'station_name' => 'string'
+        'solarSystemId' => 'int',
+        'stationName' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -81,8 +81,8 @@ class GetUniverseStationsStationIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'solar_system_id' => 'solar_system_id',
-        'station_name' => 'station_name'
+        'solarSystemId' => 'solar_system_id',
+        'stationName' => 'station_name'
     ];
 
 
@@ -91,8 +91,8 @@ class GetUniverseStationsStationIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'solar_system_id' => 'setSolarSystemId',
-        'station_name' => 'setStationName'
+        'solarSystemId' => 'setSolarSystemId',
+        'stationName' => 'setStationName'
     ];
 
 
@@ -101,8 +101,8 @@ class GetUniverseStationsStationIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'solar_system_id' => 'getSolarSystemId',
-        'station_name' => 'getStationName'
+        'solarSystemId' => 'getSolarSystemId',
+        'stationName' => 'getStationName'
     ];
 
     public static function attributeMap()
@@ -136,8 +136,8 @@ class GetUniverseStationsStationIdOk implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['solar_system_id'] = isset($data['solar_system_id']) ? $data['solar_system_id'] : null;
-        $this->container['station_name'] = isset($data['station_name']) ? $data['station_name'] : null;
+        $this->container['solarSystemId'] = isset($data['solarSystemId']) ? $data['solarSystemId'] : null;
+        $this->container['stationName'] = isset($data['stationName']) ? $data['stationName'] : null;
     }
 
     /**
@@ -164,43 +164,43 @@ class GetUniverseStationsStationIdOk implements ArrayAccess
 
 
     /**
-     * Gets solar_system_id
+     * Gets solarSystemId
      * @return int
      */
     public function getSolarSystemId()
     {
-        return $this->container['solar_system_id'];
+        return $this->container['solarSystemId'];
     }
 
     /**
-     * Sets solar_system_id
-     * @param int $solar_system_id solar_system_id integer
+     * Sets solarSystemId
+     * @param int $solarSystemId solar_system_id integer
      * @return $this
      */
-    public function setSolarSystemId($solar_system_id)
+    public function setSolarSystemId($solarSystemId)
     {
-        $this->container['solar_system_id'] = $solar_system_id;
+        $this->container['solarSystemId'] = $solarSystemId;
 
         return $this;
     }
 
     /**
-     * Gets station_name
+     * Gets stationName
      * @return string
      */
     public function getStationName()
     {
-        return $this->container['station_name'];
+        return $this->container['stationName'];
     }
 
     /**
-     * Sets station_name
-     * @param string $station_name the full name of the station
+     * Sets stationName
+     * @param string $stationName the full name of the station
      * @return $this
      */
-    public function setStationName($station_name)
+    public function setStationName($stationName)
     {
-        $this->container['station_name'] = $station_name;
+        $this->container['stationName'] = $stationName;
 
         return $this;
     }
@@ -256,9 +256,9 @@ class GetUniverseStationsStationIdOk implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

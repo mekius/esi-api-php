@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,9 +67,9 @@ class GetMarketsPrices200Ok implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'adjusted_price' => 'float',
-        'average_price' => 'float',
-        'type_id' => 'int'
+        'adjustedPrice' => 'float',
+        'averagePrice' => 'float',
+        'typeId' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -82,9 +82,9 @@ class GetMarketsPrices200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'adjusted_price' => 'adjusted_price',
-        'average_price' => 'average_price',
-        'type_id' => 'type_id'
+        'adjustedPrice' => 'adjusted_price',
+        'averagePrice' => 'average_price',
+        'typeId' => 'type_id'
     ];
 
 
@@ -93,9 +93,9 @@ class GetMarketsPrices200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'adjusted_price' => 'setAdjustedPrice',
-        'average_price' => 'setAveragePrice',
-        'type_id' => 'setTypeId'
+        'adjustedPrice' => 'setAdjustedPrice',
+        'averagePrice' => 'setAveragePrice',
+        'typeId' => 'setTypeId'
     ];
 
 
@@ -104,9 +104,9 @@ class GetMarketsPrices200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'adjusted_price' => 'getAdjustedPrice',
-        'average_price' => 'getAveragePrice',
-        'type_id' => 'getTypeId'
+        'adjustedPrice' => 'getAdjustedPrice',
+        'averagePrice' => 'getAveragePrice',
+        'typeId' => 'getTypeId'
     ];
 
     public static function attributeMap()
@@ -140,9 +140,9 @@ class GetMarketsPrices200Ok implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['adjusted_price'] = isset($data['adjusted_price']) ? $data['adjusted_price'] : null;
-        $this->container['average_price'] = isset($data['average_price']) ? $data['average_price'] : null;
-        $this->container['type_id'] = isset($data['type_id']) ? $data['type_id'] : null;
+        $this->container['adjustedPrice'] = isset($data['adjustedPrice']) ? $data['adjustedPrice'] : null;
+        $this->container['averagePrice'] = isset($data['averagePrice']) ? $data['averagePrice'] : null;
+        $this->container['typeId'] = isset($data['typeId']) ? $data['typeId'] : null;
     }
 
     /**
@@ -153,8 +153,8 @@ class GetMarketsPrices200Ok implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if ($this->container['type_id'] === null) {
-            $invalid_properties[] = "'type_id' can't be null";
+        if ($this->container['typeId'] === null) {
+            $invalid_properties[] = "'typeId' can't be null";
         }
         return $invalid_properties;
     }
@@ -167,7 +167,7 @@ class GetMarketsPrices200Ok implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['type_id'] === null) {
+        if ($this->container['typeId'] === null) {
             return false;
         }
         return true;
@@ -175,64 +175,64 @@ class GetMarketsPrices200Ok implements ArrayAccess
 
 
     /**
-     * Gets adjusted_price
+     * Gets adjustedPrice
      * @return float
      */
     public function getAdjustedPrice()
     {
-        return $this->container['adjusted_price'];
+        return $this->container['adjustedPrice'];
     }
 
     /**
-     * Sets adjusted_price
-     * @param float $adjusted_price adjusted_price number
+     * Sets adjustedPrice
+     * @param float $adjustedPrice adjusted_price number
      * @return $this
      */
-    public function setAdjustedPrice($adjusted_price)
+    public function setAdjustedPrice($adjustedPrice)
     {
-        $this->container['adjusted_price'] = $adjusted_price;
+        $this->container['adjustedPrice'] = $adjustedPrice;
 
         return $this;
     }
 
     /**
-     * Gets average_price
+     * Gets averagePrice
      * @return float
      */
     public function getAveragePrice()
     {
-        return $this->container['average_price'];
+        return $this->container['averagePrice'];
     }
 
     /**
-     * Sets average_price
-     * @param float $average_price average_price number
+     * Sets averagePrice
+     * @param float $averagePrice average_price number
      * @return $this
      */
-    public function setAveragePrice($average_price)
+    public function setAveragePrice($averagePrice)
     {
-        $this->container['average_price'] = $average_price;
+        $this->container['averagePrice'] = $averagePrice;
 
         return $this;
     }
 
     /**
-     * Gets type_id
+     * Gets typeId
      * @return int
      */
     public function getTypeId()
     {
-        return $this->container['type_id'];
+        return $this->container['typeId'];
     }
 
     /**
-     * Sets type_id
-     * @param int $type_id type_id integer
+     * Sets typeId
+     * @param int $typeId type_id integer
      * @return $this
      */
-    public function setTypeId($type_id)
+    public function setTypeId($typeId)
     {
-        $this->container['type_id'] = $type_id;
+        $this->container['typeId'] = $typeId;
 
         return $this;
     }
@@ -288,9 +288,9 @@ class GetMarketsPrices200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

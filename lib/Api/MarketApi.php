@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ESI\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ESI\ApiClient;
+use \ESI\ApiException;
+use \ESI\Configuration;
+use \ESI\ObjectSerializer;
 
 /**
  * MarketApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -59,16 +59,16 @@ class MarketApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ESI\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ESI\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ESI\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -81,7 +81,7 @@ class MarketApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ESI\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -91,11 +91,11 @@ class MarketApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ESI\ApiClient $apiClient set the API client
      *
      * @return MarketApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ESI\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -107,8 +107,8 @@ class MarketApi
      * List market prices
      *
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetMarketsPrices200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetMarketsPrices200Ok[]
      */
     public function getMarketsPrices($datasource = null)
     {
@@ -122,8 +122,8 @@ class MarketApi
      * List market prices
      *
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetMarketsPrices200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetMarketsPrices200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getMarketsPricesWithHttpInfo($datasource = null)
     {
@@ -161,19 +161,19 @@ class MarketApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetMarketsPrices200Ok[]',
+                '\ESI\Model\GetMarketsPrices200Ok[]',
                 '/markets/prices/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetMarketsPrices200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetMarketsPrices200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsPrices200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsPrices200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsPricesInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsPricesInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -187,15 +187,15 @@ class MarketApi
      *
      * List historical market statistics in a region
      *
-     * @param int $region_id Return statistics in this region (required)
-     * @param int $type_id Return statistics for this type (required)
+     * @param int $regionId Return statistics in this region (required)
+     * @param int $typeId Return statistics for this type (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetMarketsRegionIdHistory200Ok[]
      */
-    public function getMarketsRegionIdHistory($region_id, $type_id, $datasource = null)
+    public function getMarketsRegionIdHistory($regionId, $typeId, $datasource = null)
     {
-        list($response) = $this->getMarketsRegionIdHistoryWithHttpInfo($region_id, $type_id, $datasource);
+        list($response) = $this->getMarketsRegionIdHistoryWithHttpInfo($regionId, $typeId, $datasource);
         return $response;
     }
 
@@ -204,21 +204,21 @@ class MarketApi
      *
      * List historical market statistics in a region
      *
-     * @param int $region_id Return statistics in this region (required)
-     * @param int $type_id Return statistics for this type (required)
+     * @param int $regionId Return statistics in this region (required)
+     * @param int $typeId Return statistics for this type (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetMarketsRegionIdHistory200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMarketsRegionIdHistoryWithHttpInfo($region_id, $type_id, $datasource = null)
+    public function getMarketsRegionIdHistoryWithHttpInfo($regionId, $typeId, $datasource = null)
     {
-        // verify the required parameter 'region_id' is set
-        if ($region_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $region_id when calling getMarketsRegionIdHistory');
+        // verify the required parameter 'regionId' is set
+        if ($regionId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $regionId when calling getMarketsRegionIdHistory');
         }
-        // verify the required parameter 'type_id' is set
-        if ($type_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $type_id when calling getMarketsRegionIdHistory');
+        // verify the required parameter 'typeId' is set
+        if ($typeId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $typeId when calling getMarketsRegionIdHistory');
         }
         // parse inputs
         $resourcePath = "/markets/{region_id}/history/";
@@ -233,18 +233,18 @@ class MarketApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($type_id !== null) {
-            $queryParams['type_id'] = $this->apiClient->getSerializer()->toQueryValue($type_id);
+        if ($typeId !== null) {
+            $queryParams['type_id'] = $this->apiClient->getSerializer()->toQueryValue($typeId);
         }
         // query params
         if ($datasource !== null) {
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($region_id !== null) {
+        if ($regionId !== null) {
             $resourcePath = str_replace(
                 "{" . "region_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($region_id),
+                $this->apiClient->getSerializer()->toPathValue($regionId),
                 $resourcePath
             );
         }
@@ -266,23 +266,23 @@ class MarketApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[]',
+                '\ESI\Model\GetMarketsRegionIdHistory200Ok[]',
                 '/markets/{region_id}/history/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetMarketsRegionIdHistory200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdHistory200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 422:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdHistoryUnprocessableEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdHistoryUnprocessableEntity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdHistoryInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdHistoryInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -296,17 +296,17 @@ class MarketApi
      *
      * List orders in a region
      *
-     * @param int $region_id Return orders in this region (required)
-     * @param string $order_type Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. (required)
-     * @param int $type_id Return orders only for this type (optional)
+     * @param int $regionId Return orders in this region (required)
+     * @param string $orderType Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. (required)
+     * @param int $typeId Return orders only for this type (optional)
      * @param int $page Which page to query, only used for querying without type_id. Starting at 1 (optional, default to 1)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetMarketsRegionIdOrders200Ok[]
      */
-    public function getMarketsRegionIdOrders($region_id, $order_type, $type_id = null, $page = null, $datasource = null)
+    public function getMarketsRegionIdOrders($regionId, $orderType, $typeId = null, $page = null, $datasource = null)
     {
-        list($response) = $this->getMarketsRegionIdOrdersWithHttpInfo($region_id, $order_type, $type_id, $page, $datasource);
+        list($response) = $this->getMarketsRegionIdOrdersWithHttpInfo($regionId, $orderType, $typeId, $page, $datasource);
         return $response;
     }
 
@@ -315,23 +315,23 @@ class MarketApi
      *
      * List orders in a region
      *
-     * @param int $region_id Return orders in this region (required)
-     * @param string $order_type Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. (required)
-     * @param int $type_id Return orders only for this type (optional)
+     * @param int $regionId Return orders in this region (required)
+     * @param string $orderType Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. (required)
+     * @param int $typeId Return orders only for this type (optional)
      * @param int $page Which page to query, only used for querying without type_id. Starting at 1 (optional, default to 1)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetMarketsRegionIdOrders200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMarketsRegionIdOrdersWithHttpInfo($region_id, $order_type, $type_id = null, $page = null, $datasource = null)
+    public function getMarketsRegionIdOrdersWithHttpInfo($regionId, $orderType, $typeId = null, $page = null, $datasource = null)
     {
-        // verify the required parameter 'region_id' is set
-        if ($region_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $region_id when calling getMarketsRegionIdOrders');
+        // verify the required parameter 'regionId' is set
+        if ($regionId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $regionId when calling getMarketsRegionIdOrders');
         }
-        // verify the required parameter 'order_type' is set
-        if ($order_type === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $order_type when calling getMarketsRegionIdOrders');
+        // verify the required parameter 'orderType' is set
+        if ($orderType === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $orderType when calling getMarketsRegionIdOrders');
         }
         // parse inputs
         $resourcePath = "/markets/{region_id}/orders/";
@@ -346,12 +346,12 @@ class MarketApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($type_id !== null) {
-            $queryParams['type_id'] = $this->apiClient->getSerializer()->toQueryValue($type_id);
+        if ($typeId !== null) {
+            $queryParams['type_id'] = $this->apiClient->getSerializer()->toQueryValue($typeId);
         }
         // query params
-        if ($order_type !== null) {
-            $queryParams['order_type'] = $this->apiClient->getSerializer()->toQueryValue($order_type);
+        if ($orderType !== null) {
+            $queryParams['order_type'] = $this->apiClient->getSerializer()->toQueryValue($orderType);
         }
         // query params
         if ($page !== null) {
@@ -362,10 +362,10 @@ class MarketApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($region_id !== null) {
+        if ($regionId !== null) {
             $resourcePath = str_replace(
                 "{" . "region_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($region_id),
+                $this->apiClient->getSerializer()->toPathValue($regionId),
                 $resourcePath
             );
         }
@@ -387,23 +387,23 @@ class MarketApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[]',
+                '\ESI\Model\GetMarketsRegionIdOrders200Ok[]',
                 '/markets/{region_id}/orders/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetMarketsRegionIdOrders200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdOrders200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 422:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdOrdersUnprocessableEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdOrdersUnprocessableEntity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdOrdersInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdOrdersInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

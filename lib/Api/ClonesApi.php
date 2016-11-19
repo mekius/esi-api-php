@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ESI\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ESI\ApiClient;
+use \ESI\ApiException;
+use \ESI\Configuration;
+use \ESI\ObjectSerializer;
 
 /**
  * ClonesApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -59,16 +59,16 @@ class ClonesApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ESI\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ESI\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ESI\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -81,7 +81,7 @@ class ClonesApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ESI\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -91,11 +91,11 @@ class ClonesApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ESI\ApiClient $apiClient set the API client
      *
      * @return ClonesApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ESI\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -106,14 +106,14 @@ class ClonesApi
      *
      * Get clones
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdClonesOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdClonesOk
      */
-    public function getCharactersCharacterIdClones($character_id, $datasource = null)
+    public function getCharactersCharacterIdClones($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdClonesWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdClonesWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -122,16 +122,16 @@ class ClonesApi
      *
      * Get clones
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdClonesOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdClonesOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdClonesWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdClonesWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdClones');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdClones');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/clones/";
@@ -150,10 +150,10 @@ class ClonesApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -179,23 +179,23 @@ class ClonesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdClonesOk',
+                '\ESI\Model\GetCharactersCharacterIdClonesOk',
                 '/characters/{character_id}/clones/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdClonesOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdClonesOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdClonesOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdClonesOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdClonesForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdClonesForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdClonesInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdClonesInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

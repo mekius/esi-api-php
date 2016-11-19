@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description recipient object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,8 +67,8 @@ class PostCharactersCharacterIdMailRecipient implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'recipient_id' => 'int',
-        'recipient_type' => 'string'
+        'recipientId' => 'int',
+        'recipientType' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -81,8 +81,8 @@ class PostCharactersCharacterIdMailRecipient implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'recipient_id' => 'recipient_id',
-        'recipient_type' => 'recipient_type'
+        'recipientId' => 'recipient_id',
+        'recipientType' => 'recipient_type'
     ];
 
 
@@ -91,8 +91,8 @@ class PostCharactersCharacterIdMailRecipient implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'recipient_id' => 'setRecipientId',
-        'recipient_type' => 'setRecipientType'
+        'recipientId' => 'setRecipientId',
+        'recipientType' => 'setRecipientType'
     ];
 
 
@@ -101,8 +101,8 @@ class PostCharactersCharacterIdMailRecipient implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'recipient_id' => 'getRecipientId',
-        'recipient_type' => 'getRecipientType'
+        'recipientId' => 'getRecipientId',
+        'recipientType' => 'getRecipientType'
     ];
 
     public static function attributeMap()
@@ -154,8 +154,8 @@ class PostCharactersCharacterIdMailRecipient implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['recipient_id'] = isset($data['recipient_id']) ? $data['recipient_id'] : null;
-        $this->container['recipient_type'] = isset($data['recipient_type']) ? $data['recipient_type'] : null;
+        $this->container['recipientId'] = isset($data['recipientId']) ? $data['recipientId'] : null;
+        $this->container['recipientType'] = isset($data['recipientType']) ? $data['recipientType'] : null;
     }
 
     /**
@@ -166,15 +166,15 @@ class PostCharactersCharacterIdMailRecipient implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if ($this->container['recipient_id'] === null) {
-            $invalid_properties[] = "'recipient_id' can't be null";
+        if ($this->container['recipientId'] === null) {
+            $invalid_properties[] = "'recipientId' can't be null";
         }
-        if ($this->container['recipient_type'] === null) {
-            $invalid_properties[] = "'recipient_type' can't be null";
+        if ($this->container['recipientType'] === null) {
+            $invalid_properties[] = "'recipientType' can't be null";
         }
         $allowed_values = ["alliance", "character", "corporation", "mailing_list"];
-        if (!in_array($this->container['recipient_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'recipient_type', must be one of #{allowed_values}.";
+        if (!in_array($this->container['recipientType'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'recipientType', must be one of #{allowed_values}.";
         }
 
         return $invalid_properties;
@@ -188,14 +188,14 @@ class PostCharactersCharacterIdMailRecipient implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['recipient_id'] === null) {
+        if ($this->container['recipientId'] === null) {
             return false;
         }
-        if ($this->container['recipient_type'] === null) {
+        if ($this->container['recipientType'] === null) {
             return false;
         }
         $allowed_values = ["alliance", "character", "corporation", "mailing_list"];
-        if (!in_array($this->container['recipient_type'], $allowed_values)) {
+        if (!in_array($this->container['recipientType'], $allowed_values)) {
             return false;
         }
         return true;
@@ -203,47 +203,47 @@ class PostCharactersCharacterIdMailRecipient implements ArrayAccess
 
 
     /**
-     * Gets recipient_id
+     * Gets recipientId
      * @return int
      */
     public function getRecipientId()
     {
-        return $this->container['recipient_id'];
+        return $this->container['recipientId'];
     }
 
     /**
-     * Sets recipient_id
-     * @param int $recipient_id recipient_id integer
+     * Sets recipientId
+     * @param int $recipientId recipient_id integer
      * @return $this
      */
-    public function setRecipientId($recipient_id)
+    public function setRecipientId($recipientId)
     {
-        $this->container['recipient_id'] = $recipient_id;
+        $this->container['recipientId'] = $recipientId;
 
         return $this;
     }
 
     /**
-     * Gets recipient_type
+     * Gets recipientType
      * @return string
      */
     public function getRecipientType()
     {
-        return $this->container['recipient_type'];
+        return $this->container['recipientType'];
     }
 
     /**
-     * Sets recipient_type
-     * @param string $recipient_type recipient_type string
+     * Sets recipientType
+     * @param string $recipientType recipient_type string
      * @return $this
      */
-    public function setRecipientType($recipient_type)
+    public function setRecipientType($recipientType)
     {
         $allowed_values = array('alliance', 'character', 'corporation', 'mailing_list');
-        if ((!in_array($recipient_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'recipient_type', must be one of 'alliance', 'character', 'corporation', 'mailing_list'");
+        if ((!in_array($recipientType, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'recipientType', must be one of 'alliance', 'character', 'corporation', 'mailing_list'");
         }
-        $this->container['recipient_type'] = $recipient_type;
+        $this->container['recipientType'] = $recipientType;
 
         return $this;
     }
@@ -299,9 +299,9 @@ class PostCharactersCharacterIdMailRecipient implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **from** | **int** | From whom the mail was sent | [optional] 
 **labels** | **int[]** | Labels attached to the mail | [optional] 
 **read** | **bool** | Whether the mail is flagged as read | [optional] 
-**recipients** | [**\Swagger\Client\Model\GetCharactersCharacterIdMailMailIdRecipient[]**](GetCharactersCharacterIdMailMailIdRecipient.md) | Recipients of the mail | [optional] 
+**recipients** | [**\ESI\Model\GetCharactersCharacterIdMailMailIdRecipient[]**](GetCharactersCharacterIdMailMailIdRecipient.md) | Recipients of the mail | [optional] 
 **subject** | **string** | Mail subject | [optional] 
 **timestamp** | [**\DateTime**](\DateTime.md) | When the mail was sent | [optional] 
 

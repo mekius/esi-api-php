@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,8 +67,8 @@ class GetCharactersNames200Ok implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'character_id' => 'int',
-        'character_name' => 'string'
+        'characterId' => 'int',
+        'characterName' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -81,8 +81,8 @@ class GetCharactersNames200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'character_id' => 'character_id',
-        'character_name' => 'character_name'
+        'characterId' => 'character_id',
+        'characterName' => 'character_name'
     ];
 
 
@@ -91,8 +91,8 @@ class GetCharactersNames200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'character_id' => 'setCharacterId',
-        'character_name' => 'setCharacterName'
+        'characterId' => 'setCharacterId',
+        'characterName' => 'setCharacterName'
     ];
 
 
@@ -101,8 +101,8 @@ class GetCharactersNames200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'character_id' => 'getCharacterId',
-        'character_name' => 'getCharacterName'
+        'characterId' => 'getCharacterId',
+        'characterName' => 'getCharacterName'
     ];
 
     public static function attributeMap()
@@ -136,8 +136,8 @@ class GetCharactersNames200Ok implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['character_id'] = isset($data['character_id']) ? $data['character_id'] : null;
-        $this->container['character_name'] = isset($data['character_name']) ? $data['character_name'] : null;
+        $this->container['characterId'] = isset($data['characterId']) ? $data['characterId'] : null;
+        $this->container['characterName'] = isset($data['characterName']) ? $data['characterName'] : null;
     }
 
     /**
@@ -148,11 +148,11 @@ class GetCharactersNames200Ok implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if ($this->container['character_id'] === null) {
-            $invalid_properties[] = "'character_id' can't be null";
+        if ($this->container['characterId'] === null) {
+            $invalid_properties[] = "'characterId' can't be null";
         }
-        if ($this->container['character_name'] === null) {
-            $invalid_properties[] = "'character_name' can't be null";
+        if ($this->container['characterName'] === null) {
+            $invalid_properties[] = "'characterName' can't be null";
         }
         return $invalid_properties;
     }
@@ -165,10 +165,10 @@ class GetCharactersNames200Ok implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['character_id'] === null) {
+        if ($this->container['characterId'] === null) {
             return false;
         }
-        if ($this->container['character_name'] === null) {
+        if ($this->container['characterName'] === null) {
             return false;
         }
         return true;
@@ -176,43 +176,43 @@ class GetCharactersNames200Ok implements ArrayAccess
 
 
     /**
-     * Gets character_id
+     * Gets characterId
      * @return int
      */
     public function getCharacterId()
     {
-        return $this->container['character_id'];
+        return $this->container['characterId'];
     }
 
     /**
-     * Sets character_id
-     * @param int $character_id character_id integer
+     * Sets characterId
+     * @param int $characterId character_id integer
      * @return $this
      */
-    public function setCharacterId($character_id)
+    public function setCharacterId($characterId)
     {
-        $this->container['character_id'] = $character_id;
+        $this->container['characterId'] = $characterId;
 
         return $this;
     }
 
     /**
-     * Gets character_name
+     * Gets characterName
      * @return string
      */
     public function getCharacterName()
     {
-        return $this->container['character_name'];
+        return $this->container['characterName'];
     }
 
     /**
-     * Sets character_name
-     * @param string $character_name character_name string
+     * Sets characterName
+     * @param string $characterName character_name string
      * @return $this
      */
-    public function setCharacterName($character_name)
+    public function setCharacterName($characterName)
     {
-        $this->container['character_name'] = $character_name;
+        $this->container['characterName'] = $characterName;
 
         return $this;
     }
@@ -268,9 +268,9 @@ class GetCharactersNames200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

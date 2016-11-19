@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description jump_clone object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -68,8 +68,8 @@ class GetCharactersCharacterIdClonesJumpClone implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'implants' => 'int[]',
-        'location_id' => 'int',
-        'location_type' => 'string'
+        'locationId' => 'int',
+        'locationType' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -83,8 +83,8 @@ class GetCharactersCharacterIdClonesJumpClone implements ArrayAccess
      */
     protected static $attributeMap = [
         'implants' => 'implants',
-        'location_id' => 'location_id',
-        'location_type' => 'location_type'
+        'locationId' => 'location_id',
+        'locationType' => 'location_type'
     ];
 
 
@@ -94,8 +94,8 @@ class GetCharactersCharacterIdClonesJumpClone implements ArrayAccess
      */
     protected static $setters = [
         'implants' => 'setImplants',
-        'location_id' => 'setLocationId',
-        'location_type' => 'setLocationType'
+        'locationId' => 'setLocationId',
+        'locationType' => 'setLocationType'
     ];
 
 
@@ -105,8 +105,8 @@ class GetCharactersCharacterIdClonesJumpClone implements ArrayAccess
      */
     protected static $getters = [
         'implants' => 'getImplants',
-        'location_id' => 'getLocationId',
-        'location_type' => 'getLocationType'
+        'locationId' => 'getLocationId',
+        'locationType' => 'getLocationType'
     ];
 
     public static function attributeMap()
@@ -155,8 +155,8 @@ class GetCharactersCharacterIdClonesJumpClone implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['implants'] = isset($data['implants']) ? $data['implants'] : null;
-        $this->container['location_id'] = isset($data['location_id']) ? $data['location_id'] : null;
-        $this->container['location_type'] = isset($data['location_type']) ? $data['location_type'] : null;
+        $this->container['locationId'] = isset($data['locationId']) ? $data['locationId'] : null;
+        $this->container['locationType'] = isset($data['locationType']) ? $data['locationType'] : null;
     }
 
     /**
@@ -168,8 +168,8 @@ class GetCharactersCharacterIdClonesJumpClone implements ArrayAccess
     {
         $invalid_properties = [];
         $allowed_values = ["station", "structure"];
-        if (!in_array($this->container['location_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'location_type', must be one of #{allowed_values}.";
+        if (!in_array($this->container['locationType'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'locationType', must be one of #{allowed_values}.";
         }
 
         return $invalid_properties;
@@ -184,7 +184,7 @@ class GetCharactersCharacterIdClonesJumpClone implements ArrayAccess
     public function valid()
     {
         $allowed_values = ["station", "structure"];
-        if (!in_array($this->container['location_type'], $allowed_values)) {
+        if (!in_array($this->container['locationType'], $allowed_values)) {
             return false;
         }
         return true;
@@ -213,47 +213,47 @@ class GetCharactersCharacterIdClonesJumpClone implements ArrayAccess
     }
 
     /**
-     * Gets location_id
+     * Gets locationId
      * @return int
      */
     public function getLocationId()
     {
-        return $this->container['location_id'];
+        return $this->container['locationId'];
     }
 
     /**
-     * Sets location_id
-     * @param int $location_id location_id integer
+     * Sets locationId
+     * @param int $locationId location_id integer
      * @return $this
      */
-    public function setLocationId($location_id)
+    public function setLocationId($locationId)
     {
-        $this->container['location_id'] = $location_id;
+        $this->container['locationId'] = $locationId;
 
         return $this;
     }
 
     /**
-     * Gets location_type
+     * Gets locationType
      * @return string
      */
     public function getLocationType()
     {
-        return $this->container['location_type'];
+        return $this->container['locationType'];
     }
 
     /**
-     * Sets location_type
-     * @param string $location_type location_type string
+     * Sets locationType
+     * @param string $locationType location_type string
      * @return $this
      */
-    public function setLocationType($location_type)
+    public function setLocationType($locationType)
     {
         $allowed_values = array('station', 'structure');
-        if (!is_null($location_type) && (!in_array($location_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'location_type', must be one of 'station', 'structure'");
+        if (!is_null($locationType) && (!in_array($locationType, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'locationType', must be one of 'station', 'structure'");
         }
-        $this->container['location_type'] = $location_type;
+        $this->container['locationType'] = $locationType;
 
         return $this;
     }
@@ -309,9 +309,9 @@ class GetCharactersCharacterIdClonesJumpClone implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

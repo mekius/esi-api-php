@@ -1,13 +1,11 @@
 {
     "name": "mekius/esi-api-php",
-    "description": "EVE Online API Library for PHP",
+    "description": "",
     "keywords": [
         "swagger",
         "php",
         "sdk",
-        "api",
-        "eve",
-        "esi"
+        "api"
     ],
     "homepage": "http://swagger.io",
     "license": "Apache-2.0",

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ESI\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ESI\ApiClient;
+use \ESI\ApiException;
+use \ESI\Configuration;
+use \ESI\ObjectSerializer;
 
 /**
  * UniverseApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -59,16 +59,16 @@ class UniverseApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ESI\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ESI\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ESI\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -81,7 +81,7 @@ class UniverseApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ESI\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -91,11 +91,11 @@ class UniverseApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ESI\ApiClient $apiClient set the API client
      *
      * @return UniverseApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ESI\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -106,14 +106,14 @@ class UniverseApi
      *
      * Get planet information
      *
-     * @param int $planet_id An Eve planet ID (required)
+     * @param int $planetId An Eve planet ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetUniversePlanetsPlanetIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetUniversePlanetsPlanetIdOk
      */
-    public function getUniversePlanetsPlanetId($planet_id, $datasource = null)
+    public function getUniversePlanetsPlanetId($planetId, $datasource = null)
     {
-        list($response) = $this->getUniversePlanetsPlanetIdWithHttpInfo($planet_id, $datasource);
+        list($response) = $this->getUniversePlanetsPlanetIdWithHttpInfo($planetId, $datasource);
         return $response;
     }
 
@@ -122,16 +122,16 @@ class UniverseApi
      *
      * Get planet information
      *
-     * @param int $planet_id An Eve planet ID (required)
+     * @param int $planetId An Eve planet ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetUniversePlanetsPlanetIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetUniversePlanetsPlanetIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniversePlanetsPlanetIdWithHttpInfo($planet_id, $datasource = null)
+    public function getUniversePlanetsPlanetIdWithHttpInfo($planetId, $datasource = null)
     {
-        // verify the required parameter 'planet_id' is set
-        if ($planet_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $planet_id when calling getUniversePlanetsPlanetId');
+        // verify the required parameter 'planetId' is set
+        if ($planetId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $planetId when calling getUniversePlanetsPlanetId');
         }
         // parse inputs
         $resourcePath = "/universe/planets/{planet_id}/";
@@ -150,10 +150,10 @@ class UniverseApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($planet_id !== null) {
+        if ($planetId !== null) {
             $resourcePath = str_replace(
                 "{" . "planet_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($planet_id),
+                $this->apiClient->getSerializer()->toPathValue($planetId),
                 $resourcePath
             );
         }
@@ -175,19 +175,19 @@ class UniverseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetUniversePlanetsPlanetIdOk',
+                '\ESI\Model\GetUniversePlanetsPlanetIdOk',
                 '/universe/planets/{planet_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetUniversePlanetsPlanetIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetUniversePlanetsPlanetIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniversePlanetsPlanetIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniversePlanetsPlanetIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniversePlanetsPlanetIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniversePlanetsPlanetIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -201,14 +201,14 @@ class UniverseApi
      *
      * Get station information
      *
-     * @param int $station_id An Eve station ID (required)
+     * @param int $stationId An Eve station ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetUniverseStationsStationIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetUniverseStationsStationIdOk
      */
-    public function getUniverseStationsStationId($station_id, $datasource = null)
+    public function getUniverseStationsStationId($stationId, $datasource = null)
     {
-        list($response) = $this->getUniverseStationsStationIdWithHttpInfo($station_id, $datasource);
+        list($response) = $this->getUniverseStationsStationIdWithHttpInfo($stationId, $datasource);
         return $response;
     }
 
@@ -217,16 +217,16 @@ class UniverseApi
      *
      * Get station information
      *
-     * @param int $station_id An Eve station ID (required)
+     * @param int $stationId An Eve station ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetUniverseStationsStationIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetUniverseStationsStationIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniverseStationsStationIdWithHttpInfo($station_id, $datasource = null)
+    public function getUniverseStationsStationIdWithHttpInfo($stationId, $datasource = null)
     {
-        // verify the required parameter 'station_id' is set
-        if ($station_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $station_id when calling getUniverseStationsStationId');
+        // verify the required parameter 'stationId' is set
+        if ($stationId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $stationId when calling getUniverseStationsStationId');
         }
         // parse inputs
         $resourcePath = "/universe/stations/{station_id}/";
@@ -245,10 +245,10 @@ class UniverseApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($station_id !== null) {
+        if ($stationId !== null) {
             $resourcePath = str_replace(
                 "{" . "station_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($station_id),
+                $this->apiClient->getSerializer()->toPathValue($stationId),
                 $resourcePath
             );
         }
@@ -270,19 +270,19 @@ class UniverseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetUniverseStationsStationIdOk',
+                '\ESI\Model\GetUniverseStationsStationIdOk',
                 '/universe/stations/{station_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetUniverseStationsStationIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetUniverseStationsStationIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStationsStationIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStationsStationIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStationsStationIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStationsStationIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -297,7 +297,7 @@ class UniverseApi
      * List all public structures
      *
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return int[]
      */
     public function getUniverseStructures($datasource = null)
@@ -312,7 +312,7 @@ class UniverseApi
      * List all public structures
      *
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return array of int[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getUniverseStructuresWithHttpInfo($datasource = null)
@@ -363,7 +363,7 @@ class UniverseApi
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStructuresInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStructuresInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -377,14 +377,14 @@ class UniverseApi
      *
      * Get structure information
      *
-     * @param int $structure_id An Eve structure ID (required)
+     * @param int $structureId An Eve structure ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetUniverseStructuresStructureIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetUniverseStructuresStructureIdOk
      */
-    public function getUniverseStructuresStructureId($structure_id, $datasource = null)
+    public function getUniverseStructuresStructureId($structureId, $datasource = null)
     {
-        list($response) = $this->getUniverseStructuresStructureIdWithHttpInfo($structure_id, $datasource);
+        list($response) = $this->getUniverseStructuresStructureIdWithHttpInfo($structureId, $datasource);
         return $response;
     }
 
@@ -393,16 +393,16 @@ class UniverseApi
      *
      * Get structure information
      *
-     * @param int $structure_id An Eve structure ID (required)
+     * @param int $structureId An Eve structure ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetUniverseStructuresStructureIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetUniverseStructuresStructureIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniverseStructuresStructureIdWithHttpInfo($structure_id, $datasource = null)
+    public function getUniverseStructuresStructureIdWithHttpInfo($structureId, $datasource = null)
     {
-        // verify the required parameter 'structure_id' is set
-        if ($structure_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $structure_id when calling getUniverseStructuresStructureId');
+        // verify the required parameter 'structureId' is set
+        if ($structureId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $structureId when calling getUniverseStructuresStructureId');
         }
         // parse inputs
         $resourcePath = "/universe/structures/{structure_id}/";
@@ -421,10 +421,10 @@ class UniverseApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($structure_id !== null) {
+        if ($structureId !== null) {
             $resourcePath = str_replace(
                 "{" . "structure_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($structure_id),
+                $this->apiClient->getSerializer()->toPathValue($structureId),
                 $resourcePath
             );
         }
@@ -450,27 +450,27 @@ class UniverseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetUniverseStructuresStructureIdOk',
+                '\ESI\Model\GetUniverseStructuresStructureIdOk',
                 '/universe/structures/{structure_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetUniverseStructuresStructureIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetUniverseStructuresStructureIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStructuresStructureIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStructuresStructureIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStructuresStructureIdForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStructuresStructureIdForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStructuresStructureIdNotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStructuresStructureIdNotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStructuresStructureIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStructuresStructureIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -484,14 +484,14 @@ class UniverseApi
      *
      * Get solar system information
      *
-     * @param int $system_id An Eve solar system ID (required)
+     * @param int $systemId An Eve solar system ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetUniverseSystemsSystemIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetUniverseSystemsSystemIdOk
      */
-    public function getUniverseSystemsSystemId($system_id, $datasource = null)
+    public function getUniverseSystemsSystemId($systemId, $datasource = null)
     {
-        list($response) = $this->getUniverseSystemsSystemIdWithHttpInfo($system_id, $datasource);
+        list($response) = $this->getUniverseSystemsSystemIdWithHttpInfo($systemId, $datasource);
         return $response;
     }
 
@@ -500,16 +500,16 @@ class UniverseApi
      *
      * Get solar system information
      *
-     * @param int $system_id An Eve solar system ID (required)
+     * @param int $systemId An Eve solar system ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetUniverseSystemsSystemIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetUniverseSystemsSystemIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniverseSystemsSystemIdWithHttpInfo($system_id, $datasource = null)
+    public function getUniverseSystemsSystemIdWithHttpInfo($systemId, $datasource = null)
     {
-        // verify the required parameter 'system_id' is set
-        if ($system_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $system_id when calling getUniverseSystemsSystemId');
+        // verify the required parameter 'systemId' is set
+        if ($systemId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $systemId when calling getUniverseSystemsSystemId');
         }
         // parse inputs
         $resourcePath = "/universe/systems/{system_id}/";
@@ -528,10 +528,10 @@ class UniverseApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($system_id !== null) {
+        if ($systemId !== null) {
             $resourcePath = str_replace(
                 "{" . "system_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($system_id),
+                $this->apiClient->getSerializer()->toPathValue($systemId),
                 $resourcePath
             );
         }
@@ -553,23 +553,23 @@ class UniverseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetUniverseSystemsSystemIdOk',
+                '\ESI\Model\GetUniverseSystemsSystemIdOk',
                 '/universe/systems/{system_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetUniverseSystemsSystemIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetUniverseSystemsSystemIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseSystemsSystemIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseSystemsSystemIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseSystemsSystemIdNotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseSystemsSystemIdNotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseSystemsSystemIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseSystemsSystemIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -583,14 +583,14 @@ class UniverseApi
      *
      * Get type information
      *
-     * @param int $type_id An Eve item type ID (required)
+     * @param int $typeId An Eve item type ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetUniverseTypesTypeIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetUniverseTypesTypeIdOk
      */
-    public function getUniverseTypesTypeId($type_id, $datasource = null)
+    public function getUniverseTypesTypeId($typeId, $datasource = null)
     {
-        list($response) = $this->getUniverseTypesTypeIdWithHttpInfo($type_id, $datasource);
+        list($response) = $this->getUniverseTypesTypeIdWithHttpInfo($typeId, $datasource);
         return $response;
     }
 
@@ -599,16 +599,16 @@ class UniverseApi
      *
      * Get type information
      *
-     * @param int $type_id An Eve item type ID (required)
+     * @param int $typeId An Eve item type ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetUniverseTypesTypeIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetUniverseTypesTypeIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniverseTypesTypeIdWithHttpInfo($type_id, $datasource = null)
+    public function getUniverseTypesTypeIdWithHttpInfo($typeId, $datasource = null)
     {
-        // verify the required parameter 'type_id' is set
-        if ($type_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $type_id when calling getUniverseTypesTypeId');
+        // verify the required parameter 'typeId' is set
+        if ($typeId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $typeId when calling getUniverseTypesTypeId');
         }
         // parse inputs
         $resourcePath = "/universe/types/{type_id}/";
@@ -627,10 +627,10 @@ class UniverseApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($type_id !== null) {
+        if ($typeId !== null) {
             $resourcePath = str_replace(
                 "{" . "type_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($type_id),
+                $this->apiClient->getSerializer()->toPathValue($typeId),
                 $resourcePath
             );
         }
@@ -652,23 +652,23 @@ class UniverseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetUniverseTypesTypeIdOk',
+                '\ESI\Model\GetUniverseTypesTypeIdOk',
                 '/universe/types/{type_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetUniverseTypesTypeIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetUniverseTypesTypeIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseTypesTypeIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseTypesTypeIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseTypesTypeIdNotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseTypesTypeIdNotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseTypesTypeIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseTypesTypeIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -682,10 +682,10 @@ class UniverseApi
      *
      * Get names and categories for a set of ID's
      *
-     * @param \Swagger\Client\Model\PostUniverseNamesIds $ids The ids to resolve (required)
+     * @param \ESI\Model\PostUniverseNamesIds $ids The ids to resolve (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PostUniverseNames200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\PostUniverseNames200Ok[]
      */
     public function postUniverseNames($ids, $datasource = null)
     {
@@ -698,10 +698,10 @@ class UniverseApi
      *
      * Get names and categories for a set of ID's
      *
-     * @param \Swagger\Client\Model\PostUniverseNamesIds $ids The ids to resolve (required)
+     * @param \ESI\Model\PostUniverseNamesIds $ids The ids to resolve (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PostUniverseNames200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\PostUniverseNames200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
     public function postUniverseNamesWithHttpInfo($ids, $datasource = null)
     {
@@ -748,23 +748,23 @@ class UniverseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PostUniverseNames200Ok[]',
+                '\ESI\Model\PostUniverseNames200Ok[]',
                 '/universe/names/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PostUniverseNames200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\PostUniverseNames200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostUniverseNames200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostUniverseNames200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostUniverseNamesNotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostUniverseNamesNotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostUniverseNamesInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostUniverseNamesInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

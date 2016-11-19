@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,9 +67,9 @@ class GetCharactersCharacterIdLocationOk implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'solar_system_id' => 'int',
-        'station_id' => 'int',
-        'structure_id' => 'int'
+        'solarSystemId' => 'int',
+        'stationId' => 'int',
+        'structureId' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -82,9 +82,9 @@ class GetCharactersCharacterIdLocationOk implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'solar_system_id' => 'solar_system_id',
-        'station_id' => 'station_id',
-        'structure_id' => 'structure_id'
+        'solarSystemId' => 'solar_system_id',
+        'stationId' => 'station_id',
+        'structureId' => 'structure_id'
     ];
 
 
@@ -93,9 +93,9 @@ class GetCharactersCharacterIdLocationOk implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'solar_system_id' => 'setSolarSystemId',
-        'station_id' => 'setStationId',
-        'structure_id' => 'setStructureId'
+        'solarSystemId' => 'setSolarSystemId',
+        'stationId' => 'setStationId',
+        'structureId' => 'setStructureId'
     ];
 
 
@@ -104,9 +104,9 @@ class GetCharactersCharacterIdLocationOk implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'solar_system_id' => 'getSolarSystemId',
-        'station_id' => 'getStationId',
-        'structure_id' => 'getStructureId'
+        'solarSystemId' => 'getSolarSystemId',
+        'stationId' => 'getStationId',
+        'structureId' => 'getStructureId'
     ];
 
     public static function attributeMap()
@@ -140,9 +140,9 @@ class GetCharactersCharacterIdLocationOk implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['solar_system_id'] = isset($data['solar_system_id']) ? $data['solar_system_id'] : null;
-        $this->container['station_id'] = isset($data['station_id']) ? $data['station_id'] : null;
-        $this->container['structure_id'] = isset($data['structure_id']) ? $data['structure_id'] : null;
+        $this->container['solarSystemId'] = isset($data['solarSystemId']) ? $data['solarSystemId'] : null;
+        $this->container['stationId'] = isset($data['stationId']) ? $data['stationId'] : null;
+        $this->container['structureId'] = isset($data['structureId']) ? $data['structureId'] : null;
     }
 
     /**
@@ -153,8 +153,8 @@ class GetCharactersCharacterIdLocationOk implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if ($this->container['solar_system_id'] === null) {
-            $invalid_properties[] = "'solar_system_id' can't be null";
+        if ($this->container['solarSystemId'] === null) {
+            $invalid_properties[] = "'solarSystemId' can't be null";
         }
         return $invalid_properties;
     }
@@ -167,7 +167,7 @@ class GetCharactersCharacterIdLocationOk implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['solar_system_id'] === null) {
+        if ($this->container['solarSystemId'] === null) {
             return false;
         }
         return true;
@@ -175,64 +175,64 @@ class GetCharactersCharacterIdLocationOk implements ArrayAccess
 
 
     /**
-     * Gets solar_system_id
+     * Gets solarSystemId
      * @return int
      */
     public function getSolarSystemId()
     {
-        return $this->container['solar_system_id'];
+        return $this->container['solarSystemId'];
     }
 
     /**
-     * Sets solar_system_id
-     * @param int $solar_system_id solar_system_id integer
+     * Sets solarSystemId
+     * @param int $solarSystemId solar_system_id integer
      * @return $this
      */
-    public function setSolarSystemId($solar_system_id)
+    public function setSolarSystemId($solarSystemId)
     {
-        $this->container['solar_system_id'] = $solar_system_id;
+        $this->container['solarSystemId'] = $solarSystemId;
 
         return $this;
     }
 
     /**
-     * Gets station_id
+     * Gets stationId
      * @return int
      */
     public function getStationId()
     {
-        return $this->container['station_id'];
+        return $this->container['stationId'];
     }
 
     /**
-     * Sets station_id
-     * @param int $station_id station_id integer
+     * Sets stationId
+     * @param int $stationId station_id integer
      * @return $this
      */
-    public function setStationId($station_id)
+    public function setStationId($stationId)
     {
-        $this->container['station_id'] = $station_id;
+        $this->container['stationId'] = $stationId;
 
         return $this;
     }
 
     /**
-     * Gets structure_id
+     * Gets structureId
      * @return int
      */
     public function getStructureId()
     {
-        return $this->container['structure_id'];
+        return $this->container['structureId'];
     }
 
     /**
-     * Sets structure_id
-     * @param int $structure_id structure_id integer
+     * Sets structureId
+     * @param int $structureId structure_id integer
      * @return $this
      */
-    public function setStructureId($structure_id)
+    public function setStructureId($structureId)
     {
-        $this->container['structure_id'] = $structure_id;
+        $this->container['structureId'] = $structureId;
 
         return $this;
     }
@@ -288,9 +288,9 @@ class GetCharactersCharacterIdLocationOk implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

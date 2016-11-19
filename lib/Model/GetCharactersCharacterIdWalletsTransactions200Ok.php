@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description wallet transaction
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,18 +67,18 @@ class GetCharactersCharacterIdWalletsTransactions200Ok implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'client_id' => 'int',
-        'client_type' => 'string',
-        'journal_ref_id' => 'int',
-        'location_id' => 'int',
-        'location_type' => 'string',
-        'price_per_unit' => 'int',
+        'clientId' => 'int',
+        'clientType' => 'string',
+        'journalRefId' => 'int',
+        'locationId' => 'int',
+        'locationType' => 'string',
+        'pricePerUnit' => 'int',
         'quantity' => 'int',
-        'transaction_date' => '\DateTime',
-        'transaction_for' => 'string',
-        'transaction_id' => 'int',
-        'transaction_type' => 'string',
-        'type_id' => 'int'
+        'transactionDate' => '\DateTime',
+        'transactionFor' => 'string',
+        'transactionId' => 'int',
+        'transactionType' => 'string',
+        'typeId' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -91,18 +91,18 @@ class GetCharactersCharacterIdWalletsTransactions200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'client_id' => 'client_id',
-        'client_type' => 'client_type',
-        'journal_ref_id' => 'journal_ref_id',
-        'location_id' => 'location_id',
-        'location_type' => 'location_type',
-        'price_per_unit' => 'price_per_unit',
+        'clientId' => 'client_id',
+        'clientType' => 'client_type',
+        'journalRefId' => 'journal_ref_id',
+        'locationId' => 'location_id',
+        'locationType' => 'location_type',
+        'pricePerUnit' => 'price_per_unit',
         'quantity' => 'quantity',
-        'transaction_date' => 'transaction_date',
-        'transaction_for' => 'transaction_for',
-        'transaction_id' => 'transaction_id',
-        'transaction_type' => 'transaction_type',
-        'type_id' => 'type_id'
+        'transactionDate' => 'transaction_date',
+        'transactionFor' => 'transaction_for',
+        'transactionId' => 'transaction_id',
+        'transactionType' => 'transaction_type',
+        'typeId' => 'type_id'
     ];
 
 
@@ -111,18 +111,18 @@ class GetCharactersCharacterIdWalletsTransactions200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'client_id' => 'setClientId',
-        'client_type' => 'setClientType',
-        'journal_ref_id' => 'setJournalRefId',
-        'location_id' => 'setLocationId',
-        'location_type' => 'setLocationType',
-        'price_per_unit' => 'setPricePerUnit',
+        'clientId' => 'setClientId',
+        'clientType' => 'setClientType',
+        'journalRefId' => 'setJournalRefId',
+        'locationId' => 'setLocationId',
+        'locationType' => 'setLocationType',
+        'pricePerUnit' => 'setPricePerUnit',
         'quantity' => 'setQuantity',
-        'transaction_date' => 'setTransactionDate',
-        'transaction_for' => 'setTransactionFor',
-        'transaction_id' => 'setTransactionId',
-        'transaction_type' => 'setTransactionType',
-        'type_id' => 'setTypeId'
+        'transactionDate' => 'setTransactionDate',
+        'transactionFor' => 'setTransactionFor',
+        'transactionId' => 'setTransactionId',
+        'transactionType' => 'setTransactionType',
+        'typeId' => 'setTypeId'
     ];
 
 
@@ -131,18 +131,18 @@ class GetCharactersCharacterIdWalletsTransactions200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'client_id' => 'getClientId',
-        'client_type' => 'getClientType',
-        'journal_ref_id' => 'getJournalRefId',
-        'location_id' => 'getLocationId',
-        'location_type' => 'getLocationType',
-        'price_per_unit' => 'getPricePerUnit',
+        'clientId' => 'getClientId',
+        'clientType' => 'getClientType',
+        'journalRefId' => 'getJournalRefId',
+        'locationId' => 'getLocationId',
+        'locationType' => 'getLocationType',
+        'pricePerUnit' => 'getPricePerUnit',
         'quantity' => 'getQuantity',
-        'transaction_date' => 'getTransactionDate',
-        'transaction_for' => 'getTransactionFor',
-        'transaction_id' => 'getTransactionId',
-        'transaction_type' => 'getTransactionType',
-        'type_id' => 'getTypeId'
+        'transactionDate' => 'getTransactionDate',
+        'transactionFor' => 'getTransactionFor',
+        'transactionId' => 'getTransactionId',
+        'transactionType' => 'getTransactionType',
+        'typeId' => 'getTypeId'
     ];
 
     public static function attributeMap()
@@ -234,18 +234,18 @@ class GetCharactersCharacterIdWalletsTransactions200Ok implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
-        $this->container['client_type'] = isset($data['client_type']) ? $data['client_type'] : null;
-        $this->container['journal_ref_id'] = isset($data['journal_ref_id']) ? $data['journal_ref_id'] : null;
-        $this->container['location_id'] = isset($data['location_id']) ? $data['location_id'] : null;
-        $this->container['location_type'] = isset($data['location_type']) ? $data['location_type'] : null;
-        $this->container['price_per_unit'] = isset($data['price_per_unit']) ? $data['price_per_unit'] : null;
+        $this->container['clientId'] = isset($data['clientId']) ? $data['clientId'] : null;
+        $this->container['clientType'] = isset($data['clientType']) ? $data['clientType'] : null;
+        $this->container['journalRefId'] = isset($data['journalRefId']) ? $data['journalRefId'] : null;
+        $this->container['locationId'] = isset($data['locationId']) ? $data['locationId'] : null;
+        $this->container['locationType'] = isset($data['locationType']) ? $data['locationType'] : null;
+        $this->container['pricePerUnit'] = isset($data['pricePerUnit']) ? $data['pricePerUnit'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['transaction_date'] = isset($data['transaction_date']) ? $data['transaction_date'] : null;
-        $this->container['transaction_for'] = isset($data['transaction_for']) ? $data['transaction_for'] : null;
-        $this->container['transaction_id'] = isset($data['transaction_id']) ? $data['transaction_id'] : null;
-        $this->container['transaction_type'] = isset($data['transaction_type']) ? $data['transaction_type'] : null;
-        $this->container['type_id'] = isset($data['type_id']) ? $data['type_id'] : null;
+        $this->container['transactionDate'] = isset($data['transactionDate']) ? $data['transactionDate'] : null;
+        $this->container['transactionFor'] = isset($data['transactionFor']) ? $data['transactionFor'] : null;
+        $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
+        $this->container['transactionType'] = isset($data['transactionType']) ? $data['transactionType'] : null;
+        $this->container['typeId'] = isset($data['typeId']) ? $data['typeId'] : null;
     }
 
     /**
@@ -257,29 +257,29 @@ class GetCharactersCharacterIdWalletsTransactions200Ok implements ArrayAccess
     {
         $invalid_properties = [];
         $allowed_values = ["character", "corporation", "alliance"];
-        if (!in_array($this->container['client_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'client_type', must be one of #{allowed_values}.";
+        if (!in_array($this->container['clientType'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'clientType', must be one of #{allowed_values}.";
         }
 
         $allowed_values = ["station", "structure"];
-        if (!in_array($this->container['location_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'location_type', must be one of #{allowed_values}.";
+        if (!in_array($this->container['locationType'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'locationType', must be one of #{allowed_values}.";
         }
 
-        if ($this->container['transaction_date'] === null) {
-            $invalid_properties[] = "'transaction_date' can't be null";
+        if ($this->container['transactionDate'] === null) {
+            $invalid_properties[] = "'transactionDate' can't be null";
         }
         $allowed_values = ["personal", "corporate"];
-        if (!in_array($this->container['transaction_for'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'transaction_for', must be one of #{allowed_values}.";
+        if (!in_array($this->container['transactionFor'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'transactionFor', must be one of #{allowed_values}.";
         }
 
-        if ($this->container['transaction_id'] === null) {
-            $invalid_properties[] = "'transaction_id' can't be null";
+        if ($this->container['transactionId'] === null) {
+            $invalid_properties[] = "'transactionId' can't be null";
         }
         $allowed_values = ["buy", "sell"];
-        if (!in_array($this->container['transaction_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'transaction_type', must be one of #{allowed_values}.";
+        if (!in_array($this->container['transactionType'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'transactionType', must be one of #{allowed_values}.";
         }
 
         return $invalid_properties;
@@ -294,25 +294,25 @@ class GetCharactersCharacterIdWalletsTransactions200Ok implements ArrayAccess
     public function valid()
     {
         $allowed_values = ["character", "corporation", "alliance"];
-        if (!in_array($this->container['client_type'], $allowed_values)) {
+        if (!in_array($this->container['clientType'], $allowed_values)) {
             return false;
         }
         $allowed_values = ["station", "structure"];
-        if (!in_array($this->container['location_type'], $allowed_values)) {
+        if (!in_array($this->container['locationType'], $allowed_values)) {
             return false;
         }
-        if ($this->container['transaction_date'] === null) {
+        if ($this->container['transactionDate'] === null) {
             return false;
         }
         $allowed_values = ["personal", "corporate"];
-        if (!in_array($this->container['transaction_for'], $allowed_values)) {
+        if (!in_array($this->container['transactionFor'], $allowed_values)) {
             return false;
         }
-        if ($this->container['transaction_id'] === null) {
+        if ($this->container['transactionId'] === null) {
             return false;
         }
         $allowed_values = ["buy", "sell"];
-        if (!in_array($this->container['transaction_type'], $allowed_values)) {
+        if (!in_array($this->container['transactionType'], $allowed_values)) {
             return false;
         }
         return true;
@@ -320,135 +320,135 @@ class GetCharactersCharacterIdWalletsTransactions200Ok implements ArrayAccess
 
 
     /**
-     * Gets client_id
+     * Gets clientId
      * @return int
      */
     public function getClientId()
     {
-        return $this->container['client_id'];
+        return $this->container['clientId'];
     }
 
     /**
-     * Sets client_id
-     * @param int $client_id client_id integer
+     * Sets clientId
+     * @param int $clientId client_id integer
      * @return $this
      */
-    public function setClientId($client_id)
+    public function setClientId($clientId)
     {
-        $this->container['client_id'] = $client_id;
+        $this->container['clientId'] = $clientId;
 
         return $this;
     }
 
     /**
-     * Gets client_type
+     * Gets clientType
      * @return string
      */
     public function getClientType()
     {
-        return $this->container['client_type'];
+        return $this->container['clientType'];
     }
 
     /**
-     * Sets client_type
-     * @param string $client_type client_type string
+     * Sets clientType
+     * @param string $clientType client_type string
      * @return $this
      */
-    public function setClientType($client_type)
+    public function setClientType($clientType)
     {
         $allowed_values = array('character', 'corporation', 'alliance');
-        if (!is_null($client_type) && (!in_array($client_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'client_type', must be one of 'character', 'corporation', 'alliance'");
+        if (!is_null($clientType) && (!in_array($clientType, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'clientType', must be one of 'character', 'corporation', 'alliance'");
         }
-        $this->container['client_type'] = $client_type;
+        $this->container['clientType'] = $clientType;
 
         return $this;
     }
 
     /**
-     * Gets journal_ref_id
+     * Gets journalRefId
      * @return int
      */
     public function getJournalRefId()
     {
-        return $this->container['journal_ref_id'];
+        return $this->container['journalRefId'];
     }
 
     /**
-     * Sets journal_ref_id
-     * @param int $journal_ref_id journal_ref_id integer
+     * Sets journalRefId
+     * @param int $journalRefId journal_ref_id integer
      * @return $this
      */
-    public function setJournalRefId($journal_ref_id)
+    public function setJournalRefId($journalRefId)
     {
-        $this->container['journal_ref_id'] = $journal_ref_id;
+        $this->container['journalRefId'] = $journalRefId;
 
         return $this;
     }
 
     /**
-     * Gets location_id
+     * Gets locationId
      * @return int
      */
     public function getLocationId()
     {
-        return $this->container['location_id'];
+        return $this->container['locationId'];
     }
 
     /**
-     * Sets location_id
-     * @param int $location_id location_id integer
+     * Sets locationId
+     * @param int $locationId location_id integer
      * @return $this
      */
-    public function setLocationId($location_id)
+    public function setLocationId($locationId)
     {
-        $this->container['location_id'] = $location_id;
+        $this->container['locationId'] = $locationId;
 
         return $this;
     }
 
     /**
-     * Gets location_type
+     * Gets locationType
      * @return string
      */
     public function getLocationType()
     {
-        return $this->container['location_type'];
+        return $this->container['locationType'];
     }
 
     /**
-     * Sets location_type
-     * @param string $location_type location_type string
+     * Sets locationType
+     * @param string $locationType location_type string
      * @return $this
      */
-    public function setLocationType($location_type)
+    public function setLocationType($locationType)
     {
         $allowed_values = array('station', 'structure');
-        if (!is_null($location_type) && (!in_array($location_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'location_type', must be one of 'station', 'structure'");
+        if (!is_null($locationType) && (!in_array($locationType, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'locationType', must be one of 'station', 'structure'");
         }
-        $this->container['location_type'] = $location_type;
+        $this->container['locationType'] = $locationType;
 
         return $this;
     }
 
     /**
-     * Gets price_per_unit
+     * Gets pricePerUnit
      * @return int
      */
     public function getPricePerUnit()
     {
-        return $this->container['price_per_unit'];
+        return $this->container['pricePerUnit'];
     }
 
     /**
-     * Sets price_per_unit
-     * @param int $price_per_unit price_per_unit integer
+     * Sets pricePerUnit
+     * @param int $pricePerUnit price_per_unit integer
      * @return $this
      */
-    public function setPricePerUnit($price_per_unit)
+    public function setPricePerUnit($pricePerUnit)
     {
-        $this->container['price_per_unit'] = $price_per_unit;
+        $this->container['pricePerUnit'] = $pricePerUnit;
 
         return $this;
     }
@@ -475,114 +475,114 @@ class GetCharactersCharacterIdWalletsTransactions200Ok implements ArrayAccess
     }
 
     /**
-     * Gets transaction_date
+     * Gets transactionDate
      * @return \DateTime
      */
     public function getTransactionDate()
     {
-        return $this->container['transaction_date'];
+        return $this->container['transactionDate'];
     }
 
     /**
-     * Sets transaction_date
-     * @param \DateTime $transaction_date transaction_date string
+     * Sets transactionDate
+     * @param \DateTime $transactionDate transaction_date string
      * @return $this
      */
-    public function setTransactionDate($transaction_date)
+    public function setTransactionDate($transactionDate)
     {
-        $this->container['transaction_date'] = $transaction_date;
+        $this->container['transactionDate'] = $transactionDate;
 
         return $this;
     }
 
     /**
-     * Gets transaction_for
+     * Gets transactionFor
      * @return string
      */
     public function getTransactionFor()
     {
-        return $this->container['transaction_for'];
+        return $this->container['transactionFor'];
     }
 
     /**
-     * Sets transaction_for
-     * @param string $transaction_for transaction_for string
+     * Sets transactionFor
+     * @param string $transactionFor transaction_for string
      * @return $this
      */
-    public function setTransactionFor($transaction_for)
+    public function setTransactionFor($transactionFor)
     {
         $allowed_values = array('personal', 'corporate');
-        if (!is_null($transaction_for) && (!in_array($transaction_for, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'transaction_for', must be one of 'personal', 'corporate'");
+        if (!is_null($transactionFor) && (!in_array($transactionFor, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'transactionFor', must be one of 'personal', 'corporate'");
         }
-        $this->container['transaction_for'] = $transaction_for;
+        $this->container['transactionFor'] = $transactionFor;
 
         return $this;
     }
 
     /**
-     * Gets transaction_id
+     * Gets transactionId
      * @return int
      */
     public function getTransactionId()
     {
-        return $this->container['transaction_id'];
+        return $this->container['transactionId'];
     }
 
     /**
-     * Sets transaction_id
-     * @param int $transaction_id transaction_id integer
+     * Sets transactionId
+     * @param int $transactionId transaction_id integer
      * @return $this
      */
-    public function setTransactionId($transaction_id)
+    public function setTransactionId($transactionId)
     {
-        $this->container['transaction_id'] = $transaction_id;
+        $this->container['transactionId'] = $transactionId;
 
         return $this;
     }
 
     /**
-     * Gets transaction_type
+     * Gets transactionType
      * @return string
      */
     public function getTransactionType()
     {
-        return $this->container['transaction_type'];
+        return $this->container['transactionType'];
     }
 
     /**
-     * Sets transaction_type
-     * @param string $transaction_type transaction_type string
+     * Sets transactionType
+     * @param string $transactionType transaction_type string
      * @return $this
      */
-    public function setTransactionType($transaction_type)
+    public function setTransactionType($transactionType)
     {
         $allowed_values = array('buy', 'sell');
-        if (!is_null($transaction_type) && (!in_array($transaction_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'transaction_type', must be one of 'buy', 'sell'");
+        if (!is_null($transactionType) && (!in_array($transactionType, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'transactionType', must be one of 'buy', 'sell'");
         }
-        $this->container['transaction_type'] = $transaction_type;
+        $this->container['transactionType'] = $transactionType;
 
         return $this;
     }
 
     /**
-     * Gets type_id
+     * Gets typeId
      * @return int
      */
     public function getTypeId()
     {
-        return $this->container['type_id'];
+        return $this->container['typeId'];
     }
 
     /**
-     * Sets type_id
-     * @param int $type_id type_id integer
+     * Sets typeId
+     * @param int $typeId type_id integer
      * @return $this
      */
-    public function setTypeId($type_id)
+    public function setTypeId($typeId)
     {
-        $this->container['type_id'] = $type_id;
+        $this->container['typeId'] = $typeId;
 
         return $this;
     }
@@ -638,9 +638,9 @@ class GetCharactersCharacterIdWalletsTransactions200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

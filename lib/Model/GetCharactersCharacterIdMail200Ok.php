@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -68,10 +68,10 @@ class GetCharactersCharacterIdMail200Ok implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'from' => 'int',
-        'is_read' => 'bool',
+        'isRead' => 'bool',
         'labels' => 'int[]',
-        'mail_id' => 'int',
-        'recipients' => '\Swagger\Client\Model\GetCharactersCharacterIdMailRecipient[]',
+        'mailId' => 'int',
+        'recipients' => '\ESI\Model\GetCharactersCharacterIdMailRecipient[]',
         'subject' => 'string',
         'timestamp' => '\DateTime'
     ];
@@ -87,9 +87,9 @@ class GetCharactersCharacterIdMail200Ok implements ArrayAccess
      */
     protected static $attributeMap = [
         'from' => 'from',
-        'is_read' => 'is_read',
+        'isRead' => 'is_read',
         'labels' => 'labels',
-        'mail_id' => 'mail_id',
+        'mailId' => 'mail_id',
         'recipients' => 'recipients',
         'subject' => 'subject',
         'timestamp' => 'timestamp'
@@ -102,9 +102,9 @@ class GetCharactersCharacterIdMail200Ok implements ArrayAccess
      */
     protected static $setters = [
         'from' => 'setFrom',
-        'is_read' => 'setIsRead',
+        'isRead' => 'setIsRead',
         'labels' => 'setLabels',
-        'mail_id' => 'setMailId',
+        'mailId' => 'setMailId',
         'recipients' => 'setRecipients',
         'subject' => 'setSubject',
         'timestamp' => 'setTimestamp'
@@ -117,9 +117,9 @@ class GetCharactersCharacterIdMail200Ok implements ArrayAccess
      */
     protected static $getters = [
         'from' => 'getFrom',
-        'is_read' => 'getIsRead',
+        'isRead' => 'getIsRead',
         'labels' => 'getLabels',
-        'mail_id' => 'getMailId',
+        'mailId' => 'getMailId',
         'recipients' => 'getRecipients',
         'subject' => 'getSubject',
         'timestamp' => 'getTimestamp'
@@ -157,9 +157,9 @@ class GetCharactersCharacterIdMail200Ok implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['from'] = isset($data['from']) ? $data['from'] : null;
-        $this->container['is_read'] = isset($data['is_read']) ? $data['is_read'] : null;
+        $this->container['isRead'] = isset($data['isRead']) ? $data['isRead'] : null;
         $this->container['labels'] = isset($data['labels']) ? $data['labels'] : null;
-        $this->container['mail_id'] = isset($data['mail_id']) ? $data['mail_id'] : null;
+        $this->container['mailId'] = isset($data['mailId']) ? $data['mailId'] : null;
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
         $this->container['subject'] = isset($data['subject']) ? $data['subject'] : null;
         $this->container['timestamp'] = isset($data['timestamp']) ? $data['timestamp'] : null;
@@ -210,22 +210,22 @@ class GetCharactersCharacterIdMail200Ok implements ArrayAccess
     }
 
     /**
-     * Gets is_read
+     * Gets isRead
      * @return bool
      */
     public function getIsRead()
     {
-        return $this->container['is_read'];
+        return $this->container['isRead'];
     }
 
     /**
-     * Sets is_read
-     * @param bool $is_read is_read boolean
+     * Sets isRead
+     * @param bool $isRead is_read boolean
      * @return $this
      */
-    public function setIsRead($is_read)
+    public function setIsRead($isRead)
     {
-        $this->container['is_read'] = $is_read;
+        $this->container['isRead'] = $isRead;
 
         return $this;
     }
@@ -252,29 +252,29 @@ class GetCharactersCharacterIdMail200Ok implements ArrayAccess
     }
 
     /**
-     * Gets mail_id
+     * Gets mailId
      * @return int
      */
     public function getMailId()
     {
-        return $this->container['mail_id'];
+        return $this->container['mailId'];
     }
 
     /**
-     * Sets mail_id
-     * @param int $mail_id mail_id integer
+     * Sets mailId
+     * @param int $mailId mail_id integer
      * @return $this
      */
-    public function setMailId($mail_id)
+    public function setMailId($mailId)
     {
-        $this->container['mail_id'] = $mail_id;
+        $this->container['mailId'] = $mailId;
 
         return $this;
     }
 
     /**
      * Gets recipients
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdMailRecipient[]
+     * @return \ESI\Model\GetCharactersCharacterIdMailRecipient[]
      */
     public function getRecipients()
     {
@@ -283,7 +283,7 @@ class GetCharactersCharacterIdMail200Ok implements ArrayAccess
 
     /**
      * Sets recipients
-     * @param \Swagger\Client\Model\GetCharactersCharacterIdMailRecipient[] $recipients Recipients of the mail
+     * @param \ESI\Model\GetCharactersCharacterIdMailRecipient[] $recipients Recipients of the mail
      * @return $this
      */
     public function setRecipients($recipients)
@@ -386,9 +386,9 @@ class GetCharactersCharacterIdMail200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

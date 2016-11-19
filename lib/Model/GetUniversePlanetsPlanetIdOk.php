@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,7 +67,7 @@ class GetUniversePlanetsPlanetIdOk implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'planet_name' => 'string'
+        'planetName' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class GetUniversePlanetsPlanetIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'planet_name' => 'planet_name'
+        'planetName' => 'planet_name'
     ];
 
 
@@ -89,7 +89,7 @@ class GetUniversePlanetsPlanetIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'planet_name' => 'setPlanetName'
+        'planetName' => 'setPlanetName'
     ];
 
 
@@ -98,7 +98,7 @@ class GetUniversePlanetsPlanetIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'planet_name' => 'getPlanetName'
+        'planetName' => 'getPlanetName'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class GetUniversePlanetsPlanetIdOk implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['planet_name'] = isset($data['planet_name']) ? $data['planet_name'] : null;
+        $this->container['planetName'] = isset($data['planetName']) ? $data['planetName'] : null;
     }
 
     /**
@@ -159,22 +159,22 @@ class GetUniversePlanetsPlanetIdOk implements ArrayAccess
 
 
     /**
-     * Gets planet_name
+     * Gets planetName
      * @return string
      */
     public function getPlanetName()
     {
-        return $this->container['planet_name'];
+        return $this->container['planetName'];
     }
 
     /**
-     * Sets planet_name
-     * @param string $planet_name the full name of the station
+     * Sets planetName
+     * @param string $planetName the full name of the station
      * @return $this
      */
-    public function setPlanetName($planet_name)
+    public function setPlanetName($planetName)
     {
-        $this->container['planet_name'] = $planet_name;
+        $this->container['planetName'] = $planetName;
 
         return $this;
     }
@@ -230,9 +230,9 @@ class GetUniversePlanetsPlanetIdOk implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

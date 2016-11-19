@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,14 +67,14 @@ class GetCharactersCharacterIdSkillqueue200Ok implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'finish_date' => '\DateTime',
-        'finished_level' => 'int',
-        'level_end_sp' => 'int',
-        'level_start_sp' => 'int',
-        'queue_position' => 'int',
-        'skill_id' => 'int',
-        'start_date' => '\DateTime',
-        'training_start_sp' => 'int'
+        'finishDate' => '\DateTime',
+        'finishedLevel' => 'int',
+        'levelEndSp' => 'int',
+        'levelStartSp' => 'int',
+        'queuePosition' => 'int',
+        'skillId' => 'int',
+        'startDate' => '\DateTime',
+        'trainingStartSp' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -87,14 +87,14 @@ class GetCharactersCharacterIdSkillqueue200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'finish_date' => 'finish_date',
-        'finished_level' => 'finished_level',
-        'level_end_sp' => 'level_end_sp',
-        'level_start_sp' => 'level_start_sp',
-        'queue_position' => 'queue_position',
-        'skill_id' => 'skill_id',
-        'start_date' => 'start_date',
-        'training_start_sp' => 'training_start_sp'
+        'finishDate' => 'finish_date',
+        'finishedLevel' => 'finished_level',
+        'levelEndSp' => 'level_end_sp',
+        'levelStartSp' => 'level_start_sp',
+        'queuePosition' => 'queue_position',
+        'skillId' => 'skill_id',
+        'startDate' => 'start_date',
+        'trainingStartSp' => 'training_start_sp'
     ];
 
 
@@ -103,14 +103,14 @@ class GetCharactersCharacterIdSkillqueue200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'finish_date' => 'setFinishDate',
-        'finished_level' => 'setFinishedLevel',
-        'level_end_sp' => 'setLevelEndSp',
-        'level_start_sp' => 'setLevelStartSp',
-        'queue_position' => 'setQueuePosition',
-        'skill_id' => 'setSkillId',
-        'start_date' => 'setStartDate',
-        'training_start_sp' => 'setTrainingStartSp'
+        'finishDate' => 'setFinishDate',
+        'finishedLevel' => 'setFinishedLevel',
+        'levelEndSp' => 'setLevelEndSp',
+        'levelStartSp' => 'setLevelStartSp',
+        'queuePosition' => 'setQueuePosition',
+        'skillId' => 'setSkillId',
+        'startDate' => 'setStartDate',
+        'trainingStartSp' => 'setTrainingStartSp'
     ];
 
 
@@ -119,14 +119,14 @@ class GetCharactersCharacterIdSkillqueue200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'finish_date' => 'getFinishDate',
-        'finished_level' => 'getFinishedLevel',
-        'level_end_sp' => 'getLevelEndSp',
-        'level_start_sp' => 'getLevelStartSp',
-        'queue_position' => 'getQueuePosition',
-        'skill_id' => 'getSkillId',
-        'start_date' => 'getStartDate',
-        'training_start_sp' => 'getTrainingStartSp'
+        'finishDate' => 'getFinishDate',
+        'finishedLevel' => 'getFinishedLevel',
+        'levelEndSp' => 'getLevelEndSp',
+        'levelStartSp' => 'getLevelStartSp',
+        'queuePosition' => 'getQueuePosition',
+        'skillId' => 'getSkillId',
+        'startDate' => 'getStartDate',
+        'trainingStartSp' => 'getTrainingStartSp'
     ];
 
     public static function attributeMap()
@@ -160,14 +160,14 @@ class GetCharactersCharacterIdSkillqueue200Ok implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['finish_date'] = isset($data['finish_date']) ? $data['finish_date'] : null;
-        $this->container['finished_level'] = isset($data['finished_level']) ? $data['finished_level'] : null;
-        $this->container['level_end_sp'] = isset($data['level_end_sp']) ? $data['level_end_sp'] : null;
-        $this->container['level_start_sp'] = isset($data['level_start_sp']) ? $data['level_start_sp'] : null;
-        $this->container['queue_position'] = isset($data['queue_position']) ? $data['queue_position'] : null;
-        $this->container['skill_id'] = isset($data['skill_id']) ? $data['skill_id'] : null;
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['training_start_sp'] = isset($data['training_start_sp']) ? $data['training_start_sp'] : null;
+        $this->container['finishDate'] = isset($data['finishDate']) ? $data['finishDate'] : null;
+        $this->container['finishedLevel'] = isset($data['finishedLevel']) ? $data['finishedLevel'] : null;
+        $this->container['levelEndSp'] = isset($data['levelEndSp']) ? $data['levelEndSp'] : null;
+        $this->container['levelStartSp'] = isset($data['levelStartSp']) ? $data['levelStartSp'] : null;
+        $this->container['queuePosition'] = isset($data['queuePosition']) ? $data['queuePosition'] : null;
+        $this->container['skillId'] = isset($data['skillId']) ? $data['skillId'] : null;
+        $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
+        $this->container['trainingStartSp'] = isset($data['trainingStartSp']) ? $data['trainingStartSp'] : null;
     }
 
     /**
@@ -178,22 +178,22 @@ class GetCharactersCharacterIdSkillqueue200Ok implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if ($this->container['finished_level'] === null) {
-            $invalid_properties[] = "'finished_level' can't be null";
+        if ($this->container['finishedLevel'] === null) {
+            $invalid_properties[] = "'finishedLevel' can't be null";
         }
-        if (($this->container['finished_level'] > 5.0)) {
-            $invalid_properties[] = "invalid value for 'finished_level', must be smaller than or equal to 5.0.";
-        }
-
-        if (($this->container['finished_level'] < 0.0)) {
-            $invalid_properties[] = "invalid value for 'finished_level', must be bigger than or equal to 0.0.";
+        if (($this->container['finishedLevel'] > 5.0)) {
+            $invalid_properties[] = "invalid value for 'finishedLevel', must be smaller than or equal to 5.0.";
         }
 
-        if ($this->container['queue_position'] === null) {
-            $invalid_properties[] = "'queue_position' can't be null";
+        if (($this->container['finishedLevel'] < 0.0)) {
+            $invalid_properties[] = "invalid value for 'finishedLevel', must be bigger than or equal to 0.0.";
         }
-        if ($this->container['skill_id'] === null) {
-            $invalid_properties[] = "'skill_id' can't be null";
+
+        if ($this->container['queuePosition'] === null) {
+            $invalid_properties[] = "'queuePosition' can't be null";
+        }
+        if ($this->container['skillId'] === null) {
+            $invalid_properties[] = "'skillId' can't be null";
         }
         return $invalid_properties;
     }
@@ -206,19 +206,19 @@ class GetCharactersCharacterIdSkillqueue200Ok implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['finished_level'] === null) {
+        if ($this->container['finishedLevel'] === null) {
             return false;
         }
-        if ($this->container['finished_level'] > 5.0) {
+        if ($this->container['finishedLevel'] > 5.0) {
             return false;
         }
-        if ($this->container['finished_level'] < 0.0) {
+        if ($this->container['finishedLevel'] < 0.0) {
             return false;
         }
-        if ($this->container['queue_position'] === null) {
+        if ($this->container['queuePosition'] === null) {
             return false;
         }
-        if ($this->container['skill_id'] === null) {
+        if ($this->container['skillId'] === null) {
             return false;
         }
         return true;
@@ -226,177 +226,177 @@ class GetCharactersCharacterIdSkillqueue200Ok implements ArrayAccess
 
 
     /**
-     * Gets finish_date
+     * Gets finishDate
      * @return \DateTime
      */
     public function getFinishDate()
     {
-        return $this->container['finish_date'];
+        return $this->container['finishDate'];
     }
 
     /**
-     * Sets finish_date
-     * @param \DateTime $finish_date finish_date string
+     * Sets finishDate
+     * @param \DateTime $finishDate finish_date string
      * @return $this
      */
-    public function setFinishDate($finish_date)
+    public function setFinishDate($finishDate)
     {
-        $this->container['finish_date'] = $finish_date;
+        $this->container['finishDate'] = $finishDate;
 
         return $this;
     }
 
     /**
-     * Gets finished_level
+     * Gets finishedLevel
      * @return int
      */
     public function getFinishedLevel()
     {
-        return $this->container['finished_level'];
+        return $this->container['finishedLevel'];
     }
 
     /**
-     * Sets finished_level
-     * @param int $finished_level finished_level integer
+     * Sets finishedLevel
+     * @param int $finishedLevel finished_level integer
      * @return $this
      */
-    public function setFinishedLevel($finished_level)
+    public function setFinishedLevel($finishedLevel)
     {
 
-        if (($finished_level > 5.0)) {
-            throw new \InvalidArgumentException('invalid value for $finished_level when calling GetCharactersCharacterIdSkillqueue200Ok., must be smaller than or equal to 5.0.');
+        if (($finishedLevel > 5.0)) {
+            throw new \InvalidArgumentException('invalid value for $finishedLevel when calling GetCharactersCharacterIdSkillqueue200Ok., must be smaller than or equal to 5.0.');
         }
-        if (($finished_level < 0.0)) {
-            throw new \InvalidArgumentException('invalid value for $finished_level when calling GetCharactersCharacterIdSkillqueue200Ok., must be bigger than or equal to 0.0.');
+        if (($finishedLevel < 0.0)) {
+            throw new \InvalidArgumentException('invalid value for $finishedLevel when calling GetCharactersCharacterIdSkillqueue200Ok., must be bigger than or equal to 0.0.');
         }
 
-        $this->container['finished_level'] = $finished_level;
+        $this->container['finishedLevel'] = $finishedLevel;
 
         return $this;
     }
 
     /**
-     * Gets level_end_sp
+     * Gets levelEndSp
      * @return int
      */
     public function getLevelEndSp()
     {
-        return $this->container['level_end_sp'];
+        return $this->container['levelEndSp'];
     }
 
     /**
-     * Sets level_end_sp
-     * @param int $level_end_sp level_end_sp integer
+     * Sets levelEndSp
+     * @param int $levelEndSp level_end_sp integer
      * @return $this
      */
-    public function setLevelEndSp($level_end_sp)
+    public function setLevelEndSp($levelEndSp)
     {
-        $this->container['level_end_sp'] = $level_end_sp;
+        $this->container['levelEndSp'] = $levelEndSp;
 
         return $this;
     }
 
     /**
-     * Gets level_start_sp
+     * Gets levelStartSp
      * @return int
      */
     public function getLevelStartSp()
     {
-        return $this->container['level_start_sp'];
+        return $this->container['levelStartSp'];
     }
 
     /**
-     * Sets level_start_sp
-     * @param int $level_start_sp Amount of SP that was in the skill when it started training it's current level. Used to calculate % of current level complete.
+     * Sets levelStartSp
+     * @param int $levelStartSp Amount of SP that was in the skill when it started training it's current level. Used to calculate % of current level complete.
      * @return $this
      */
-    public function setLevelStartSp($level_start_sp)
+    public function setLevelStartSp($levelStartSp)
     {
-        $this->container['level_start_sp'] = $level_start_sp;
+        $this->container['levelStartSp'] = $levelStartSp;
 
         return $this;
     }
 
     /**
-     * Gets queue_position
+     * Gets queuePosition
      * @return int
      */
     public function getQueuePosition()
     {
-        return $this->container['queue_position'];
+        return $this->container['queuePosition'];
     }
 
     /**
-     * Sets queue_position
-     * @param int $queue_position queue_position integer
+     * Sets queuePosition
+     * @param int $queuePosition queue_position integer
      * @return $this
      */
-    public function setQueuePosition($queue_position)
+    public function setQueuePosition($queuePosition)
     {
-        $this->container['queue_position'] = $queue_position;
+        $this->container['queuePosition'] = $queuePosition;
 
         return $this;
     }
 
     /**
-     * Gets skill_id
+     * Gets skillId
      * @return int
      */
     public function getSkillId()
     {
-        return $this->container['skill_id'];
+        return $this->container['skillId'];
     }
 
     /**
-     * Sets skill_id
-     * @param int $skill_id skill_id integer
+     * Sets skillId
+     * @param int $skillId skill_id integer
      * @return $this
      */
-    public function setSkillId($skill_id)
+    public function setSkillId($skillId)
     {
-        $this->container['skill_id'] = $skill_id;
+        $this->container['skillId'] = $skillId;
 
         return $this;
     }
 
     /**
-     * Gets start_date
+     * Gets startDate
      * @return \DateTime
      */
     public function getStartDate()
     {
-        return $this->container['start_date'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets start_date
-     * @param \DateTime $start_date start_date string
+     * Sets startDate
+     * @param \DateTime $startDate start_date string
      * @return $this
      */
-    public function setStartDate($start_date)
+    public function setStartDate($startDate)
     {
-        $this->container['start_date'] = $start_date;
+        $this->container['startDate'] = $startDate;
 
         return $this;
     }
 
     /**
-     * Gets training_start_sp
+     * Gets trainingStartSp
      * @return int
      */
     public function getTrainingStartSp()
     {
-        return $this->container['training_start_sp'];
+        return $this->container['trainingStartSp'];
     }
 
     /**
-     * Sets training_start_sp
-     * @param int $training_start_sp training_start_sp integer
+     * Sets trainingStartSp
+     * @param int $trainingStartSp training_start_sp integer
      * @return $this
      */
-    public function setTrainingStartSp($training_start_sp)
+    public function setTrainingStartSp($trainingStartSp)
     {
-        $this->container['training_start_sp'] = $training_start_sp;
+        $this->container['trainingStartSp'] = $trainingStartSp;
 
         return $this;
     }
@@ -452,9 +452,9 @@ class GetCharactersCharacterIdSkillqueue200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

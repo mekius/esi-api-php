@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -71,7 +71,7 @@ class GetMarketsRegionIdHistory200Ok implements ArrayAccess
         'date' => '\DateTime',
         'highest' => 'float',
         'lowest' => 'float',
-        'order_count' => 'int',
+        'orderCount' => 'int',
         'volume' => 'int'
     ];
 
@@ -89,7 +89,7 @@ class GetMarketsRegionIdHistory200Ok implements ArrayAccess
         'date' => 'date',
         'highest' => 'highest',
         'lowest' => 'lowest',
-        'order_count' => 'order_count',
+        'orderCount' => 'order_count',
         'volume' => 'volume'
     ];
 
@@ -103,7 +103,7 @@ class GetMarketsRegionIdHistory200Ok implements ArrayAccess
         'date' => 'setDate',
         'highest' => 'setHighest',
         'lowest' => 'setLowest',
-        'order_count' => 'setOrderCount',
+        'orderCount' => 'setOrderCount',
         'volume' => 'setVolume'
     ];
 
@@ -117,7 +117,7 @@ class GetMarketsRegionIdHistory200Ok implements ArrayAccess
         'date' => 'getDate',
         'highest' => 'getHighest',
         'lowest' => 'getLowest',
-        'order_count' => 'getOrderCount',
+        'orderCount' => 'getOrderCount',
         'volume' => 'getVolume'
     ];
 
@@ -156,7 +156,7 @@ class GetMarketsRegionIdHistory200Ok implements ArrayAccess
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
         $this->container['highest'] = isset($data['highest']) ? $data['highest'] : null;
         $this->container['lowest'] = isset($data['lowest']) ? $data['lowest'] : null;
-        $this->container['order_count'] = isset($data['order_count']) ? $data['order_count'] : null;
+        $this->container['orderCount'] = isset($data['orderCount']) ? $data['orderCount'] : null;
         $this->container['volume'] = isset($data['volume']) ? $data['volume'] : null;
     }
 
@@ -180,8 +180,8 @@ class GetMarketsRegionIdHistory200Ok implements ArrayAccess
         if ($this->container['lowest'] === null) {
             $invalid_properties[] = "'lowest' can't be null";
         }
-        if ($this->container['order_count'] === null) {
-            $invalid_properties[] = "'order_count' can't be null";
+        if ($this->container['orderCount'] === null) {
+            $invalid_properties[] = "'orderCount' can't be null";
         }
         if ($this->container['volume'] === null) {
             $invalid_properties[] = "'volume' can't be null";
@@ -209,7 +209,7 @@ class GetMarketsRegionIdHistory200Ok implements ArrayAccess
         if ($this->container['lowest'] === null) {
             return false;
         }
-        if ($this->container['order_count'] === null) {
+        if ($this->container['orderCount'] === null) {
             return false;
         }
         if ($this->container['volume'] === null) {
@@ -304,22 +304,22 @@ class GetMarketsRegionIdHistory200Ok implements ArrayAccess
     }
 
     /**
-     * Gets order_count
+     * Gets orderCount
      * @return int
      */
     public function getOrderCount()
     {
-        return $this->container['order_count'];
+        return $this->container['orderCount'];
     }
 
     /**
-     * Sets order_count
-     * @param int $order_count Total number of orders happened that day
+     * Sets orderCount
+     * @param int $orderCount Total number of orders happened that day
      * @return $this
      */
-    public function setOrderCount($order_count)
+    public function setOrderCount($orderCount)
     {
-        $this->container['order_count'] = $order_count;
+        $this->container['orderCount'] = $orderCount;
 
         return $this;
     }
@@ -396,9 +396,9 @@ class GetMarketsRegionIdHistory200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,12 +67,12 @@ class GetUniverseTypesTypeIdOk implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'category_id' => 'int',
-        'graphic_id' => 'int',
-        'group_id' => 'int',
-        'icon_id' => 'int',
-        'type_description' => 'string',
-        'type_name' => 'string'
+        'categoryId' => 'int',
+        'graphicId' => 'int',
+        'groupId' => 'int',
+        'iconId' => 'int',
+        'typeDescription' => 'string',
+        'typeName' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -85,12 +85,12 @@ class GetUniverseTypesTypeIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'category_id' => 'category_id',
-        'graphic_id' => 'graphic_id',
-        'group_id' => 'group_id',
-        'icon_id' => 'icon_id',
-        'type_description' => 'type_description',
-        'type_name' => 'type_name'
+        'categoryId' => 'category_id',
+        'graphicId' => 'graphic_id',
+        'groupId' => 'group_id',
+        'iconId' => 'icon_id',
+        'typeDescription' => 'type_description',
+        'typeName' => 'type_name'
     ];
 
 
@@ -99,12 +99,12 @@ class GetUniverseTypesTypeIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'category_id' => 'setCategoryId',
-        'graphic_id' => 'setGraphicId',
-        'group_id' => 'setGroupId',
-        'icon_id' => 'setIconId',
-        'type_description' => 'setTypeDescription',
-        'type_name' => 'setTypeName'
+        'categoryId' => 'setCategoryId',
+        'graphicId' => 'setGraphicId',
+        'groupId' => 'setGroupId',
+        'iconId' => 'setIconId',
+        'typeDescription' => 'setTypeDescription',
+        'typeName' => 'setTypeName'
     ];
 
 
@@ -113,12 +113,12 @@ class GetUniverseTypesTypeIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'category_id' => 'getCategoryId',
-        'graphic_id' => 'getGraphicId',
-        'group_id' => 'getGroupId',
-        'icon_id' => 'getIconId',
-        'type_description' => 'getTypeDescription',
-        'type_name' => 'getTypeName'
+        'categoryId' => 'getCategoryId',
+        'graphicId' => 'getGraphicId',
+        'groupId' => 'getGroupId',
+        'iconId' => 'getIconId',
+        'typeDescription' => 'getTypeDescription',
+        'typeName' => 'getTypeName'
     ];
 
     public static function attributeMap()
@@ -152,12 +152,12 @@ class GetUniverseTypesTypeIdOk implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['category_id'] = isset($data['category_id']) ? $data['category_id'] : null;
-        $this->container['graphic_id'] = isset($data['graphic_id']) ? $data['graphic_id'] : null;
-        $this->container['group_id'] = isset($data['group_id']) ? $data['group_id'] : null;
-        $this->container['icon_id'] = isset($data['icon_id']) ? $data['icon_id'] : null;
-        $this->container['type_description'] = isset($data['type_description']) ? $data['type_description'] : null;
-        $this->container['type_name'] = isset($data['type_name']) ? $data['type_name'] : null;
+        $this->container['categoryId'] = isset($data['categoryId']) ? $data['categoryId'] : null;
+        $this->container['graphicId'] = isset($data['graphicId']) ? $data['graphicId'] : null;
+        $this->container['groupId'] = isset($data['groupId']) ? $data['groupId'] : null;
+        $this->container['iconId'] = isset($data['iconId']) ? $data['iconId'] : null;
+        $this->container['typeDescription'] = isset($data['typeDescription']) ? $data['typeDescription'] : null;
+        $this->container['typeName'] = isset($data['typeName']) ? $data['typeName'] : null;
     }
 
     /**
@@ -168,17 +168,17 @@ class GetUniverseTypesTypeIdOk implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if ($this->container['category_id'] === null) {
-            $invalid_properties[] = "'category_id' can't be null";
+        if ($this->container['categoryId'] === null) {
+            $invalid_properties[] = "'categoryId' can't be null";
         }
-        if ($this->container['group_id'] === null) {
-            $invalid_properties[] = "'group_id' can't be null";
+        if ($this->container['groupId'] === null) {
+            $invalid_properties[] = "'groupId' can't be null";
         }
-        if ($this->container['type_description'] === null) {
-            $invalid_properties[] = "'type_description' can't be null";
+        if ($this->container['typeDescription'] === null) {
+            $invalid_properties[] = "'typeDescription' can't be null";
         }
-        if ($this->container['type_name'] === null) {
-            $invalid_properties[] = "'type_name' can't be null";
+        if ($this->container['typeName'] === null) {
+            $invalid_properties[] = "'typeName' can't be null";
         }
         return $invalid_properties;
     }
@@ -191,16 +191,16 @@ class GetUniverseTypesTypeIdOk implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['category_id'] === null) {
+        if ($this->container['categoryId'] === null) {
             return false;
         }
-        if ($this->container['group_id'] === null) {
+        if ($this->container['groupId'] === null) {
             return false;
         }
-        if ($this->container['type_description'] === null) {
+        if ($this->container['typeDescription'] === null) {
             return false;
         }
-        if ($this->container['type_name'] === null) {
+        if ($this->container['typeName'] === null) {
             return false;
         }
         return true;
@@ -208,127 +208,127 @@ class GetUniverseTypesTypeIdOk implements ArrayAccess
 
 
     /**
-     * Gets category_id
+     * Gets categoryId
      * @return int
      */
     public function getCategoryId()
     {
-        return $this->container['category_id'];
+        return $this->container['categoryId'];
     }
 
     /**
-     * Sets category_id
-     * @param int $category_id category_id integer
+     * Sets categoryId
+     * @param int $categoryId category_id integer
      * @return $this
      */
-    public function setCategoryId($category_id)
+    public function setCategoryId($categoryId)
     {
-        $this->container['category_id'] = $category_id;
+        $this->container['categoryId'] = $categoryId;
 
         return $this;
     }
 
     /**
-     * Gets graphic_id
+     * Gets graphicId
      * @return int
      */
     public function getGraphicId()
     {
-        return $this->container['graphic_id'];
+        return $this->container['graphicId'];
     }
 
     /**
-     * Sets graphic_id
-     * @param int $graphic_id graphic_id integer
+     * Sets graphicId
+     * @param int $graphicId graphic_id integer
      * @return $this
      */
-    public function setGraphicId($graphic_id)
+    public function setGraphicId($graphicId)
     {
-        $this->container['graphic_id'] = $graphic_id;
+        $this->container['graphicId'] = $graphicId;
 
         return $this;
     }
 
     /**
-     * Gets group_id
+     * Gets groupId
      * @return int
      */
     public function getGroupId()
     {
-        return $this->container['group_id'];
+        return $this->container['groupId'];
     }
 
     /**
-     * Sets group_id
-     * @param int $group_id group_id integer
+     * Sets groupId
+     * @param int $groupId group_id integer
      * @return $this
      */
-    public function setGroupId($group_id)
+    public function setGroupId($groupId)
     {
-        $this->container['group_id'] = $group_id;
+        $this->container['groupId'] = $groupId;
 
         return $this;
     }
 
     /**
-     * Gets icon_id
+     * Gets iconId
      * @return int
      */
     public function getIconId()
     {
-        return $this->container['icon_id'];
+        return $this->container['iconId'];
     }
 
     /**
-     * Sets icon_id
-     * @param int $icon_id icon_id integer
+     * Sets iconId
+     * @param int $iconId icon_id integer
      * @return $this
      */
-    public function setIconId($icon_id)
+    public function setIconId($iconId)
     {
-        $this->container['icon_id'] = $icon_id;
+        $this->container['iconId'] = $iconId;
 
         return $this;
     }
 
     /**
-     * Gets type_description
+     * Gets typeDescription
      * @return string
      */
     public function getTypeDescription()
     {
-        return $this->container['type_description'];
+        return $this->container['typeDescription'];
     }
 
     /**
-     * Sets type_description
-     * @param string $type_description type_description string
+     * Sets typeDescription
+     * @param string $typeDescription type_description string
      * @return $this
      */
-    public function setTypeDescription($type_description)
+    public function setTypeDescription($typeDescription)
     {
-        $this->container['type_description'] = $type_description;
+        $this->container['typeDescription'] = $typeDescription;
 
         return $this;
     }
 
     /**
-     * Gets type_name
+     * Gets typeName
      * @return string
      */
     public function getTypeName()
     {
-        return $this->container['type_name'];
+        return $this->container['typeName'];
     }
 
     /**
-     * Sets type_name
-     * @param string $type_name type_name string
+     * Sets typeName
+     * @param string $typeName type_name string
      * @return $this
      */
-    public function setTypeName($type_name)
+    public function setTypeName($typeName)
     {
-        $this->container['type_name'] = $type_name;
+        $this->container['typeName'] = $typeName;
 
         return $this;
     }
@@ -384,9 +384,9 @@ class GetUniverseTypesTypeIdOk implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

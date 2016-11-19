@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -68,7 +68,7 @@ class GetCharactersCharacterIdWallets200Ok implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'balance' => 'int',
-        'wallet_id' => 'int'
+        'walletId' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -82,7 +82,7 @@ class GetCharactersCharacterIdWallets200Ok implements ArrayAccess
      */
     protected static $attributeMap = [
         'balance' => 'balance',
-        'wallet_id' => 'wallet_id'
+        'walletId' => 'wallet_id'
     ];
 
 
@@ -92,7 +92,7 @@ class GetCharactersCharacterIdWallets200Ok implements ArrayAccess
      */
     protected static $setters = [
         'balance' => 'setBalance',
-        'wallet_id' => 'setWalletId'
+        'walletId' => 'setWalletId'
     ];
 
 
@@ -102,7 +102,7 @@ class GetCharactersCharacterIdWallets200Ok implements ArrayAccess
      */
     protected static $getters = [
         'balance' => 'getBalance',
-        'wallet_id' => 'getWalletId'
+        'walletId' => 'getWalletId'
     ];
 
     public static function attributeMap()
@@ -137,7 +137,7 @@ class GetCharactersCharacterIdWallets200Ok implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['balance'] = isset($data['balance']) ? $data['balance'] : null;
-        $this->container['wallet_id'] = isset($data['wallet_id']) ? $data['wallet_id'] : null;
+        $this->container['walletId'] = isset($data['walletId']) ? $data['walletId'] : null;
     }
 
     /**
@@ -185,22 +185,22 @@ class GetCharactersCharacterIdWallets200Ok implements ArrayAccess
     }
 
     /**
-     * Gets wallet_id
+     * Gets walletId
      * @return int
      */
     public function getWalletId()
     {
-        return $this->container['wallet_id'];
+        return $this->container['walletId'];
     }
 
     /**
-     * Sets wallet_id
-     * @param int $wallet_id wallet_id integer
+     * Sets walletId
+     * @param int $walletId wallet_id integer
      * @return $this
      */
-    public function setWalletId($wallet_id)
+    public function setWalletId($walletId)
     {
-        $this->container['wallet_id'] = $wallet_id;
+        $this->container['walletId'] = $walletId;
 
         return $this;
     }
@@ -256,9 +256,9 @@ class GetCharactersCharacterIdWallets200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

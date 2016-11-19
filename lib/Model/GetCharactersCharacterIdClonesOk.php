@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,9 +67,9 @@ class GetCharactersCharacterIdClonesOk implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'home_location' => '\Swagger\Client\Model\GetCharactersCharacterIdClonesHomeLocation',
-        'jump_clones' => '\Swagger\Client\Model\GetCharactersCharacterIdClonesJumpClone[]',
-        'last_jump_date' => '\DateTime'
+        'homeLocation' => '\ESI\Model\GetCharactersCharacterIdClonesHomeLocation',
+        'jumpClones' => '\ESI\Model\GetCharactersCharacterIdClonesJumpClone[]',
+        'lastJumpDate' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -82,9 +82,9 @@ class GetCharactersCharacterIdClonesOk implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'home_location' => 'home_location',
-        'jump_clones' => 'jump_clones',
-        'last_jump_date' => 'last_jump_date'
+        'homeLocation' => 'home_location',
+        'jumpClones' => 'jump_clones',
+        'lastJumpDate' => 'last_jump_date'
     ];
 
 
@@ -93,9 +93,9 @@ class GetCharactersCharacterIdClonesOk implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'home_location' => 'setHomeLocation',
-        'jump_clones' => 'setJumpClones',
-        'last_jump_date' => 'setLastJumpDate'
+        'homeLocation' => 'setHomeLocation',
+        'jumpClones' => 'setJumpClones',
+        'lastJumpDate' => 'setLastJumpDate'
     ];
 
 
@@ -104,9 +104,9 @@ class GetCharactersCharacterIdClonesOk implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'home_location' => 'getHomeLocation',
-        'jump_clones' => 'getJumpClones',
-        'last_jump_date' => 'getLastJumpDate'
+        'homeLocation' => 'getHomeLocation',
+        'jumpClones' => 'getJumpClones',
+        'lastJumpDate' => 'getLastJumpDate'
     ];
 
     public static function attributeMap()
@@ -140,9 +140,9 @@ class GetCharactersCharacterIdClonesOk implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['home_location'] = isset($data['home_location']) ? $data['home_location'] : null;
-        $this->container['jump_clones'] = isset($data['jump_clones']) ? $data['jump_clones'] : null;
-        $this->container['last_jump_date'] = isset($data['last_jump_date']) ? $data['last_jump_date'] : null;
+        $this->container['homeLocation'] = isset($data['homeLocation']) ? $data['homeLocation'] : null;
+        $this->container['jumpClones'] = isset($data['jumpClones']) ? $data['jumpClones'] : null;
+        $this->container['lastJumpDate'] = isset($data['lastJumpDate']) ? $data['lastJumpDate'] : null;
     }
 
     /**
@@ -153,8 +153,8 @@ class GetCharactersCharacterIdClonesOk implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if ($this->container['jump_clones'] === null) {
-            $invalid_properties[] = "'jump_clones' can't be null";
+        if ($this->container['jumpClones'] === null) {
+            $invalid_properties[] = "'jumpClones' can't be null";
         }
         return $invalid_properties;
     }
@@ -167,7 +167,7 @@ class GetCharactersCharacterIdClonesOk implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['jump_clones'] === null) {
+        if ($this->container['jumpClones'] === null) {
             return false;
         }
         return true;
@@ -175,64 +175,64 @@ class GetCharactersCharacterIdClonesOk implements ArrayAccess
 
 
     /**
-     * Gets home_location
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdClonesHomeLocation
+     * Gets homeLocation
+     * @return \ESI\Model\GetCharactersCharacterIdClonesHomeLocation
      */
     public function getHomeLocation()
     {
-        return $this->container['home_location'];
+        return $this->container['homeLocation'];
     }
 
     /**
-     * Sets home_location
-     * @param \Swagger\Client\Model\GetCharactersCharacterIdClonesHomeLocation $home_location
+     * Sets homeLocation
+     * @param \ESI\Model\GetCharactersCharacterIdClonesHomeLocation $homeLocation
      * @return $this
      */
-    public function setHomeLocation($home_location)
+    public function setHomeLocation($homeLocation)
     {
-        $this->container['home_location'] = $home_location;
+        $this->container['homeLocation'] = $homeLocation;
 
         return $this;
     }
 
     /**
-     * Gets jump_clones
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdClonesJumpClone[]
+     * Gets jumpClones
+     * @return \ESI\Model\GetCharactersCharacterIdClonesJumpClone[]
      */
     public function getJumpClones()
     {
-        return $this->container['jump_clones'];
+        return $this->container['jumpClones'];
     }
 
     /**
-     * Sets jump_clones
-     * @param \Swagger\Client\Model\GetCharactersCharacterIdClonesJumpClone[] $jump_clones jump_clones array
+     * Sets jumpClones
+     * @param \ESI\Model\GetCharactersCharacterIdClonesJumpClone[] $jumpClones jump_clones array
      * @return $this
      */
-    public function setJumpClones($jump_clones)
+    public function setJumpClones($jumpClones)
     {
-        $this->container['jump_clones'] = $jump_clones;
+        $this->container['jumpClones'] = $jumpClones;
 
         return $this;
     }
 
     /**
-     * Gets last_jump_date
+     * Gets lastJumpDate
      * @return \DateTime
      */
     public function getLastJumpDate()
     {
-        return $this->container['last_jump_date'];
+        return $this->container['lastJumpDate'];
     }
 
     /**
-     * Sets last_jump_date
-     * @param \DateTime $last_jump_date last_jump_date string
+     * Sets lastJumpDate
+     * @param \DateTime $lastJumpDate last_jump_date string
      * @return $this
      */
-    public function setLastJumpDate($last_jump_date)
+    public function setLastJumpDate($lastJumpDate)
     {
-        $this->container['last_jump_date'] = $last_jump_date;
+        $this->container['lastJumpDate'] = $lastJumpDate;
 
         return $this;
     }
@@ -288,9 +288,9 @@ class GetCharactersCharacterIdClonesOk implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

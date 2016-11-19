@@ -1,4 +1,4 @@
-# Swagger\Client\DummyApi
+# ESI\DummyApi
 
 All URIs are relative to *https://esi.tech.ccp.is/latest*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getCharactersCharacterIdWalletsJournal**
-> \Swagger\Client\Model\GetCharactersCharacterIdWalletsJournal200Ok[] getCharactersCharacterIdWalletsJournal($character_id, $last_seen_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdWalletsJournal200Ok[] getCharactersCharacterIdWalletsJournal($characterId, $lastSeenId, $datasource)
 
 Get character wallet journal
 
@@ -25,15 +25,15 @@ Returns the most recent 50 entries for the characters wallet journal. Optionally
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DummyApi();
-$character_id = 56; // int | An EVE character ID
-$last_seen_id = 789; // int | A journal reference ID to paginate from
+$api_instance = new ESI\Api\DummyApi();
+$characterId = 56; // int | An EVE character ID
+$lastSeenId = 789; // int | A journal reference ID to paginate from
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdWalletsJournal($character_id, $last_seen_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdWalletsJournal($characterId, $lastSeenId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DummyApi->getCharactersCharacterIdWalletsJournal: ', $e->getMessage(), PHP_EOL;
@@ -45,13 +45,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
- **last_seen_id** | **int**| A journal reference ID to paginate from | [optional]
+ **characterId** | **int**| An EVE character ID |
+ **lastSeenId** | **int**| A journal reference ID to paginate from | [optional]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdWalletsJournal200Ok[]**](../Model/GetCharactersCharacterIdWalletsJournal200Ok.md)
+[**\ESI\Model\GetCharactersCharacterIdWalletsJournal200Ok[]**](../Model/GetCharactersCharacterIdWalletsJournal200Ok.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdWalletsTransactions**
-> \Swagger\Client\Model\GetCharactersCharacterIdWalletsTransactions200Ok[] getCharactersCharacterIdWalletsTransactions($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdWalletsTransactions200Ok[] getCharactersCharacterIdWalletsTransactions($characterId, $datasource)
 
 Get wallet transactions
 
@@ -77,14 +77,14 @@ Gets the 50 most recent transactions in a characters wallet. Optionally, takes a
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\DummyApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\DummyApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdWalletsTransactions($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdWalletsTransactions($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DummyApi->getCharactersCharacterIdWalletsTransactions: ', $e->getMessage(), PHP_EOL;
@@ -96,12 +96,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdWalletsTransactions200Ok[]**](../Model/GetCharactersCharacterIdWalletsTransactions200Ok.md)
+[**\ESI\Model\GetCharactersCharacterIdWalletsTransactions200Ok[]**](../Model/GetCharactersCharacterIdWalletsTransactions200Ok.md)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCorporationsCorporationIdWallets**
-> getCorporationsCorporationIdWallets($corporation_id, $datasource)
+> getCorporationsCorporationIdWallets($corporationId, $datasource)
 
 Dummy Endpoint, Please Ignore
 
@@ -126,12 +126,12 @@ Dummy  ---  Alternate route: `/v1/corporations/{corporation_id}/wallets/`  Alter
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\DummyApi();
-$corporation_id = 56; // int | An EVE corporation ID
+$api_instance = new ESI\Api\DummyApi();
+$corporationId = 56; // int | An EVE corporation ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $api_instance->getCorporationsCorporationIdWallets($corporation_id, $datasource);
+    $api_instance->getCorporationsCorporationIdWallets($corporationId, $datasource);
 } catch (Exception $e) {
     echo 'Exception when calling DummyApi->getCorporationsCorporationIdWallets: ', $e->getMessage(), PHP_EOL;
 }
@@ -142,7 +142,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **corporation_id** | **int**| An EVE corporation ID |
+ **corporationId** | **int**| An EVE corporation ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
@@ -161,7 +161,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCorporationsCorporationIdWalletsWalletIdJournal**
-> getCorporationsCorporationIdWalletsWalletIdJournal($corporation_id, $wallet_id, $datasource)
+> getCorporationsCorporationIdWalletsWalletIdJournal($corporationId, $walletId, $datasource)
 
 Dummy Endpoint, Please Ignore
 
@@ -172,13 +172,13 @@ Dummy  ---  Alternate route: `/v1/corporations/{corporation_id}/wallets/{wallet_
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\DummyApi();
-$corporation_id = 56; // int | An EVE corporation ID
-$wallet_id = 56; // int | Wallet ID
+$api_instance = new ESI\Api\DummyApi();
+$corporationId = 56; // int | An EVE corporation ID
+$walletId = 56; // int | Wallet ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $api_instance->getCorporationsCorporationIdWalletsWalletIdJournal($corporation_id, $wallet_id, $datasource);
+    $api_instance->getCorporationsCorporationIdWalletsWalletIdJournal($corporationId, $walletId, $datasource);
 } catch (Exception $e) {
     echo 'Exception when calling DummyApi->getCorporationsCorporationIdWalletsWalletIdJournal: ', $e->getMessage(), PHP_EOL;
 }
@@ -189,8 +189,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **corporation_id** | **int**| An EVE corporation ID |
- **wallet_id** | **int**| Wallet ID |
+ **corporationId** | **int**| An EVE corporation ID |
+ **walletId** | **int**| Wallet ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
@@ -209,7 +209,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCorporationsCorporationIdWalletsWalletIdTransactions**
-> getCorporationsCorporationIdWalletsWalletIdTransactions($corporation_id, $wallet_id, $datasource)
+> getCorporationsCorporationIdWalletsWalletIdTransactions($corporationId, $walletId, $datasource)
 
 Dummy Endpoint, Please Ignore
 
@@ -220,13 +220,13 @@ Dummy  ---  Alternate route: `/v1/corporations/{corporation_id}/wallets/{wallet_
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\DummyApi();
-$corporation_id = 56; // int | An EVE corporation ID
-$wallet_id = 56; // int | Wallet ID
+$api_instance = new ESI\Api\DummyApi();
+$corporationId = 56; // int | An EVE corporation ID
+$walletId = 56; // int | Wallet ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $api_instance->getCorporationsCorporationIdWalletsWalletIdTransactions($corporation_id, $wallet_id, $datasource);
+    $api_instance->getCorporationsCorporationIdWalletsWalletIdTransactions($corporationId, $walletId, $datasource);
 } catch (Exception $e) {
     echo 'Exception when calling DummyApi->getCorporationsCorporationIdWalletsWalletIdTransactions: ', $e->getMessage(), PHP_EOL;
 }
@@ -237,8 +237,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **corporation_id** | **int**| An EVE corporation ID |
- **wallet_id** | **int**| Wallet ID |
+ **corporationId** | **int**| An EVE corporation ID |
+ **walletId** | **int**| Wallet ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
@@ -257,7 +257,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUniversePlanetsPlanetId**
-> \Swagger\Client\Model\GetUniversePlanetsPlanetIdOk getUniversePlanetsPlanetId($planet_id, $datasource)
+> \ESI\Model\GetUniversePlanetsPlanetIdOk getUniversePlanetsPlanetId($planetId, $datasource)
 
 Get planet information
 
@@ -268,12 +268,12 @@ Information on a planet  ---  Alternate route: `/v1/universe/planets/{planet_id}
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\DummyApi();
-$planet_id = 56; // int | An Eve planet ID
+$api_instance = new ESI\Api\DummyApi();
+$planetId = 56; // int | An Eve planet ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getUniversePlanetsPlanetId($planet_id, $datasource);
+    $result = $api_instance->getUniversePlanetsPlanetId($planetId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DummyApi->getUniversePlanetsPlanetId: ', $e->getMessage(), PHP_EOL;
@@ -285,12 +285,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **planet_id** | **int**| An Eve planet ID |
+ **planetId** | **int**| An Eve planet ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetUniversePlanetsPlanetIdOk**](../Model/GetUniversePlanetsPlanetIdOk.md)
+[**\ESI\Model\GetUniversePlanetsPlanetIdOk**](../Model/GetUniversePlanetsPlanetIdOk.md)
 
 ### Authorization
 

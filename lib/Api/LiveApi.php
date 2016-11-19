@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ESI\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ESI\ApiClient;
+use \ESI\ApiException;
+use \ESI\Configuration;
+use \ESI\ObjectSerializer;
 
 /**
  * LiveApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -59,16 +59,16 @@ class LiveApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ESI\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ESI\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ESI\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -81,7 +81,7 @@ class LiveApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ESI\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -91,11 +91,11 @@ class LiveApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ESI\ApiClient $apiClient set the API client
      *
      * @return LiveApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ESI\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -106,15 +106,15 @@ class LiveApi
      *
      * Delete a mail
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param int $mail_id An EVE mail ID (required)
+     * @param int $characterId An EVE character ID (required)
+     * @param int $mailId An EVE mail ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return void
      */
-    public function deleteCharactersCharacterIdMailMailId($character_id, $mail_id, $datasource = null)
+    public function deleteCharactersCharacterIdMailMailId($characterId, $mailId, $datasource = null)
     {
-        list($response) = $this->deleteCharactersCharacterIdMailMailIdWithHttpInfo($character_id, $mail_id, $datasource);
+        list($response) = $this->deleteCharactersCharacterIdMailMailIdWithHttpInfo($characterId, $mailId, $datasource);
         return $response;
     }
 
@@ -123,21 +123,21 @@ class LiveApi
      *
      * Delete a mail
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param int $mail_id An EVE mail ID (required)
+     * @param int $characterId An EVE character ID (required)
+     * @param int $mailId An EVE mail ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCharactersCharacterIdMailMailIdWithHttpInfo($character_id, $mail_id, $datasource = null)
+    public function deleteCharactersCharacterIdMailMailIdWithHttpInfo($characterId, $mailId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling deleteCharactersCharacterIdMailMailId');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling deleteCharactersCharacterIdMailMailId');
         }
-        // verify the required parameter 'mail_id' is set
-        if ($mail_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $mail_id when calling deleteCharactersCharacterIdMailMailId');
+        // verify the required parameter 'mailId' is set
+        if ($mailId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mailId when calling deleteCharactersCharacterIdMailMailId');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/mail/{mail_id}/";
@@ -156,18 +156,18 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
         // path params
-        if ($mail_id !== null) {
+        if ($mailId !== null) {
             $resourcePath = str_replace(
                 "{" . "mail_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($mail_id),
+                $this->apiClient->getSerializer()->toPathValue($mailId),
                 $resourcePath
             );
         }
@@ -201,11 +201,11 @@ class LiveApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteCharactersCharacterIdMailMailIdForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\DeleteCharactersCharacterIdMailMailIdForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeleteCharactersCharacterIdMailMailIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\DeleteCharactersCharacterIdMailMailIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -219,14 +219,14 @@ class LiveApi
      *
      * Get character's public information
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdOk
      */
-    public function getCharactersCharacterId($character_id, $datasource = null)
+    public function getCharactersCharacterId($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -235,16 +235,16 @@ class LiveApi
      *
      * Get character's public information
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterId');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterId');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/";
@@ -263,10 +263,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -288,23 +288,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdOk',
+                '\ESI\Model\GetCharactersCharacterIdOk',
                 '/characters/{character_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 422:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdUnprocessableEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdUnprocessableEntity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -318,15 +318,15 @@ class LiveApi
      *
      * List calendar event summaries
      *
-     * @param int $character_id The character to retrieve events from (required)
-     * @param int $from_event The event ID to retrieve events from (optional)
+     * @param int $characterId The character to retrieve events from (required)
+     * @param int $fromEvent The event ID to retrieve events from (optional)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdCalendar200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdCalendar200Ok[]
      */
-    public function getCharactersCharacterIdCalendar($character_id, $from_event = null, $datasource = null)
+    public function getCharactersCharacterIdCalendar($characterId, $fromEvent = null, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdCalendarWithHttpInfo($character_id, $from_event, $datasource);
+        list($response) = $this->getCharactersCharacterIdCalendarWithHttpInfo($characterId, $fromEvent, $datasource);
         return $response;
     }
 
@@ -335,17 +335,17 @@ class LiveApi
      *
      * List calendar event summaries
      *
-     * @param int $character_id The character to retrieve events from (required)
-     * @param int $from_event The event ID to retrieve events from (optional)
+     * @param int $characterId The character to retrieve events from (required)
+     * @param int $fromEvent The event ID to retrieve events from (optional)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdCalendar200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdCalendar200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdCalendarWithHttpInfo($character_id, $from_event = null, $datasource = null)
+    public function getCharactersCharacterIdCalendarWithHttpInfo($characterId, $fromEvent = null, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdCalendar');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdCalendar');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/calendar/";
@@ -360,18 +360,18 @@ class LiveApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($from_event !== null) {
-            $queryParams['from_event'] = $this->apiClient->getSerializer()->toQueryValue($from_event);
+        if ($fromEvent !== null) {
+            $queryParams['from_event'] = $this->apiClient->getSerializer()->toQueryValue($fromEvent);
         }
         // query params
         if ($datasource !== null) {
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -397,23 +397,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdCalendar200Ok[]',
+                '\ESI\Model\GetCharactersCharacterIdCalendar200Ok[]',
                 '/characters/{character_id}/calendar/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdCalendar200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdCalendar200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdCalendar200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdCalendar200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdCalendarForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdCalendarForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdCalendarInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdCalendarInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -427,15 +427,15 @@ class LiveApi
      *
      * Get an event
      *
-     * @param int $character_id The character id requesting the event (required)
-     * @param int $event_id The id of the event requested (required)
+     * @param int $characterId The character id requesting the event (required)
+     * @param int $eventId The id of the event requested (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdCalendarEventIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdCalendarEventIdOk
      */
-    public function getCharactersCharacterIdCalendarEventId($character_id, $event_id, $datasource = null)
+    public function getCharactersCharacterIdCalendarEventId($characterId, $eventId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdCalendarEventIdWithHttpInfo($character_id, $event_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdCalendarEventIdWithHttpInfo($characterId, $eventId, $datasource);
         return $response;
     }
 
@@ -444,21 +444,21 @@ class LiveApi
      *
      * Get an event
      *
-     * @param int $character_id The character id requesting the event (required)
-     * @param int $event_id The id of the event requested (required)
+     * @param int $characterId The character id requesting the event (required)
+     * @param int $eventId The id of the event requested (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdCalendarEventIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdCalendarEventIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdCalendarEventIdWithHttpInfo($character_id, $event_id, $datasource = null)
+    public function getCharactersCharacterIdCalendarEventIdWithHttpInfo($characterId, $eventId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdCalendarEventId');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdCalendarEventId');
         }
-        // verify the required parameter 'event_id' is set
-        if ($event_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $event_id when calling getCharactersCharacterIdCalendarEventId');
+        // verify the required parameter 'eventId' is set
+        if ($eventId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $eventId when calling getCharactersCharacterIdCalendarEventId');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/calendar/{event_id}/";
@@ -477,18 +477,18 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
         // path params
-        if ($event_id !== null) {
+        if ($eventId !== null) {
             $resourcePath = str_replace(
                 "{" . "event_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($event_id),
+                $this->apiClient->getSerializer()->toPathValue($eventId),
                 $resourcePath
             );
         }
@@ -514,23 +514,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdCalendarEventIdOk',
+                '\ESI\Model\GetCharactersCharacterIdCalendarEventIdOk',
                 '/characters/{character_id}/calendar/{event_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdCalendarEventIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdCalendarEventIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdCalendarEventIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdCalendarEventIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdCalendarEventIdForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdCalendarEventIdForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdCalendarEventIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdCalendarEventIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -544,14 +544,14 @@ class LiveApi
      *
      * Get clones
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdClonesOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdClonesOk
      */
-    public function getCharactersCharacterIdClones($character_id, $datasource = null)
+    public function getCharactersCharacterIdClones($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdClonesWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdClonesWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -560,16 +560,16 @@ class LiveApi
      *
      * Get clones
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdClonesOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdClonesOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdClonesWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdClonesWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdClones');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdClones');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/clones/";
@@ -588,10 +588,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -617,23 +617,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdClonesOk',
+                '\ESI\Model\GetCharactersCharacterIdClonesOk',
                 '/characters/{character_id}/clones/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdClonesOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdClonesOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdClonesOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdClonesOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdClonesForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdClonesForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdClonesInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdClonesInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -647,14 +647,14 @@ class LiveApi
      *
      * Get corporation history
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdCorporationhistory200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdCorporationhistory200Ok[]
      */
-    public function getCharactersCharacterIdCorporationhistory($character_id, $datasource = null)
+    public function getCharactersCharacterIdCorporationhistory($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdCorporationhistoryWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdCorporationhistoryWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -663,16 +663,16 @@ class LiveApi
      *
      * Get corporation history
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdCorporationhistory200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdCorporationhistory200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdCorporationhistoryWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdCorporationhistoryWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdCorporationhistory');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdCorporationhistory');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/corporationhistory/";
@@ -691,10 +691,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -716,19 +716,19 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdCorporationhistory200Ok[]',
+                '\ESI\Model\GetCharactersCharacterIdCorporationhistory200Ok[]',
                 '/characters/{character_id}/corporationhistory/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdCorporationhistory200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdCorporationhistory200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdCorporationhistory200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdCorporationhistory200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdCorporationhistoryInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdCorporationhistoryInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -742,14 +742,14 @@ class LiveApi
      *
      * Get character location
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdLocationOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdLocationOk
      */
-    public function getCharactersCharacterIdLocation($character_id, $datasource = null)
+    public function getCharactersCharacterIdLocation($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdLocationWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdLocationWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -758,16 +758,16 @@ class LiveApi
      *
      * Get character location
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdLocationOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdLocationOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdLocationWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdLocationWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdLocation');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdLocation');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/location/";
@@ -786,10 +786,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -815,23 +815,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdLocationOk',
+                '\ESI\Model\GetCharactersCharacterIdLocationOk',
                 '/characters/{character_id}/location/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdLocationOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdLocationOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdLocationOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdLocationOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdLocationForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdLocationForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdLocationInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdLocationInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -845,16 +845,16 @@ class LiveApi
      *
      * Return mail headers
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param int[] $labels Fetch only mails that match one or more of the given labels (optional)
-     * @param int $last_mail_id List only mail with an ID lower than the given ID, if present (optional)
+     * @param int $lastMailId List only mail with an ID lower than the given ID, if present (optional)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdMail200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdMail200Ok[]
      */
-    public function getCharactersCharacterIdMail($character_id, $labels = null, $last_mail_id = null, $datasource = null)
+    public function getCharactersCharacterIdMail($characterId, $labels = null, $lastMailId = null, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdMailWithHttpInfo($character_id, $labels, $last_mail_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdMailWithHttpInfo($characterId, $labels, $lastMailId, $datasource);
         return $response;
     }
 
@@ -863,18 +863,18 @@ class LiveApi
      *
      * Return mail headers
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param int[] $labels Fetch only mails that match one or more of the given labels (optional)
-     * @param int $last_mail_id List only mail with an ID lower than the given ID, if present (optional)
+     * @param int $lastMailId List only mail with an ID lower than the given ID, if present (optional)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdMail200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdMail200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdMailWithHttpInfo($character_id, $labels = null, $last_mail_id = null, $datasource = null)
+    public function getCharactersCharacterIdMailWithHttpInfo($characterId, $labels = null, $lastMailId = null, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdMail');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdMail');
         }
         if (!is_null($labels) && (count($labels) < 1)) {
             throw new \InvalidArgumentException('invalid value for "$labels" when calling LiveApi.getCharactersCharacterIdMail, number of items must be greater than or equal to 1.');
@@ -900,18 +900,18 @@ class LiveApi
             $queryParams['labels'] = $this->apiClient->getSerializer()->toQueryValue($labels);
         }
         // query params
-        if ($last_mail_id !== null) {
-            $queryParams['last_mail_id'] = $this->apiClient->getSerializer()->toQueryValue($last_mail_id);
+        if ($lastMailId !== null) {
+            $queryParams['last_mail_id'] = $this->apiClient->getSerializer()->toQueryValue($lastMailId);
         }
         // query params
         if ($datasource !== null) {
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -937,23 +937,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdMail200Ok[]',
+                '\ESI\Model\GetCharactersCharacterIdMail200Ok[]',
                 '/characters/{character_id}/mail/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdMail200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdMail200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMail200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMail200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -967,14 +967,14 @@ class LiveApi
      *
      * Get mail labels and unread counts
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdMailLabelsOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdMailLabelsOk
      */
-    public function getCharactersCharacterIdMailLabels($character_id, $datasource = null)
+    public function getCharactersCharacterIdMailLabels($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdMailLabelsWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdMailLabelsWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -983,16 +983,16 @@ class LiveApi
      *
      * Get mail labels and unread counts
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdMailLabelsOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdMailLabelsOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdMailLabelsWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdMailLabelsWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdMailLabels');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdMailLabels');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/mail/labels/";
@@ -1011,10 +1011,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -1040,23 +1040,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdMailLabelsOk',
+                '\ESI\Model\GetCharactersCharacterIdMailLabelsOk',
                 '/characters/{character_id}/mail/labels/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdMailLabelsOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdMailLabelsOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailLabelsOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailLabelsOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailLabelsForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailLabelsForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailLabelsInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailLabelsInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1070,14 +1070,14 @@ class LiveApi
      *
      * Return mailing list subscriptions
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdMailLists200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdMailLists200Ok[]
      */
-    public function getCharactersCharacterIdMailLists($character_id, $datasource = null)
+    public function getCharactersCharacterIdMailLists($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdMailListsWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdMailListsWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -1086,16 +1086,16 @@ class LiveApi
      *
      * Return mailing list subscriptions
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdMailLists200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdMailLists200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdMailListsWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdMailListsWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdMailLists');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdMailLists');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/mail/lists/";
@@ -1114,10 +1114,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -1143,23 +1143,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdMailLists200Ok[]',
+                '\ESI\Model\GetCharactersCharacterIdMailLists200Ok[]',
                 '/characters/{character_id}/mail/lists/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdMailLists200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdMailLists200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailLists200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailLists200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailListsForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailListsForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailListsInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailListsInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1173,15 +1173,15 @@ class LiveApi
      *
      * Return a mail
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param int $mail_id An EVE mail ID (required)
+     * @param int $characterId An EVE character ID (required)
+     * @param int $mailId An EVE mail ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdMailMailIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdMailMailIdOk
      */
-    public function getCharactersCharacterIdMailMailId($character_id, $mail_id, $datasource = null)
+    public function getCharactersCharacterIdMailMailId($characterId, $mailId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdMailMailIdWithHttpInfo($character_id, $mail_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdMailMailIdWithHttpInfo($characterId, $mailId, $datasource);
         return $response;
     }
 
@@ -1190,21 +1190,21 @@ class LiveApi
      *
      * Return a mail
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param int $mail_id An EVE mail ID (required)
+     * @param int $characterId An EVE character ID (required)
+     * @param int $mailId An EVE mail ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdMailMailIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdMailMailIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdMailMailIdWithHttpInfo($character_id, $mail_id, $datasource = null)
+    public function getCharactersCharacterIdMailMailIdWithHttpInfo($characterId, $mailId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdMailMailId');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdMailMailId');
         }
-        // verify the required parameter 'mail_id' is set
-        if ($mail_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $mail_id when calling getCharactersCharacterIdMailMailId');
+        // verify the required parameter 'mailId' is set
+        if ($mailId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mailId when calling getCharactersCharacterIdMailMailId');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/mail/{mail_id}/";
@@ -1223,18 +1223,18 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
         // path params
-        if ($mail_id !== null) {
+        if ($mailId !== null) {
             $resourcePath = str_replace(
                 "{" . "mail_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($mail_id),
+                $this->apiClient->getSerializer()->toPathValue($mailId),
                 $resourcePath
             );
         }
@@ -1260,27 +1260,27 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdMailMailIdOk',
+                '\ESI\Model\GetCharactersCharacterIdMailMailIdOk',
                 '/characters/{character_id}/mail/{mail_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdMailMailIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdMailMailIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailMailIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailMailIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailMailIdForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailMailIdForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailMailIdNotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailMailIdNotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdMailMailIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdMailMailIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1294,14 +1294,14 @@ class LiveApi
      *
      * Get character portraits
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdPortraitOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdPortraitOk
      */
-    public function getCharactersCharacterIdPortrait($character_id, $datasource = null)
+    public function getCharactersCharacterIdPortrait($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdPortraitWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdPortraitWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -1310,16 +1310,16 @@ class LiveApi
      *
      * Get character portraits
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdPortraitOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdPortraitOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdPortraitWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdPortraitWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdPortrait');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdPortrait');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/portrait/";
@@ -1338,10 +1338,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -1363,23 +1363,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdPortraitOk',
+                '\ESI\Model\GetCharactersCharacterIdPortraitOk',
                 '/characters/{character_id}/portrait/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdPortraitOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdPortraitOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdPortraitOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdPortraitOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdPortraitNotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdPortraitNotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdPortraitInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdPortraitInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1393,14 +1393,14 @@ class LiveApi
      *
      * Get current ship
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdShipOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdShipOk
      */
-    public function getCharactersCharacterIdShip($character_id, $datasource = null)
+    public function getCharactersCharacterIdShip($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdShipWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdShipWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -1409,16 +1409,16 @@ class LiveApi
      *
      * Get current ship
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdShipOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdShipOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdShipWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdShipWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdShip');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdShip');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/ship/";
@@ -1437,10 +1437,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -1466,23 +1466,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdShipOk',
+                '\ESI\Model\GetCharactersCharacterIdShipOk',
                 '/characters/{character_id}/ship/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdShipOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdShipOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdShipOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdShipOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdShipForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdShipForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdShipInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdShipInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1496,14 +1496,14 @@ class LiveApi
      *
      * Get character's skill queue
      *
-     * @param int $character_id Character id of the target character (required)
+     * @param int $characterId Character id of the target character (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[]
      */
-    public function getCharactersCharacterIdSkillqueue($character_id, $datasource = null)
+    public function getCharactersCharacterIdSkillqueue($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdSkillqueueWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdSkillqueueWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -1512,16 +1512,16 @@ class LiveApi
      *
      * Get character's skill queue
      *
-     * @param int $character_id Character id of the target character (required)
+     * @param int $characterId Character id of the target character (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdSkillqueueWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdSkillqueueWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdSkillqueue');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdSkillqueue');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/skillqueue/";
@@ -1540,10 +1540,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -1569,23 +1569,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[]',
+                '\ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[]',
                 '/characters/{character_id}/skillqueue/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillqueueForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillqueueForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillqueueInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillqueueInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1599,14 +1599,14 @@ class LiveApi
      *
      * Get character skills
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdSkillsOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdSkillsOk
      */
-    public function getCharactersCharacterIdSkills($character_id, $datasource = null)
+    public function getCharactersCharacterIdSkills($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdSkillsWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdSkillsWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -1615,16 +1615,16 @@ class LiveApi
      *
      * Get character skills
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdSkillsOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdSkillsOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdSkillsWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdSkillsWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdSkills');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdSkills');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/skills/";
@@ -1643,10 +1643,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -1672,23 +1672,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdSkillsOk',
+                '\ESI\Model\GetCharactersCharacterIdSkillsOk',
                 '/characters/{character_id}/skills/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdSkillsOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdSkillsOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillsOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillsOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillsForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillsForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdSkillsInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdSkillsInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1702,14 +1702,14 @@ class LiveApi
      *
      * List wallets and balances
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdWallets200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdWallets200Ok[]
      */
-    public function getCharactersCharacterIdWallets($character_id, $datasource = null)
+    public function getCharactersCharacterIdWallets($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdWalletsWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdWalletsWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -1718,16 +1718,16 @@ class LiveApi
      *
      * List wallets and balances
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdWallets200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdWallets200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdWalletsWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdWalletsWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdWallets');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdWallets');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/wallets/";
@@ -1746,10 +1746,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -1775,23 +1775,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdWallets200Ok[]',
+                '\ESI\Model\GetCharactersCharacterIdWallets200Ok[]',
                 '/characters/{character_id}/wallets/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdWallets200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdWallets200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdWallets200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdWallets200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdWalletsForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdWalletsForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdWalletsInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdWalletsInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1805,14 +1805,14 @@ class LiveApi
      *
      * Get character names
      *
-     * @param int[] $character_ids A comma separated list of character IDs (required)
+     * @param int[] $characterIds A comma separated list of character IDs (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersNames200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersNames200Ok[]
      */
-    public function getCharactersNames($character_ids, $datasource = null)
+    public function getCharactersNames($characterIds, $datasource = null)
     {
-        list($response) = $this->getCharactersNamesWithHttpInfo($character_ids, $datasource);
+        list($response) = $this->getCharactersNamesWithHttpInfo($characterIds, $datasource);
         return $response;
     }
 
@@ -1821,19 +1821,19 @@ class LiveApi
      *
      * Get character names
      *
-     * @param int[] $character_ids A comma separated list of character IDs (required)
+     * @param int[] $characterIds A comma separated list of character IDs (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersNames200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersNames200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersNamesWithHttpInfo($character_ids, $datasource = null)
+    public function getCharactersNamesWithHttpInfo($characterIds, $datasource = null)
     {
-        // verify the required parameter 'character_ids' is set
-        if ($character_ids === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_ids when calling getCharactersNames');
+        // verify the required parameter 'characterIds' is set
+        if ($characterIds === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterIds when calling getCharactersNames');
         }
-        if ((count($character_ids) < 1)) {
-            throw new \InvalidArgumentException('invalid value for "$character_ids" when calling LiveApi.getCharactersNames, number of items must be greater than or equal to 1.');
+        if ((count($characterIds) < 1)) {
+            throw new \InvalidArgumentException('invalid value for "$characterIds" when calling LiveApi.getCharactersNames, number of items must be greater than or equal to 1.');
         }
 
         // parse inputs
@@ -1849,11 +1849,11 @@ class LiveApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if (is_array($character_ids)) {
-            $character_ids = $this->apiClient->getSerializer()->serializeCollection($character_ids, 'csv', true);
+        if (is_array($characterIds)) {
+            $characterIds = $this->apiClient->getSerializer()->serializeCollection($characterIds, 'csv', true);
         }
-        if ($character_ids !== null) {
-            $queryParams['character_ids'] = $this->apiClient->getSerializer()->toQueryValue($character_ids);
+        if ($characterIds !== null) {
+            $queryParams['character_ids'] = $this->apiClient->getSerializer()->toQueryValue($characterIds);
         }
         // query params
         if ($datasource !== null) {
@@ -1877,19 +1877,19 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersNames200Ok[]',
+                '\ESI\Model\GetCharactersNames200Ok[]',
                 '/characters/names/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersNames200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersNames200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersNames200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersNames200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersNamesInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersNamesInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1904,8 +1904,8 @@ class LiveApi
      * List market prices
      *
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetMarketsPrices200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetMarketsPrices200Ok[]
      */
     public function getMarketsPrices($datasource = null)
     {
@@ -1919,8 +1919,8 @@ class LiveApi
      * List market prices
      *
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetMarketsPrices200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetMarketsPrices200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getMarketsPricesWithHttpInfo($datasource = null)
     {
@@ -1958,19 +1958,19 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetMarketsPrices200Ok[]',
+                '\ESI\Model\GetMarketsPrices200Ok[]',
                 '/markets/prices/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetMarketsPrices200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetMarketsPrices200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsPrices200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsPrices200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsPricesInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsPricesInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1984,15 +1984,15 @@ class LiveApi
      *
      * List historical market statistics in a region
      *
-     * @param int $region_id Return statistics in this region (required)
-     * @param int $type_id Return statistics for this type (required)
+     * @param int $regionId Return statistics in this region (required)
+     * @param int $typeId Return statistics for this type (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetMarketsRegionIdHistory200Ok[]
      */
-    public function getMarketsRegionIdHistory($region_id, $type_id, $datasource = null)
+    public function getMarketsRegionIdHistory($regionId, $typeId, $datasource = null)
     {
-        list($response) = $this->getMarketsRegionIdHistoryWithHttpInfo($region_id, $type_id, $datasource);
+        list($response) = $this->getMarketsRegionIdHistoryWithHttpInfo($regionId, $typeId, $datasource);
         return $response;
     }
 
@@ -2001,21 +2001,21 @@ class LiveApi
      *
      * List historical market statistics in a region
      *
-     * @param int $region_id Return statistics in this region (required)
-     * @param int $type_id Return statistics for this type (required)
+     * @param int $regionId Return statistics in this region (required)
+     * @param int $typeId Return statistics for this type (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetMarketsRegionIdHistory200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMarketsRegionIdHistoryWithHttpInfo($region_id, $type_id, $datasource = null)
+    public function getMarketsRegionIdHistoryWithHttpInfo($regionId, $typeId, $datasource = null)
     {
-        // verify the required parameter 'region_id' is set
-        if ($region_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $region_id when calling getMarketsRegionIdHistory');
+        // verify the required parameter 'regionId' is set
+        if ($regionId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $regionId when calling getMarketsRegionIdHistory');
         }
-        // verify the required parameter 'type_id' is set
-        if ($type_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $type_id when calling getMarketsRegionIdHistory');
+        // verify the required parameter 'typeId' is set
+        if ($typeId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $typeId when calling getMarketsRegionIdHistory');
         }
         // parse inputs
         $resourcePath = "/markets/{region_id}/history/";
@@ -2030,18 +2030,18 @@ class LiveApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($type_id !== null) {
-            $queryParams['type_id'] = $this->apiClient->getSerializer()->toQueryValue($type_id);
+        if ($typeId !== null) {
+            $queryParams['type_id'] = $this->apiClient->getSerializer()->toQueryValue($typeId);
         }
         // query params
         if ($datasource !== null) {
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($region_id !== null) {
+        if ($regionId !== null) {
             $resourcePath = str_replace(
                 "{" . "region_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($region_id),
+                $this->apiClient->getSerializer()->toPathValue($regionId),
                 $resourcePath
             );
         }
@@ -2063,23 +2063,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[]',
+                '\ESI\Model\GetMarketsRegionIdHistory200Ok[]',
                 '/markets/{region_id}/history/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetMarketsRegionIdHistory200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdHistory200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 422:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdHistoryUnprocessableEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdHistoryUnprocessableEntity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdHistoryInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdHistoryInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2093,17 +2093,17 @@ class LiveApi
      *
      * List orders in a region
      *
-     * @param int $region_id Return orders in this region (required)
-     * @param string $order_type Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. (required)
-     * @param int $type_id Return orders only for this type (optional)
+     * @param int $regionId Return orders in this region (required)
+     * @param string $orderType Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. (required)
+     * @param int $typeId Return orders only for this type (optional)
      * @param int $page Which page to query, only used for querying without type_id. Starting at 1 (optional, default to 1)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetMarketsRegionIdOrders200Ok[]
      */
-    public function getMarketsRegionIdOrders($region_id, $order_type, $type_id = null, $page = null, $datasource = null)
+    public function getMarketsRegionIdOrders($regionId, $orderType, $typeId = null, $page = null, $datasource = null)
     {
-        list($response) = $this->getMarketsRegionIdOrdersWithHttpInfo($region_id, $order_type, $type_id, $page, $datasource);
+        list($response) = $this->getMarketsRegionIdOrdersWithHttpInfo($regionId, $orderType, $typeId, $page, $datasource);
         return $response;
     }
 
@@ -2112,23 +2112,23 @@ class LiveApi
      *
      * List orders in a region
      *
-     * @param int $region_id Return orders in this region (required)
-     * @param string $order_type Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. (required)
-     * @param int $type_id Return orders only for this type (optional)
+     * @param int $regionId Return orders in this region (required)
+     * @param string $orderType Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. (required)
+     * @param int $typeId Return orders only for this type (optional)
      * @param int $page Which page to query, only used for querying without type_id. Starting at 1 (optional, default to 1)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetMarketsRegionIdOrders200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMarketsRegionIdOrdersWithHttpInfo($region_id, $order_type, $type_id = null, $page = null, $datasource = null)
+    public function getMarketsRegionIdOrdersWithHttpInfo($regionId, $orderType, $typeId = null, $page = null, $datasource = null)
     {
-        // verify the required parameter 'region_id' is set
-        if ($region_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $region_id when calling getMarketsRegionIdOrders');
+        // verify the required parameter 'regionId' is set
+        if ($regionId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $regionId when calling getMarketsRegionIdOrders');
         }
-        // verify the required parameter 'order_type' is set
-        if ($order_type === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $order_type when calling getMarketsRegionIdOrders');
+        // verify the required parameter 'orderType' is set
+        if ($orderType === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $orderType when calling getMarketsRegionIdOrders');
         }
         // parse inputs
         $resourcePath = "/markets/{region_id}/orders/";
@@ -2143,12 +2143,12 @@ class LiveApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($type_id !== null) {
-            $queryParams['type_id'] = $this->apiClient->getSerializer()->toQueryValue($type_id);
+        if ($typeId !== null) {
+            $queryParams['type_id'] = $this->apiClient->getSerializer()->toQueryValue($typeId);
         }
         // query params
-        if ($order_type !== null) {
-            $queryParams['order_type'] = $this->apiClient->getSerializer()->toQueryValue($order_type);
+        if ($orderType !== null) {
+            $queryParams['order_type'] = $this->apiClient->getSerializer()->toQueryValue($orderType);
         }
         // query params
         if ($page !== null) {
@@ -2159,10 +2159,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($region_id !== null) {
+        if ($regionId !== null) {
             $resourcePath = str_replace(
                 "{" . "region_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($region_id),
+                $this->apiClient->getSerializer()->toPathValue($regionId),
                 $resourcePath
             );
         }
@@ -2184,23 +2184,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[]',
+                '\ESI\Model\GetMarketsRegionIdOrders200Ok[]',
                 '/markets/{region_id}/orders/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetMarketsRegionIdOrders200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdOrders200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 422:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdOrdersUnprocessableEntity', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdOrdersUnprocessableEntity', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetMarketsRegionIdOrdersInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetMarketsRegionIdOrdersInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2214,14 +2214,14 @@ class LiveApi
      *
      * Get station information
      *
-     * @param int $station_id An Eve station ID (required)
+     * @param int $stationId An Eve station ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetUniverseStationsStationIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetUniverseStationsStationIdOk
      */
-    public function getUniverseStationsStationId($station_id, $datasource = null)
+    public function getUniverseStationsStationId($stationId, $datasource = null)
     {
-        list($response) = $this->getUniverseStationsStationIdWithHttpInfo($station_id, $datasource);
+        list($response) = $this->getUniverseStationsStationIdWithHttpInfo($stationId, $datasource);
         return $response;
     }
 
@@ -2230,16 +2230,16 @@ class LiveApi
      *
      * Get station information
      *
-     * @param int $station_id An Eve station ID (required)
+     * @param int $stationId An Eve station ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetUniverseStationsStationIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetUniverseStationsStationIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniverseStationsStationIdWithHttpInfo($station_id, $datasource = null)
+    public function getUniverseStationsStationIdWithHttpInfo($stationId, $datasource = null)
     {
-        // verify the required parameter 'station_id' is set
-        if ($station_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $station_id when calling getUniverseStationsStationId');
+        // verify the required parameter 'stationId' is set
+        if ($stationId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $stationId when calling getUniverseStationsStationId');
         }
         // parse inputs
         $resourcePath = "/universe/stations/{station_id}/";
@@ -2258,10 +2258,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($station_id !== null) {
+        if ($stationId !== null) {
             $resourcePath = str_replace(
                 "{" . "station_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($station_id),
+                $this->apiClient->getSerializer()->toPathValue($stationId),
                 $resourcePath
             );
         }
@@ -2283,19 +2283,19 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetUniverseStationsStationIdOk',
+                '\ESI\Model\GetUniverseStationsStationIdOk',
                 '/universe/stations/{station_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetUniverseStationsStationIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetUniverseStationsStationIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStationsStationIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStationsStationIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStationsStationIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStationsStationIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2310,7 +2310,7 @@ class LiveApi
      * List all public structures
      *
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return int[]
      */
     public function getUniverseStructures($datasource = null)
@@ -2325,7 +2325,7 @@ class LiveApi
      * List all public structures
      *
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return array of int[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getUniverseStructuresWithHttpInfo($datasource = null)
@@ -2376,7 +2376,7 @@ class LiveApi
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStructuresInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStructuresInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2390,14 +2390,14 @@ class LiveApi
      *
      * Get structure information
      *
-     * @param int $structure_id An Eve structure ID (required)
+     * @param int $structureId An Eve structure ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetUniverseStructuresStructureIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetUniverseStructuresStructureIdOk
      */
-    public function getUniverseStructuresStructureId($structure_id, $datasource = null)
+    public function getUniverseStructuresStructureId($structureId, $datasource = null)
     {
-        list($response) = $this->getUniverseStructuresStructureIdWithHttpInfo($structure_id, $datasource);
+        list($response) = $this->getUniverseStructuresStructureIdWithHttpInfo($structureId, $datasource);
         return $response;
     }
 
@@ -2406,16 +2406,16 @@ class LiveApi
      *
      * Get structure information
      *
-     * @param int $structure_id An Eve structure ID (required)
+     * @param int $structureId An Eve structure ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetUniverseStructuresStructureIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetUniverseStructuresStructureIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniverseStructuresStructureIdWithHttpInfo($structure_id, $datasource = null)
+    public function getUniverseStructuresStructureIdWithHttpInfo($structureId, $datasource = null)
     {
-        // verify the required parameter 'structure_id' is set
-        if ($structure_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $structure_id when calling getUniverseStructuresStructureId');
+        // verify the required parameter 'structureId' is set
+        if ($structureId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $structureId when calling getUniverseStructuresStructureId');
         }
         // parse inputs
         $resourcePath = "/universe/structures/{structure_id}/";
@@ -2434,10 +2434,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($structure_id !== null) {
+        if ($structureId !== null) {
             $resourcePath = str_replace(
                 "{" . "structure_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($structure_id),
+                $this->apiClient->getSerializer()->toPathValue($structureId),
                 $resourcePath
             );
         }
@@ -2463,27 +2463,27 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetUniverseStructuresStructureIdOk',
+                '\ESI\Model\GetUniverseStructuresStructureIdOk',
                 '/universe/structures/{structure_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetUniverseStructuresStructureIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetUniverseStructuresStructureIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStructuresStructureIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStructuresStructureIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStructuresStructureIdForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStructuresStructureIdForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStructuresStructureIdNotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStructuresStructureIdNotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseStructuresStructureIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseStructuresStructureIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2497,14 +2497,14 @@ class LiveApi
      *
      * Get solar system information
      *
-     * @param int $system_id An Eve solar system ID (required)
+     * @param int $systemId An Eve solar system ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetUniverseSystemsSystemIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetUniverseSystemsSystemIdOk
      */
-    public function getUniverseSystemsSystemId($system_id, $datasource = null)
+    public function getUniverseSystemsSystemId($systemId, $datasource = null)
     {
-        list($response) = $this->getUniverseSystemsSystemIdWithHttpInfo($system_id, $datasource);
+        list($response) = $this->getUniverseSystemsSystemIdWithHttpInfo($systemId, $datasource);
         return $response;
     }
 
@@ -2513,16 +2513,16 @@ class LiveApi
      *
      * Get solar system information
      *
-     * @param int $system_id An Eve solar system ID (required)
+     * @param int $systemId An Eve solar system ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetUniverseSystemsSystemIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetUniverseSystemsSystemIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniverseSystemsSystemIdWithHttpInfo($system_id, $datasource = null)
+    public function getUniverseSystemsSystemIdWithHttpInfo($systemId, $datasource = null)
     {
-        // verify the required parameter 'system_id' is set
-        if ($system_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $system_id when calling getUniverseSystemsSystemId');
+        // verify the required parameter 'systemId' is set
+        if ($systemId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $systemId when calling getUniverseSystemsSystemId');
         }
         // parse inputs
         $resourcePath = "/universe/systems/{system_id}/";
@@ -2541,10 +2541,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($system_id !== null) {
+        if ($systemId !== null) {
             $resourcePath = str_replace(
                 "{" . "system_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($system_id),
+                $this->apiClient->getSerializer()->toPathValue($systemId),
                 $resourcePath
             );
         }
@@ -2566,23 +2566,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetUniverseSystemsSystemIdOk',
+                '\ESI\Model\GetUniverseSystemsSystemIdOk',
                 '/universe/systems/{system_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetUniverseSystemsSystemIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetUniverseSystemsSystemIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseSystemsSystemIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseSystemsSystemIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseSystemsSystemIdNotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseSystemsSystemIdNotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseSystemsSystemIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseSystemsSystemIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2596,14 +2596,14 @@ class LiveApi
      *
      * Get type information
      *
-     * @param int $type_id An Eve item type ID (required)
+     * @param int $typeId An Eve item type ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetUniverseTypesTypeIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetUniverseTypesTypeIdOk
      */
-    public function getUniverseTypesTypeId($type_id, $datasource = null)
+    public function getUniverseTypesTypeId($typeId, $datasource = null)
     {
-        list($response) = $this->getUniverseTypesTypeIdWithHttpInfo($type_id, $datasource);
+        list($response) = $this->getUniverseTypesTypeIdWithHttpInfo($typeId, $datasource);
         return $response;
     }
 
@@ -2612,16 +2612,16 @@ class LiveApi
      *
      * Get type information
      *
-     * @param int $type_id An Eve item type ID (required)
+     * @param int $typeId An Eve item type ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetUniverseTypesTypeIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetUniverseTypesTypeIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniverseTypesTypeIdWithHttpInfo($type_id, $datasource = null)
+    public function getUniverseTypesTypeIdWithHttpInfo($typeId, $datasource = null)
     {
-        // verify the required parameter 'type_id' is set
-        if ($type_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $type_id when calling getUniverseTypesTypeId');
+        // verify the required parameter 'typeId' is set
+        if ($typeId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $typeId when calling getUniverseTypesTypeId');
         }
         // parse inputs
         $resourcePath = "/universe/types/{type_id}/";
@@ -2640,10 +2640,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($type_id !== null) {
+        if ($typeId !== null) {
             $resourcePath = str_replace(
                 "{" . "type_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($type_id),
+                $this->apiClient->getSerializer()->toPathValue($typeId),
                 $resourcePath
             );
         }
@@ -2665,23 +2665,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetUniverseTypesTypeIdOk',
+                '\ESI\Model\GetUniverseTypesTypeIdOk',
                 '/universe/types/{type_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetUniverseTypesTypeIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetUniverseTypesTypeIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseTypesTypeIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseTypesTypeIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseTypesTypeIdNotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseTypesTypeIdNotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniverseTypesTypeIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniverseTypesTypeIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2695,15 +2695,15 @@ class LiveApi
      *
      * Calculate a CSPA charge cost
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param \Swagger\Client\Model\PostCharactersCharacterIdCspaCharacters $characters The target characters to calculate the charge for (required)
+     * @param int $characterId An EVE character ID (required)
+     * @param \ESI\Model\PostCharactersCharacterIdCspaCharacters $characters The target characters to calculate the charge for (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PostCharactersCharacterIdCspaCreated
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\PostCharactersCharacterIdCspaCreated
      */
-    public function postCharactersCharacterIdCspa($character_id, $characters, $datasource = null)
+    public function postCharactersCharacterIdCspa($characterId, $characters, $datasource = null)
     {
-        list($response) = $this->postCharactersCharacterIdCspaWithHttpInfo($character_id, $characters, $datasource);
+        list($response) = $this->postCharactersCharacterIdCspaWithHttpInfo($characterId, $characters, $datasource);
         return $response;
     }
 
@@ -2712,17 +2712,17 @@ class LiveApi
      *
      * Calculate a CSPA charge cost
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param \Swagger\Client\Model\PostCharactersCharacterIdCspaCharacters $characters The target characters to calculate the charge for (required)
+     * @param int $characterId An EVE character ID (required)
+     * @param \ESI\Model\PostCharactersCharacterIdCspaCharacters $characters The target characters to calculate the charge for (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PostCharactersCharacterIdCspaCreated, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\PostCharactersCharacterIdCspaCreated, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postCharactersCharacterIdCspaWithHttpInfo($character_id, $characters, $datasource = null)
+    public function postCharactersCharacterIdCspaWithHttpInfo($characterId, $characters, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling postCharactersCharacterIdCspa');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling postCharactersCharacterIdCspa');
         }
         // verify the required parameter 'characters' is set
         if ($characters === null) {
@@ -2745,10 +2745,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -2779,23 +2779,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PostCharactersCharacterIdCspaCreated',
+                '\ESI\Model\PostCharactersCharacterIdCspaCreated',
                 '/characters/{character_id}/cspa/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PostCharactersCharacterIdCspaCreated', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\PostCharactersCharacterIdCspaCreated', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostCharactersCharacterIdCspaCreated', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostCharactersCharacterIdCspaCreated', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostCharactersCharacterIdCspaForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostCharactersCharacterIdCspaForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostCharactersCharacterIdCspaInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostCharactersCharacterIdCspaInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2809,15 +2809,15 @@ class LiveApi
      *
      * Send a new mail
      *
-     * @param int $character_id The sender&#39;s character ID (required)
-     * @param \Swagger\Client\Model\PostCharactersCharacterIdMailMail $mail The mail to send (required)
+     * @param int $characterId The sender&#39;s character ID (required)
+     * @param \ESI\Model\PostCharactersCharacterIdMailMail $mail The mail to send (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return int
      */
-    public function postCharactersCharacterIdMail($character_id, $mail, $datasource = null)
+    public function postCharactersCharacterIdMail($characterId, $mail, $datasource = null)
     {
-        list($response) = $this->postCharactersCharacterIdMailWithHttpInfo($character_id, $mail, $datasource);
+        list($response) = $this->postCharactersCharacterIdMailWithHttpInfo($characterId, $mail, $datasource);
         return $response;
     }
 
@@ -2826,17 +2826,17 @@ class LiveApi
      *
      * Send a new mail
      *
-     * @param int $character_id The sender&#39;s character ID (required)
-     * @param \Swagger\Client\Model\PostCharactersCharacterIdMailMail $mail The mail to send (required)
+     * @param int $characterId The sender&#39;s character ID (required)
+     * @param \ESI\Model\PostCharactersCharacterIdMailMail $mail The mail to send (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postCharactersCharacterIdMailWithHttpInfo($character_id, $mail, $datasource = null)
+    public function postCharactersCharacterIdMailWithHttpInfo($characterId, $mail, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling postCharactersCharacterIdMail');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling postCharactersCharacterIdMail');
         }
         // verify the required parameter 'mail' is set
         if ($mail === null) {
@@ -2859,10 +2859,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -2905,15 +2905,15 @@ class LiveApi
                     $e->setResponseObject($data);
                     break;
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostCharactersCharacterIdMailBadRequest', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostCharactersCharacterIdMailBadRequest', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostCharactersCharacterIdMailForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostCharactersCharacterIdMailForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostCharactersCharacterIdMailInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostCharactersCharacterIdMailInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2927,15 +2927,15 @@ class LiveApi
      *
      * Create a mail label
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param \Swagger\Client\Model\PostCharactersCharacterIdMailLabelsLabel $label Label to create (optional)
+     * @param int $characterId An EVE character ID (required)
+     * @param \ESI\Model\PostCharactersCharacterIdMailLabelsLabel $label Label to create (optional)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return int
      */
-    public function postCharactersCharacterIdMailLabels($character_id, $label = null, $datasource = null)
+    public function postCharactersCharacterIdMailLabels($characterId, $label = null, $datasource = null)
     {
-        list($response) = $this->postCharactersCharacterIdMailLabelsWithHttpInfo($character_id, $label, $datasource);
+        list($response) = $this->postCharactersCharacterIdMailLabelsWithHttpInfo($characterId, $label, $datasource);
         return $response;
     }
 
@@ -2944,17 +2944,17 @@ class LiveApi
      *
      * Create a mail label
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param \Swagger\Client\Model\PostCharactersCharacterIdMailLabelsLabel $label Label to create (optional)
+     * @param int $characterId An EVE character ID (required)
+     * @param \ESI\Model\PostCharactersCharacterIdMailLabelsLabel $label Label to create (optional)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postCharactersCharacterIdMailLabelsWithHttpInfo($character_id, $label = null, $datasource = null)
+    public function postCharactersCharacterIdMailLabelsWithHttpInfo($characterId, $label = null, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling postCharactersCharacterIdMailLabels');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling postCharactersCharacterIdMailLabels');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/mail/labels/";
@@ -2973,10 +2973,10 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -3019,11 +3019,11 @@ class LiveApi
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostCharactersCharacterIdMailLabelsForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostCharactersCharacterIdMailLabelsForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostCharactersCharacterIdMailLabelsInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostCharactersCharacterIdMailLabelsInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -3037,10 +3037,10 @@ class LiveApi
      *
      * Get names and categories for a set of ID's
      *
-     * @param \Swagger\Client\Model\PostUniverseNamesIds $ids The ids to resolve (required)
+     * @param \ESI\Model\PostUniverseNamesIds $ids The ids to resolve (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PostUniverseNames200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\PostUniverseNames200Ok[]
      */
     public function postUniverseNames($ids, $datasource = null)
     {
@@ -3053,10 +3053,10 @@ class LiveApi
      *
      * Get names and categories for a set of ID's
      *
-     * @param \Swagger\Client\Model\PostUniverseNamesIds $ids The ids to resolve (required)
+     * @param \ESI\Model\PostUniverseNamesIds $ids The ids to resolve (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PostUniverseNames200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\PostUniverseNames200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
     public function postUniverseNamesWithHttpInfo($ids, $datasource = null)
     {
@@ -3103,23 +3103,23 @@ class LiveApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PostUniverseNames200Ok[]',
+                '\ESI\Model\PostUniverseNames200Ok[]',
                 '/universe/names/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PostUniverseNames200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\PostUniverseNames200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostUniverseNames200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostUniverseNames200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 404:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostUniverseNamesNotFound', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostUniverseNamesNotFound', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PostUniverseNamesInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PostUniverseNamesInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -3133,16 +3133,16 @@ class LiveApi
      *
      * Respond to an event
      *
-     * @param int $character_id The character ID requesting the event (required)
-     * @param int $event_id The ID of the event requested (required)
-     * @param \Swagger\Client\Model\PutCharactersCharacterIdCalendarEventIdResponse $response The response value to set, overriding current value. (required)
+     * @param int $characterId The character ID requesting the event (required)
+     * @param int $eventId The ID of the event requested (required)
+     * @param \ESI\Model\PutCharactersCharacterIdCalendarEventIdResponse $response The response value to set, overriding current value. (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return void
      */
-    public function putCharactersCharacterIdCalendarEventId($character_id, $event_id, $response, $datasource = null)
+    public function putCharactersCharacterIdCalendarEventId($characterId, $eventId, $response, $datasource = null)
     {
-        list($response) = $this->putCharactersCharacterIdCalendarEventIdWithHttpInfo($character_id, $event_id, $response, $datasource);
+        list($response) = $this->putCharactersCharacterIdCalendarEventIdWithHttpInfo($characterId, $eventId, $response, $datasource);
         return $response;
     }
 
@@ -3151,22 +3151,22 @@ class LiveApi
      *
      * Respond to an event
      *
-     * @param int $character_id The character ID requesting the event (required)
-     * @param int $event_id The ID of the event requested (required)
-     * @param \Swagger\Client\Model\PutCharactersCharacterIdCalendarEventIdResponse $response The response value to set, overriding current value. (required)
+     * @param int $characterId The character ID requesting the event (required)
+     * @param int $eventId The ID of the event requested (required)
+     * @param \ESI\Model\PutCharactersCharacterIdCalendarEventIdResponse $response The response value to set, overriding current value. (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putCharactersCharacterIdCalendarEventIdWithHttpInfo($character_id, $event_id, $response, $datasource = null)
+    public function putCharactersCharacterIdCalendarEventIdWithHttpInfo($characterId, $eventId, $response, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling putCharactersCharacterIdCalendarEventId');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling putCharactersCharacterIdCalendarEventId');
         }
-        // verify the required parameter 'event_id' is set
-        if ($event_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $event_id when calling putCharactersCharacterIdCalendarEventId');
+        // verify the required parameter 'eventId' is set
+        if ($eventId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $eventId when calling putCharactersCharacterIdCalendarEventId');
         }
         // verify the required parameter 'response' is set
         if ($response === null) {
@@ -3189,18 +3189,18 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
         // path params
-        if ($event_id !== null) {
+        if ($eventId !== null) {
             $resourcePath = str_replace(
                 "{" . "event_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($event_id),
+                $this->apiClient->getSerializer()->toPathValue($eventId),
                 $resourcePath
             );
         }
@@ -3239,11 +3239,11 @@ class LiveApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PutCharactersCharacterIdCalendarEventIdForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PutCharactersCharacterIdCalendarEventIdForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PutCharactersCharacterIdCalendarEventIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PutCharactersCharacterIdCalendarEventIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -3257,16 +3257,16 @@ class LiveApi
      *
      * Update metadata about a mail
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param int $mail_id An EVE mail ID (required)
-     * @param \Swagger\Client\Model\PutCharactersCharacterIdMailMailIdContents $contents Data used to update the mail (required)
+     * @param int $characterId An EVE character ID (required)
+     * @param int $mailId An EVE mail ID (required)
+     * @param \ESI\Model\PutCharactersCharacterIdMailMailIdContents $contents Data used to update the mail (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return void
      */
-    public function putCharactersCharacterIdMailMailId($character_id, $mail_id, $contents, $datasource = null)
+    public function putCharactersCharacterIdMailMailId($characterId, $mailId, $contents, $datasource = null)
     {
-        list($response) = $this->putCharactersCharacterIdMailMailIdWithHttpInfo($character_id, $mail_id, $contents, $datasource);
+        list($response) = $this->putCharactersCharacterIdMailMailIdWithHttpInfo($characterId, $mailId, $contents, $datasource);
         return $response;
     }
 
@@ -3275,22 +3275,22 @@ class LiveApi
      *
      * Update metadata about a mail
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param int $mail_id An EVE mail ID (required)
-     * @param \Swagger\Client\Model\PutCharactersCharacterIdMailMailIdContents $contents Data used to update the mail (required)
+     * @param int $characterId An EVE character ID (required)
+     * @param int $mailId An EVE mail ID (required)
+     * @param \ESI\Model\PutCharactersCharacterIdMailMailIdContents $contents Data used to update the mail (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putCharactersCharacterIdMailMailIdWithHttpInfo($character_id, $mail_id, $contents, $datasource = null)
+    public function putCharactersCharacterIdMailMailIdWithHttpInfo($characterId, $mailId, $contents, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling putCharactersCharacterIdMailMailId');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling putCharactersCharacterIdMailMailId');
         }
-        // verify the required parameter 'mail_id' is set
-        if ($mail_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $mail_id when calling putCharactersCharacterIdMailMailId');
+        // verify the required parameter 'mailId' is set
+        if ($mailId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mailId when calling putCharactersCharacterIdMailMailId');
         }
         // verify the required parameter 'contents' is set
         if ($contents === null) {
@@ -3313,18 +3313,18 @@ class LiveApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
         // path params
-        if ($mail_id !== null) {
+        if ($mailId !== null) {
             $resourcePath = str_replace(
                 "{" . "mail_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($mail_id),
+                $this->apiClient->getSerializer()->toPathValue($mailId),
                 $resourcePath
             );
         }
@@ -3363,15 +3363,15 @@ class LiveApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PutCharactersCharacterIdMailMailIdBadRequest', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PutCharactersCharacterIdMailMailIdBadRequest', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PutCharactersCharacterIdMailMailIdForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PutCharactersCharacterIdMailMailIdForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PutCharactersCharacterIdMailMailIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\PutCharactersCharacterIdMailMailIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -1,4 +1,4 @@
-# Swagger\Client\LiveApi
+# ESI\LiveApi
 
 All URIs are relative to *https://esi.tech.ccp.is/latest*
 
@@ -38,7 +38,7 @@ Method | HTTP request | Description
 
 
 # **deleteCharactersCharacterIdMailMailId**
-> deleteCharactersCharacterIdMailMailId($character_id, $mail_id, $datasource)
+> deleteCharactersCharacterIdMailMailId($characterId, $mailId, $datasource)
 
 Delete a mail
 
@@ -50,15 +50,15 @@ Delete a mail  ---  Alternate route: `/v1/characters/{character_id}/mail/{mail_i
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
-$mail_id = 56; // int | An EVE mail ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
+$mailId = 56; // int | An EVE mail ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $api_instance->deleteCharactersCharacterIdMailMailId($character_id, $mail_id, $datasource);
+    $api_instance->deleteCharactersCharacterIdMailMailId($characterId, $mailId, $datasource);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->deleteCharactersCharacterIdMailMailId: ', $e->getMessage(), PHP_EOL;
 }
@@ -69,8 +69,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
- **mail_id** | **int**| An EVE mail ID |
+ **characterId** | **int**| An EVE character ID |
+ **mailId** | **int**| An EVE mail ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
@@ -89,7 +89,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterId**
-> \Swagger\Client\Model\GetCharactersCharacterIdOk getCharactersCharacterId($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdOk getCharactersCharacterId($characterId, $datasource)
 
 Get character's public information
 
@@ -100,12 +100,12 @@ Public information about a character  ---  Alternate route: `/v3/characters/{cha
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterId($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterId($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterId: ', $e->getMessage(), PHP_EOL;
@@ -117,12 +117,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdOk**](../Model/GetCharactersCharacterIdOk.md)
+[**\ESI\Model\GetCharactersCharacterIdOk**](../Model/GetCharactersCharacterIdOk.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdCalendar**
-> \Swagger\Client\Model\GetCharactersCharacterIdCalendar200Ok[] getCharactersCharacterIdCalendar($character_id, $from_event, $datasource)
+> \ESI\Model\GetCharactersCharacterIdCalendar200Ok[] getCharactersCharacterIdCalendar($characterId, $fromEvent, $datasource)
 
 List calendar event summaries
 
@@ -148,15 +148,15 @@ Get 50 event summaries from the calendar. If no event ID is given, the resource 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 789; // int | The character to retrieve events from
-$from_event = 56; // int | The event ID to retrieve events from
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 789; // int | The character to retrieve events from
+$fromEvent = 56; // int | The event ID to retrieve events from
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdCalendar($character_id, $from_event, $datasource);
+    $result = $api_instance->getCharactersCharacterIdCalendar($characterId, $fromEvent, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdCalendar: ', $e->getMessage(), PHP_EOL;
@@ -168,13 +168,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| The character to retrieve events from |
- **from_event** | **int**| The event ID to retrieve events from | [optional]
+ **characterId** | **int**| The character to retrieve events from |
+ **fromEvent** | **int**| The event ID to retrieve events from | [optional]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdCalendar200Ok[]**](../Model/GetCharactersCharacterIdCalendar200Ok.md)
+[**\ESI\Model\GetCharactersCharacterIdCalendar200Ok[]**](../Model/GetCharactersCharacterIdCalendar200Ok.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdCalendarEventId**
-> \Swagger\Client\Model\GetCharactersCharacterIdCalendarEventIdOk getCharactersCharacterIdCalendarEventId($character_id, $event_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdCalendarEventIdOk getCharactersCharacterIdCalendarEventId($characterId, $eventId, $datasource)
 
 Get an event
 
@@ -200,15 +200,15 @@ Get all the information for a specific event  ---  Alternate route: `/v3/charact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 789; // int | The character id requesting the event
-$event_id = 56; // int | The id of the event requested
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 789; // int | The character id requesting the event
+$eventId = 56; // int | The id of the event requested
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdCalendarEventId($character_id, $event_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdCalendarEventId($characterId, $eventId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdCalendarEventId: ', $e->getMessage(), PHP_EOL;
@@ -220,13 +220,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| The character id requesting the event |
- **event_id** | **int**| The id of the event requested |
+ **characterId** | **int**| The character id requesting the event |
+ **eventId** | **int**| The id of the event requested |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdCalendarEventIdOk**](../Model/GetCharactersCharacterIdCalendarEventIdOk.md)
+[**\ESI\Model\GetCharactersCharacterIdCalendarEventIdOk**](../Model/GetCharactersCharacterIdCalendarEventIdOk.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdClones**
-> \Swagger\Client\Model\GetCharactersCharacterIdClonesOk getCharactersCharacterIdClones($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdClonesOk getCharactersCharacterIdClones($characterId, $datasource)
 
 Get clones
 
@@ -252,14 +252,14 @@ A list of the character's clones  ---  Alternate route: `/v2/characters/{charact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdClones($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdClones($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdClones: ', $e->getMessage(), PHP_EOL;
@@ -271,12 +271,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdClonesOk**](../Model/GetCharactersCharacterIdClonesOk.md)
+[**\ESI\Model\GetCharactersCharacterIdClonesOk**](../Model/GetCharactersCharacterIdClonesOk.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdCorporationhistory**
-> \Swagger\Client\Model\GetCharactersCharacterIdCorporationhistory200Ok[] getCharactersCharacterIdCorporationhistory($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdCorporationhistory200Ok[] getCharactersCharacterIdCorporationhistory($characterId, $datasource)
 
 Get corporation history
 
@@ -301,12 +301,12 @@ Get a list of all the corporations a character has been a member of  ---  Altern
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdCorporationhistory($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdCorporationhistory($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdCorporationhistory: ', $e->getMessage(), PHP_EOL;
@@ -318,12 +318,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdCorporationhistory200Ok[]**](../Model/GetCharactersCharacterIdCorporationhistory200Ok.md)
+[**\ESI\Model\GetCharactersCharacterIdCorporationhistory200Ok[]**](../Model/GetCharactersCharacterIdCorporationhistory200Ok.md)
 
 ### Authorization
 
@@ -337,7 +337,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdLocation**
-> \Swagger\Client\Model\GetCharactersCharacterIdLocationOk getCharactersCharacterIdLocation($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdLocationOk getCharactersCharacterIdLocation($characterId, $datasource)
 
 Get character location
 
@@ -349,14 +349,14 @@ Information about the characters current location. Returns the current solar sys
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdLocation($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdLocation($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdLocation: ', $e->getMessage(), PHP_EOL;
@@ -368,12 +368,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdLocationOk**](../Model/GetCharactersCharacterIdLocationOk.md)
+[**\ESI\Model\GetCharactersCharacterIdLocationOk**](../Model/GetCharactersCharacterIdLocationOk.md)
 
 ### Authorization
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdMail**
-> \Swagger\Client\Model\GetCharactersCharacterIdMail200Ok[] getCharactersCharacterIdMail($character_id, $labels, $last_mail_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdMail200Ok[] getCharactersCharacterIdMail($characterId, $labels, $lastMailId, $datasource)
 
 Return mail headers
 
@@ -399,16 +399,16 @@ Return the 50 most recent mail headers belonging to the character that match the
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $labels = array(56); // int[] | Fetch only mails that match one or more of the given labels
-$last_mail_id = 56; // int | List only mail with an ID lower than the given ID, if present
+$lastMailId = 56; // int | List only mail with an ID lower than the given ID, if present
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdMail($character_id, $labels, $last_mail_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdMail($characterId, $labels, $lastMailId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
@@ -420,14 +420,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **labels** | [**int[]**](../Model/int.md)| Fetch only mails that match one or more of the given labels | [optional]
- **last_mail_id** | **int**| List only mail with an ID lower than the given ID, if present | [optional]
+ **lastMailId** | **int**| List only mail with an ID lower than the given ID, if present | [optional]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdMail200Ok[]**](../Model/GetCharactersCharacterIdMail200Ok.md)
+[**\ESI\Model\GetCharactersCharacterIdMail200Ok[]**](../Model/GetCharactersCharacterIdMail200Ok.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdMailLabels**
-> \Swagger\Client\Model\GetCharactersCharacterIdMailLabelsOk getCharactersCharacterIdMailLabels($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdMailLabelsOk getCharactersCharacterIdMailLabels($characterId, $datasource)
 
 Get mail labels and unread counts
 
@@ -453,14 +453,14 @@ Return a list of the users mail labels, unread counts for each label and a total
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdMailLabels($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdMailLabels($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdMailLabels: ', $e->getMessage(), PHP_EOL;
@@ -472,12 +472,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdMailLabelsOk**](../Model/GetCharactersCharacterIdMailLabelsOk.md)
+[**\ESI\Model\GetCharactersCharacterIdMailLabelsOk**](../Model/GetCharactersCharacterIdMailLabelsOk.md)
 
 ### Authorization
 
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdMailLists**
-> \Swagger\Client\Model\GetCharactersCharacterIdMailLists200Ok[] getCharactersCharacterIdMailLists($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdMailLists200Ok[] getCharactersCharacterIdMailLists($characterId, $datasource)
 
 Return mailing list subscriptions
 
@@ -503,14 +503,14 @@ Return all mailing lists that the character is subscribed to   ---  Alternate ro
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdMailLists($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdMailLists($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdMailLists: ', $e->getMessage(), PHP_EOL;
@@ -522,12 +522,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdMailLists200Ok[]**](../Model/GetCharactersCharacterIdMailLists200Ok.md)
+[**\ESI\Model\GetCharactersCharacterIdMailLists200Ok[]**](../Model/GetCharactersCharacterIdMailLists200Ok.md)
 
 ### Authorization
 
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdMailMailId**
-> \Swagger\Client\Model\GetCharactersCharacterIdMailMailIdOk getCharactersCharacterIdMailMailId($character_id, $mail_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdMailMailIdOk getCharactersCharacterIdMailMailId($characterId, $mailId, $datasource)
 
 Return a mail
 
@@ -553,15 +553,15 @@ Return the contents of an EVE mail  ---  Alternate route: `/v1/characters/{chara
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
-$mail_id = 56; // int | An EVE mail ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
+$mailId = 56; // int | An EVE mail ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdMailMailId($character_id, $mail_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdMailMailId($characterId, $mailId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdMailMailId: ', $e->getMessage(), PHP_EOL;
@@ -573,13 +573,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
- **mail_id** | **int**| An EVE mail ID |
+ **characterId** | **int**| An EVE character ID |
+ **mailId** | **int**| An EVE mail ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdMailMailIdOk**](../Model/GetCharactersCharacterIdMailMailIdOk.md)
+[**\ESI\Model\GetCharactersCharacterIdMailMailIdOk**](../Model/GetCharactersCharacterIdMailMailIdOk.md)
 
 ### Authorization
 
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdPortrait**
-> \Swagger\Client\Model\GetCharactersCharacterIdPortraitOk getCharactersCharacterIdPortrait($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdPortraitOk getCharactersCharacterIdPortrait($characterId, $datasource)
 
 Get character portraits
 
@@ -604,12 +604,12 @@ Get portrait urls for a character  ---  Alternate route: `/v2/characters/{charac
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdPortrait($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdPortrait($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdPortrait: ', $e->getMessage(), PHP_EOL;
@@ -621,12 +621,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdPortraitOk**](../Model/GetCharactersCharacterIdPortraitOk.md)
+[**\ESI\Model\GetCharactersCharacterIdPortraitOk**](../Model/GetCharactersCharacterIdPortraitOk.md)
 
 ### Authorization
 
@@ -640,7 +640,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdShip**
-> \Swagger\Client\Model\GetCharactersCharacterIdShipOk getCharactersCharacterIdShip($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdShipOk getCharactersCharacterIdShip($characterId, $datasource)
 
 Get current ship
 
@@ -652,14 +652,14 @@ Get the current ship type, name and id  ---  Alternate route: `/v1/characters/{c
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdShip($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdShip($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdShip: ', $e->getMessage(), PHP_EOL;
@@ -671,12 +671,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdShipOk**](../Model/GetCharactersCharacterIdShipOk.md)
+[**\ESI\Model\GetCharactersCharacterIdShipOk**](../Model/GetCharactersCharacterIdShipOk.md)
 
 ### Authorization
 
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdSkillqueue**
-> \Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[] getCharactersCharacterIdSkillqueue($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[] getCharactersCharacterIdSkillqueue($characterId, $datasource)
 
 Get character's skill queue
 
@@ -702,14 +702,14 @@ List the configured skill queue for the given character  ---  Alternate route: `
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | Character id of the target character
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | Character id of the target character
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdSkillqueue($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdSkillqueue($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdSkillqueue: ', $e->getMessage(), PHP_EOL;
@@ -721,12 +721,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| Character id of the target character |
+ **characterId** | **int**| Character id of the target character |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdSkillqueue200Ok[]**](../Model/GetCharactersCharacterIdSkillqueue200Ok.md)
+[**\ESI\Model\GetCharactersCharacterIdSkillqueue200Ok[]**](../Model/GetCharactersCharacterIdSkillqueue200Ok.md)
 
 ### Authorization
 
@@ -740,7 +740,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdSkills**
-> \Swagger\Client\Model\GetCharactersCharacterIdSkillsOk getCharactersCharacterIdSkills($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdSkillsOk getCharactersCharacterIdSkills($characterId, $datasource)
 
 Get character skills
 
@@ -752,14 +752,14 @@ List all trained skills for the given character  ---  Alternate route: `/v3/char
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdSkills($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdSkills($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdSkills: ', $e->getMessage(), PHP_EOL;
@@ -771,12 +771,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdSkillsOk**](../Model/GetCharactersCharacterIdSkillsOk.md)
+[**\ESI\Model\GetCharactersCharacterIdSkillsOk**](../Model/GetCharactersCharacterIdSkillsOk.md)
 
 ### Authorization
 
@@ -790,7 +790,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdWallets**
-> \Swagger\Client\Model\GetCharactersCharacterIdWallets200Ok[] getCharactersCharacterIdWallets($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdWallets200Ok[] getCharactersCharacterIdWallets($characterId, $datasource)
 
 List wallets and balances
 
@@ -802,14 +802,14 @@ List your wallets and their balances. Characters typically have only one wallet,
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdWallets($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdWallets($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersCharacterIdWallets: ', $e->getMessage(), PHP_EOL;
@@ -821,12 +821,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdWallets200Ok[]**](../Model/GetCharactersCharacterIdWallets200Ok.md)
+[**\ESI\Model\GetCharactersCharacterIdWallets200Ok[]**](../Model/GetCharactersCharacterIdWallets200Ok.md)
 
 ### Authorization
 
@@ -840,7 +840,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersNames**
-> \Swagger\Client\Model\GetCharactersNames200Ok[] getCharactersNames($character_ids, $datasource)
+> \ESI\Model\GetCharactersNames200Ok[] getCharactersNames($characterIds, $datasource)
 
 Get character names
 
@@ -851,12 +851,12 @@ Resolve a set of character IDs to character names  ---  Alternate route: `/v1/ch
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_ids = array(56); // int[] | A comma separated list of character IDs
+$api_instance = new ESI\Api\LiveApi();
+$characterIds = array(56); // int[] | A comma separated list of character IDs
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersNames($character_ids, $datasource);
+    $result = $api_instance->getCharactersNames($characterIds, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getCharactersNames: ', $e->getMessage(), PHP_EOL;
@@ -868,12 +868,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_ids** | [**int[]**](../Model/int.md)| A comma separated list of character IDs |
+ **characterIds** | [**int[]**](../Model/int.md)| A comma separated list of character IDs |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersNames200Ok[]**](../Model/GetCharactersNames200Ok.md)
+[**\ESI\Model\GetCharactersNames200Ok[]**](../Model/GetCharactersNames200Ok.md)
 
 ### Authorization
 
@@ -887,7 +887,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMarketsPrices**
-> \Swagger\Client\Model\GetMarketsPrices200Ok[] getMarketsPrices($datasource)
+> \ESI\Model\GetMarketsPrices200Ok[] getMarketsPrices($datasource)
 
 List market prices
 
@@ -898,7 +898,7 @@ Return a list of prices  ---  Alternate route: `/v1/markets/prices/`  Alternate 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
+$api_instance = new ESI\Api\LiveApi();
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
@@ -918,7 +918,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\GetMarketsPrices200Ok[]**](../Model/GetMarketsPrices200Ok.md)
+[**\ESI\Model\GetMarketsPrices200Ok[]**](../Model/GetMarketsPrices200Ok.md)
 
 ### Authorization
 
@@ -932,7 +932,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMarketsRegionIdHistory**
-> \Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[] getMarketsRegionIdHistory($region_id, $type_id, $datasource)
+> \ESI\Model\GetMarketsRegionIdHistory200Ok[] getMarketsRegionIdHistory($regionId, $typeId, $datasource)
 
 List historical market statistics in a region
 
@@ -943,13 +943,13 @@ Return a list of historical market statistics for the specified type in a region
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$region_id = 789; // int | Return statistics in this region
-$type_id = 789; // int | Return statistics for this type
+$api_instance = new ESI\Api\LiveApi();
+$regionId = 789; // int | Return statistics in this region
+$typeId = 789; // int | Return statistics for this type
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getMarketsRegionIdHistory($region_id, $type_id, $datasource);
+    $result = $api_instance->getMarketsRegionIdHistory($regionId, $typeId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getMarketsRegionIdHistory: ', $e->getMessage(), PHP_EOL;
@@ -961,13 +961,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **region_id** | **int**| Return statistics in this region |
- **type_id** | **int**| Return statistics for this type |
+ **regionId** | **int**| Return statistics in this region |
+ **typeId** | **int**| Return statistics for this type |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetMarketsRegionIdHistory200Ok[]**](../Model/GetMarketsRegionIdHistory200Ok.md)
+[**\ESI\Model\GetMarketsRegionIdHistory200Ok[]**](../Model/GetMarketsRegionIdHistory200Ok.md)
 
 ### Authorization
 
@@ -981,7 +981,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMarketsRegionIdOrders**
-> \Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[] getMarketsRegionIdOrders($region_id, $order_type, $type_id, $page, $datasource)
+> \ESI\Model\GetMarketsRegionIdOrders200Ok[] getMarketsRegionIdOrders($regionId, $orderType, $typeId, $page, $datasource)
 
 List orders in a region
 
@@ -992,15 +992,15 @@ Return a list of orders in a region  ---  Alternate route: `/v1/markets/{region_
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$region_id = 789; // int | Return orders in this region
-$order_type = "all"; // string | Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders.
-$type_id = 789; // int | Return orders only for this type
+$api_instance = new ESI\Api\LiveApi();
+$regionId = 789; // int | Return orders in this region
+$orderType = "all"; // string | Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders.
+$typeId = 789; // int | Return orders only for this type
 $page = 1; // int | Which page to query, only used for querying without type_id. Starting at 1
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getMarketsRegionIdOrders($region_id, $order_type, $type_id, $page, $datasource);
+    $result = $api_instance->getMarketsRegionIdOrders($regionId, $orderType, $typeId, $page, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getMarketsRegionIdOrders: ', $e->getMessage(), PHP_EOL;
@@ -1012,15 +1012,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **region_id** | **int**| Return orders in this region |
- **order_type** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. | [default to all]
- **type_id** | **int**| Return orders only for this type | [optional]
+ **regionId** | **int**| Return orders in this region |
+ **orderType** | **string**| Filter buy/sell orders, return all orders by default. If you query without type_id, we always return both buy and sell orders. | [default to all]
+ **typeId** | **int**| Return orders only for this type | [optional]
  **page** | **int**| Which page to query, only used for querying without type_id. Starting at 1 | [optional] [default to 1]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetMarketsRegionIdOrders200Ok[]**](../Model/GetMarketsRegionIdOrders200Ok.md)
+[**\ESI\Model\GetMarketsRegionIdOrders200Ok[]**](../Model/GetMarketsRegionIdOrders200Ok.md)
 
 ### Authorization
 
@@ -1034,7 +1034,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUniverseStationsStationId**
-> \Swagger\Client\Model\GetUniverseStationsStationIdOk getUniverseStationsStationId($station_id, $datasource)
+> \ESI\Model\GetUniverseStationsStationIdOk getUniverseStationsStationId($stationId, $datasource)
 
 Get station information
 
@@ -1045,12 +1045,12 @@ Public information on stations  ---  Alternate route: `/v1/universe/stations/{st
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$station_id = 56; // int | An Eve station ID
+$api_instance = new ESI\Api\LiveApi();
+$stationId = 56; // int | An Eve station ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getUniverseStationsStationId($station_id, $datasource);
+    $result = $api_instance->getUniverseStationsStationId($stationId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getUniverseStationsStationId: ', $e->getMessage(), PHP_EOL;
@@ -1062,12 +1062,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **station_id** | **int**| An Eve station ID |
+ **stationId** | **int**| An Eve station ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetUniverseStationsStationIdOk**](../Model/GetUniverseStationsStationIdOk.md)
+[**\ESI\Model\GetUniverseStationsStationIdOk**](../Model/GetUniverseStationsStationIdOk.md)
 
 ### Authorization
 
@@ -1092,7 +1092,7 @@ List all public structures  ---  Alternate route: `/v1/universe/structures/`  Al
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
+$api_instance = new ESI\Api\LiveApi();
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
@@ -1126,7 +1126,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUniverseStructuresStructureId**
-> \Swagger\Client\Model\GetUniverseStructuresStructureIdOk getUniverseStructuresStructureId($structure_id, $datasource)
+> \ESI\Model\GetUniverseStructuresStructureIdOk getUniverseStructuresStructureId($structureId, $datasource)
 
 Get structure information
 
@@ -1138,14 +1138,14 @@ Returns information on requested structure, if you are on the ACL. Otherwise, re
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$structure_id = 789; // int | An Eve structure ID
+$api_instance = new ESI\Api\LiveApi();
+$structureId = 789; // int | An Eve structure ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getUniverseStructuresStructureId($structure_id, $datasource);
+    $result = $api_instance->getUniverseStructuresStructureId($structureId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getUniverseStructuresStructureId: ', $e->getMessage(), PHP_EOL;
@@ -1157,12 +1157,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **structure_id** | **int**| An Eve structure ID |
+ **structureId** | **int**| An Eve structure ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetUniverseStructuresStructureIdOk**](../Model/GetUniverseStructuresStructureIdOk.md)
+[**\ESI\Model\GetUniverseStructuresStructureIdOk**](../Model/GetUniverseStructuresStructureIdOk.md)
 
 ### Authorization
 
@@ -1176,7 +1176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUniverseSystemsSystemId**
-> \Swagger\Client\Model\GetUniverseSystemsSystemIdOk getUniverseSystemsSystemId($system_id, $datasource)
+> \ESI\Model\GetUniverseSystemsSystemIdOk getUniverseSystemsSystemId($systemId, $datasource)
 
 Get solar system information
 
@@ -1187,12 +1187,12 @@ Information on solar systems  ---  Alternate route: `/v1/universe/systems/{syste
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$system_id = 56; // int | An Eve solar system ID
+$api_instance = new ESI\Api\LiveApi();
+$systemId = 56; // int | An Eve solar system ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getUniverseSystemsSystemId($system_id, $datasource);
+    $result = $api_instance->getUniverseSystemsSystemId($systemId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getUniverseSystemsSystemId: ', $e->getMessage(), PHP_EOL;
@@ -1204,12 +1204,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **system_id** | **int**| An Eve solar system ID |
+ **systemId** | **int**| An Eve solar system ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetUniverseSystemsSystemIdOk**](../Model/GetUniverseSystemsSystemIdOk.md)
+[**\ESI\Model\GetUniverseSystemsSystemIdOk**](../Model/GetUniverseSystemsSystemIdOk.md)
 
 ### Authorization
 
@@ -1223,7 +1223,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUniverseTypesTypeId**
-> \Swagger\Client\Model\GetUniverseTypesTypeIdOk getUniverseTypesTypeId($type_id, $datasource)
+> \ESI\Model\GetUniverseTypesTypeIdOk getUniverseTypesTypeId($typeId, $datasource)
 
 Get type information
 
@@ -1234,12 +1234,12 @@ Get information on a type  ---  Alternate route: `/v1/universe/types/{type_id}/`
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$type_id = 56; // int | An Eve item type ID
+$api_instance = new ESI\Api\LiveApi();
+$typeId = 56; // int | An Eve item type ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getUniverseTypesTypeId($type_id, $datasource);
+    $result = $api_instance->getUniverseTypesTypeId($typeId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->getUniverseTypesTypeId: ', $e->getMessage(), PHP_EOL;
@@ -1251,12 +1251,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type_id** | **int**| An Eve item type ID |
+ **typeId** | **int**| An Eve item type ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetUniverseTypesTypeIdOk**](../Model/GetUniverseTypesTypeIdOk.md)
+[**\ESI\Model\GetUniverseTypesTypeIdOk**](../Model/GetUniverseTypesTypeIdOk.md)
 
 ### Authorization
 
@@ -1270,7 +1270,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postCharactersCharacterIdCspa**
-> \Swagger\Client\Model\PostCharactersCharacterIdCspaCreated postCharactersCharacterIdCspa($character_id, $characters, $datasource)
+> \ESI\Model\PostCharactersCharacterIdCspaCreated postCharactersCharacterIdCspa($characterId, $characters, $datasource)
 
 Calculate a CSPA charge cost
 
@@ -1282,15 +1282,15 @@ Takes a source character ID in the url and a set of target character ID's in the
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
-$characters = new \Swagger\Client\Model\PostCharactersCharacterIdCspaCharacters(); // \Swagger\Client\Model\PostCharactersCharacterIdCspaCharacters | The target characters to calculate the charge for
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
+$characters = new \ESI\Model\PostCharactersCharacterIdCspaCharacters(); // \ESI\Model\PostCharactersCharacterIdCspaCharacters | The target characters to calculate the charge for
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->postCharactersCharacterIdCspa($character_id, $characters, $datasource);
+    $result = $api_instance->postCharactersCharacterIdCspa($characterId, $characters, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->postCharactersCharacterIdCspa: ', $e->getMessage(), PHP_EOL;
@@ -1302,13 +1302,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
- **characters** | [**\Swagger\Client\Model\PostCharactersCharacterIdCspaCharacters**](../Model/\Swagger\Client\Model\PostCharactersCharacterIdCspaCharacters.md)| The target characters to calculate the charge for |
+ **characterId** | **int**| An EVE character ID |
+ **characters** | [**\ESI\Model\PostCharactersCharacterIdCspaCharacters**](../Model/\ESI\Model\PostCharactersCharacterIdCspaCharacters.md)| The target characters to calculate the charge for |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\PostCharactersCharacterIdCspaCreated**](../Model/PostCharactersCharacterIdCspaCreated.md)
+[**\ESI\Model\PostCharactersCharacterIdCspaCreated**](../Model/PostCharactersCharacterIdCspaCreated.md)
 
 ### Authorization
 
@@ -1322,7 +1322,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postCharactersCharacterIdMail**
-> int postCharactersCharacterIdMail($character_id, $mail, $datasource)
+> int postCharactersCharacterIdMail($characterId, $mail, $datasource)
 
 Send a new mail
 
@@ -1334,15 +1334,15 @@ Create and send a new mail  ---  Alternate route: `/v1/characters/{character_id}
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | The sender's character ID
-$mail = new \Swagger\Client\Model\PostCharactersCharacterIdMailMail(); // \Swagger\Client\Model\PostCharactersCharacterIdMailMail | The mail to send
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | The sender's character ID
+$mail = new \ESI\Model\PostCharactersCharacterIdMailMail(); // \ESI\Model\PostCharactersCharacterIdMailMail | The mail to send
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->postCharactersCharacterIdMail($character_id, $mail, $datasource);
+    $result = $api_instance->postCharactersCharacterIdMail($characterId, $mail, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
@@ -1354,8 +1354,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| The sender&#39;s character ID |
- **mail** | [**\Swagger\Client\Model\PostCharactersCharacterIdMailMail**](../Model/\Swagger\Client\Model\PostCharactersCharacterIdMailMail.md)| The mail to send |
+ **characterId** | **int**| The sender&#39;s character ID |
+ **mail** | [**\ESI\Model\PostCharactersCharacterIdMailMail**](../Model/\ESI\Model\PostCharactersCharacterIdMailMail.md)| The mail to send |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
@@ -1374,7 +1374,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postCharactersCharacterIdMailLabels**
-> int postCharactersCharacterIdMailLabels($character_id, $label, $datasource)
+> int postCharactersCharacterIdMailLabels($characterId, $label, $datasource)
 
 Create a mail label
 
@@ -1386,15 +1386,15 @@ Create a mail label  ---  Alternate route: `/v2/characters/{character_id}/mail/l
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
-$label = new \Swagger\Client\Model\PostCharactersCharacterIdMailLabelsLabel(); // \Swagger\Client\Model\PostCharactersCharacterIdMailLabelsLabel | Label to create
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
+$label = new \ESI\Model\PostCharactersCharacterIdMailLabelsLabel(); // \ESI\Model\PostCharactersCharacterIdMailLabelsLabel | Label to create
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->postCharactersCharacterIdMailLabels($character_id, $label, $datasource);
+    $result = $api_instance->postCharactersCharacterIdMailLabels($characterId, $label, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->postCharactersCharacterIdMailLabels: ', $e->getMessage(), PHP_EOL;
@@ -1406,8 +1406,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
- **label** | [**\Swagger\Client\Model\PostCharactersCharacterIdMailLabelsLabel**](../Model/\Swagger\Client\Model\PostCharactersCharacterIdMailLabelsLabel.md)| Label to create | [optional]
+ **characterId** | **int**| An EVE character ID |
+ **label** | [**\ESI\Model\PostCharactersCharacterIdMailLabelsLabel**](../Model/\ESI\Model\PostCharactersCharacterIdMailLabelsLabel.md)| Label to create | [optional]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
@@ -1426,7 +1426,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postUniverseNames**
-> \Swagger\Client\Model\PostUniverseNames200Ok[] postUniverseNames($ids, $datasource)
+> \ESI\Model\PostUniverseNames200Ok[] postUniverseNames($ids, $datasource)
 
 Get names and categories for a set of ID's
 
@@ -1437,8 +1437,8 @@ Resolve a set of IDs to names and categories. Supported ID's for resolving are: 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$ids = new \Swagger\Client\Model\PostUniverseNamesIds(); // \Swagger\Client\Model\PostUniverseNamesIds | The ids to resolve
+$api_instance = new ESI\Api\LiveApi();
+$ids = new \ESI\Model\PostUniverseNamesIds(); // \ESI\Model\PostUniverseNamesIds | The ids to resolve
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
@@ -1454,12 +1454,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**\Swagger\Client\Model\PostUniverseNamesIds**](../Model/\Swagger\Client\Model\PostUniverseNamesIds.md)| The ids to resolve |
+ **ids** | [**\ESI\Model\PostUniverseNamesIds**](../Model/\ESI\Model\PostUniverseNamesIds.md)| The ids to resolve |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\PostUniverseNames200Ok[]**](../Model/PostUniverseNames200Ok.md)
+[**\ESI\Model\PostUniverseNames200Ok[]**](../Model/PostUniverseNames200Ok.md)
 
 ### Authorization
 
@@ -1473,7 +1473,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putCharactersCharacterIdCalendarEventId**
-> putCharactersCharacterIdCalendarEventId($character_id, $event_id, $response, $datasource)
+> putCharactersCharacterIdCalendarEventId($characterId, $eventId, $response, $datasource)
 
 Respond to an event
 
@@ -1485,16 +1485,16 @@ Set your response status to an event  ---  Alternate route: `/v3/characters/{cha
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | The character ID requesting the event
-$event_id = 56; // int | The ID of the event requested
-$response = new \Swagger\Client\Model\PutCharactersCharacterIdCalendarEventIdResponse(); // \Swagger\Client\Model\PutCharactersCharacterIdCalendarEventIdResponse | The response value to set, overriding current value.
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | The character ID requesting the event
+$eventId = 56; // int | The ID of the event requested
+$response = new \ESI\Model\PutCharactersCharacterIdCalendarEventIdResponse(); // \ESI\Model\PutCharactersCharacterIdCalendarEventIdResponse | The response value to set, overriding current value.
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $api_instance->putCharactersCharacterIdCalendarEventId($character_id, $event_id, $response, $datasource);
+    $api_instance->putCharactersCharacterIdCalendarEventId($characterId, $eventId, $response, $datasource);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->putCharactersCharacterIdCalendarEventId: ', $e->getMessage(), PHP_EOL;
 }
@@ -1505,9 +1505,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| The character ID requesting the event |
- **event_id** | **int**| The ID of the event requested |
- **response** | [**\Swagger\Client\Model\PutCharactersCharacterIdCalendarEventIdResponse**](../Model/\Swagger\Client\Model\PutCharactersCharacterIdCalendarEventIdResponse.md)| The response value to set, overriding current value. |
+ **characterId** | **int**| The character ID requesting the event |
+ **eventId** | **int**| The ID of the event requested |
+ **response** | [**\ESI\Model\PutCharactersCharacterIdCalendarEventIdResponse**](../Model/\ESI\Model\PutCharactersCharacterIdCalendarEventIdResponse.md)| The response value to set, overriding current value. |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
@@ -1526,7 +1526,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putCharactersCharacterIdMailMailId**
-> putCharactersCharacterIdMailMailId($character_id, $mail_id, $contents, $datasource)
+> putCharactersCharacterIdMailMailId($characterId, $mailId, $contents, $datasource)
 
 Update metadata about a mail
 
@@ -1538,16 +1538,16 @@ Update metadata about a mail  ---  Alternate route: `/v1/characters/{character_i
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LiveApi();
-$character_id = 56; // int | An EVE character ID
-$mail_id = 56; // int | An EVE mail ID
-$contents = new \Swagger\Client\Model\PutCharactersCharacterIdMailMailIdContents(); // \Swagger\Client\Model\PutCharactersCharacterIdMailMailIdContents | Data used to update the mail
+$api_instance = new ESI\Api\LiveApi();
+$characterId = 56; // int | An EVE character ID
+$mailId = 56; // int | An EVE mail ID
+$contents = new \ESI\Model\PutCharactersCharacterIdMailMailIdContents(); // \ESI\Model\PutCharactersCharacterIdMailMailIdContents | Data used to update the mail
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $api_instance->putCharactersCharacterIdMailMailId($character_id, $mail_id, $contents, $datasource);
+    $api_instance->putCharactersCharacterIdMailMailId($characterId, $mailId, $contents, $datasource);
 } catch (Exception $e) {
     echo 'Exception when calling LiveApi->putCharactersCharacterIdMailMailId: ', $e->getMessage(), PHP_EOL;
 }
@@ -1558,9 +1558,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
- **mail_id** | **int**| An EVE mail ID |
- **contents** | [**\Swagger\Client\Model\PutCharactersCharacterIdMailMailIdContents**](../Model/\Swagger\Client\Model\PutCharactersCharacterIdMailMailIdContents.md)| Data used to update the mail |
+ **characterId** | **int**| An EVE character ID |
+ **mailId** | **int**| An EVE mail ID |
+ **contents** | [**\ESI\Model\PutCharactersCharacterIdMailMailIdContents**](../Model/\ESI\Model\PutCharactersCharacterIdMailMailIdContents.md)| Data used to update the mail |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type

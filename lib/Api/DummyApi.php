@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -38,18 +38,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ESI\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ESI\ApiClient;
+use \ESI\ApiException;
+use \ESI\Configuration;
+use \ESI\ObjectSerializer;
 
 /**
  * DummyApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -59,16 +59,16 @@ class DummyApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ESI\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ESI\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ESI\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -81,7 +81,7 @@ class DummyApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ESI\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -91,11 +91,11 @@ class DummyApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ESI\ApiClient $apiClient set the API client
      *
      * @return DummyApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ESI\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -106,15 +106,15 @@ class DummyApi
      *
      * Get character wallet journal
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param int $last_seen_id A journal reference ID to paginate from (optional)
+     * @param int $characterId An EVE character ID (required)
+     * @param int $lastSeenId A journal reference ID to paginate from (optional)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdWalletsJournal200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdWalletsJournal200Ok[]
      */
-    public function getCharactersCharacterIdWalletsJournal($character_id, $last_seen_id = null, $datasource = null)
+    public function getCharactersCharacterIdWalletsJournal($characterId, $lastSeenId = null, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdWalletsJournalWithHttpInfo($character_id, $last_seen_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdWalletsJournalWithHttpInfo($characterId, $lastSeenId, $datasource);
         return $response;
     }
 
@@ -123,17 +123,17 @@ class DummyApi
      *
      * Get character wallet journal
      *
-     * @param int $character_id An EVE character ID (required)
-     * @param int $last_seen_id A journal reference ID to paginate from (optional)
+     * @param int $characterId An EVE character ID (required)
+     * @param int $lastSeenId A journal reference ID to paginate from (optional)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdWalletsJournal200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdWalletsJournal200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdWalletsJournalWithHttpInfo($character_id, $last_seen_id = null, $datasource = null)
+    public function getCharactersCharacterIdWalletsJournalWithHttpInfo($characterId, $lastSeenId = null, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdWalletsJournal');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdWalletsJournal');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/wallets/journal/";
@@ -148,18 +148,18 @@ class DummyApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
 
         // query params
-        if ($last_seen_id !== null) {
-            $queryParams['last_seen_id'] = $this->apiClient->getSerializer()->toQueryValue($last_seen_id);
+        if ($lastSeenId !== null) {
+            $queryParams['last_seen_id'] = $this->apiClient->getSerializer()->toQueryValue($lastSeenId);
         }
         // query params
         if ($datasource !== null) {
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -185,23 +185,23 @@ class DummyApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdWalletsJournal200Ok[]',
+                '\ESI\Model\GetCharactersCharacterIdWalletsJournal200Ok[]',
                 '/characters/{character_id}/wallets/journal/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdWalletsJournal200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdWalletsJournal200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdWalletsJournal200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdWalletsJournal200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdWalletsJournalForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdWalletsJournalForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdWalletsJournalInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdWalletsJournalInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -215,14 +215,14 @@ class DummyApi
      *
      * Get wallet transactions
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdWalletsTransactions200Ok[]
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetCharactersCharacterIdWalletsTransactions200Ok[]
      */
-    public function getCharactersCharacterIdWalletsTransactions($character_id, $datasource = null)
+    public function getCharactersCharacterIdWalletsTransactions($characterId, $datasource = null)
     {
-        list($response) = $this->getCharactersCharacterIdWalletsTransactionsWithHttpInfo($character_id, $datasource);
+        list($response) = $this->getCharactersCharacterIdWalletsTransactionsWithHttpInfo($characterId, $datasource);
         return $response;
     }
 
@@ -231,16 +231,16 @@ class DummyApi
      *
      * Get wallet transactions
      *
-     * @param int $character_id An EVE character ID (required)
+     * @param int $characterId An EVE character ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetCharactersCharacterIdWalletsTransactions200Ok[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetCharactersCharacterIdWalletsTransactions200Ok[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCharactersCharacterIdWalletsTransactionsWithHttpInfo($character_id, $datasource = null)
+    public function getCharactersCharacterIdWalletsTransactionsWithHttpInfo($characterId, $datasource = null)
     {
-        // verify the required parameter 'character_id' is set
-        if ($character_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $character_id when calling getCharactersCharacterIdWalletsTransactions');
+        // verify the required parameter 'characterId' is set
+        if ($characterId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $characterId when calling getCharactersCharacterIdWalletsTransactions');
         }
         // parse inputs
         $resourcePath = "/characters/{character_id}/wallets/transactions/";
@@ -259,10 +259,10 @@ class DummyApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($character_id !== null) {
+        if ($characterId !== null) {
             $resourcePath = str_replace(
                 "{" . "character_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($character_id),
+                $this->apiClient->getSerializer()->toPathValue($characterId),
                 $resourcePath
             );
         }
@@ -288,23 +288,23 @@ class DummyApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetCharactersCharacterIdWalletsTransactions200Ok[]',
+                '\ESI\Model\GetCharactersCharacterIdWalletsTransactions200Ok[]',
                 '/characters/{character_id}/wallets/transactions/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetCharactersCharacterIdWalletsTransactions200Ok[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetCharactersCharacterIdWalletsTransactions200Ok[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdWalletsTransactions200Ok[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdWalletsTransactions200Ok[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 403:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdWalletsTransactionsForbidden', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdWalletsTransactionsForbidden', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCharactersCharacterIdWalletsTransactionsInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCharactersCharacterIdWalletsTransactionsInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -318,14 +318,14 @@ class DummyApi
      *
      * Dummy Endpoint, Please Ignore
      *
-     * @param int $corporation_id An EVE corporation ID (required)
+     * @param int $corporationId An EVE corporation ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return void
      */
-    public function getCorporationsCorporationIdWallets($corporation_id, $datasource = null)
+    public function getCorporationsCorporationIdWallets($corporationId, $datasource = null)
     {
-        list($response) = $this->getCorporationsCorporationIdWalletsWithHttpInfo($corporation_id, $datasource);
+        list($response) = $this->getCorporationsCorporationIdWalletsWithHttpInfo($corporationId, $datasource);
         return $response;
     }
 
@@ -334,16 +334,16 @@ class DummyApi
      *
      * Dummy Endpoint, Please Ignore
      *
-     * @param int $corporation_id An EVE corporation ID (required)
+     * @param int $corporationId An EVE corporation ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCorporationsCorporationIdWalletsWithHttpInfo($corporation_id, $datasource = null)
+    public function getCorporationsCorporationIdWalletsWithHttpInfo($corporationId, $datasource = null)
     {
-        // verify the required parameter 'corporation_id' is set
-        if ($corporation_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $corporation_id when calling getCorporationsCorporationIdWallets');
+        // verify the required parameter 'corporationId' is set
+        if ($corporationId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $corporationId when calling getCorporationsCorporationIdWallets');
         }
         // parse inputs
         $resourcePath = "/corporations/{corporation_id}/wallets/";
@@ -362,10 +362,10 @@ class DummyApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($corporation_id !== null) {
+        if ($corporationId !== null) {
             $resourcePath = str_replace(
                 "{" . "corporation_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($corporation_id),
+                $this->apiClient->getSerializer()->toPathValue($corporationId),
                 $resourcePath
             );
         }
@@ -395,7 +395,7 @@ class DummyApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCorporationsCorporationIdWalletsInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCorporationsCorporationIdWalletsInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -409,15 +409,15 @@ class DummyApi
      *
      * Dummy Endpoint, Please Ignore
      *
-     * @param int $corporation_id An EVE corporation ID (required)
-     * @param int $wallet_id Wallet ID (required)
+     * @param int $corporationId An EVE corporation ID (required)
+     * @param int $walletId Wallet ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return void
      */
-    public function getCorporationsCorporationIdWalletsWalletIdJournal($corporation_id, $wallet_id, $datasource = null)
+    public function getCorporationsCorporationIdWalletsWalletIdJournal($corporationId, $walletId, $datasource = null)
     {
-        list($response) = $this->getCorporationsCorporationIdWalletsWalletIdJournalWithHttpInfo($corporation_id, $wallet_id, $datasource);
+        list($response) = $this->getCorporationsCorporationIdWalletsWalletIdJournalWithHttpInfo($corporationId, $walletId, $datasource);
         return $response;
     }
 
@@ -426,21 +426,21 @@ class DummyApi
      *
      * Dummy Endpoint, Please Ignore
      *
-     * @param int $corporation_id An EVE corporation ID (required)
-     * @param int $wallet_id Wallet ID (required)
+     * @param int $corporationId An EVE corporation ID (required)
+     * @param int $walletId Wallet ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCorporationsCorporationIdWalletsWalletIdJournalWithHttpInfo($corporation_id, $wallet_id, $datasource = null)
+    public function getCorporationsCorporationIdWalletsWalletIdJournalWithHttpInfo($corporationId, $walletId, $datasource = null)
     {
-        // verify the required parameter 'corporation_id' is set
-        if ($corporation_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $corporation_id when calling getCorporationsCorporationIdWalletsWalletIdJournal');
+        // verify the required parameter 'corporationId' is set
+        if ($corporationId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $corporationId when calling getCorporationsCorporationIdWalletsWalletIdJournal');
         }
-        // verify the required parameter 'wallet_id' is set
-        if ($wallet_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $wallet_id when calling getCorporationsCorporationIdWalletsWalletIdJournal');
+        // verify the required parameter 'walletId' is set
+        if ($walletId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $walletId when calling getCorporationsCorporationIdWalletsWalletIdJournal');
         }
         // parse inputs
         $resourcePath = "/corporations/{corporation_id}/wallets/{wallet_id}/journal/";
@@ -459,18 +459,18 @@ class DummyApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($corporation_id !== null) {
+        if ($corporationId !== null) {
             $resourcePath = str_replace(
                 "{" . "corporation_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($corporation_id),
+                $this->apiClient->getSerializer()->toPathValue($corporationId),
                 $resourcePath
             );
         }
         // path params
-        if ($wallet_id !== null) {
+        if ($walletId !== null) {
             $resourcePath = str_replace(
                 "{" . "wallet_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($wallet_id),
+                $this->apiClient->getSerializer()->toPathValue($walletId),
                 $resourcePath
             );
         }
@@ -500,7 +500,7 @@ class DummyApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCorporationsCorporationIdWalletsWalletIdJournalInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCorporationsCorporationIdWalletsWalletIdJournalInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -514,15 +514,15 @@ class DummyApi
      *
      * Dummy Endpoint, Please Ignore
      *
-     * @param int $corporation_id An EVE corporation ID (required)
-     * @param int $wallet_id Wallet ID (required)
+     * @param int $corporationId An EVE corporation ID (required)
+     * @param int $walletId Wallet ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return void
      */
-    public function getCorporationsCorporationIdWalletsWalletIdTransactions($corporation_id, $wallet_id, $datasource = null)
+    public function getCorporationsCorporationIdWalletsWalletIdTransactions($corporationId, $walletId, $datasource = null)
     {
-        list($response) = $this->getCorporationsCorporationIdWalletsWalletIdTransactionsWithHttpInfo($corporation_id, $wallet_id, $datasource);
+        list($response) = $this->getCorporationsCorporationIdWalletsWalletIdTransactionsWithHttpInfo($corporationId, $walletId, $datasource);
         return $response;
     }
 
@@ -531,21 +531,21 @@ class DummyApi
      *
      * Dummy Endpoint, Please Ignore
      *
-     * @param int $corporation_id An EVE corporation ID (required)
-     * @param int $wallet_id Wallet ID (required)
+     * @param int $corporationId An EVE corporation ID (required)
+     * @param int $walletId Wallet ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \ESI\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCorporationsCorporationIdWalletsWalletIdTransactionsWithHttpInfo($corporation_id, $wallet_id, $datasource = null)
+    public function getCorporationsCorporationIdWalletsWalletIdTransactionsWithHttpInfo($corporationId, $walletId, $datasource = null)
     {
-        // verify the required parameter 'corporation_id' is set
-        if ($corporation_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $corporation_id when calling getCorporationsCorporationIdWalletsWalletIdTransactions');
+        // verify the required parameter 'corporationId' is set
+        if ($corporationId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $corporationId when calling getCorporationsCorporationIdWalletsWalletIdTransactions');
         }
-        // verify the required parameter 'wallet_id' is set
-        if ($wallet_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $wallet_id when calling getCorporationsCorporationIdWalletsWalletIdTransactions');
+        // verify the required parameter 'walletId' is set
+        if ($walletId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $walletId when calling getCorporationsCorporationIdWalletsWalletIdTransactions');
         }
         // parse inputs
         $resourcePath = "/corporations/{corporation_id}/wallets/{wallet_id}/transactions/";
@@ -564,18 +564,18 @@ class DummyApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($corporation_id !== null) {
+        if ($corporationId !== null) {
             $resourcePath = str_replace(
                 "{" . "corporation_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($corporation_id),
+                $this->apiClient->getSerializer()->toPathValue($corporationId),
                 $resourcePath
             );
         }
         // path params
-        if ($wallet_id !== null) {
+        if ($walletId !== null) {
             $resourcePath = str_replace(
                 "{" . "wallet_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($wallet_id),
+                $this->apiClient->getSerializer()->toPathValue($walletId),
                 $resourcePath
             );
         }
@@ -605,7 +605,7 @@ class DummyApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetCorporationsCorporationIdWalletsWalletIdTransactionsInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetCorporationsCorporationIdWalletsWalletIdTransactionsInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -619,14 +619,14 @@ class DummyApi
      *
      * Get planet information
      *
-     * @param int $planet_id An Eve planet ID (required)
+     * @param int $planetId An Eve planet ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\GetUniversePlanetsPlanetIdOk
+     * @throws \ESI\ApiException on non-2xx response
+     * @return \ESI\Model\GetUniversePlanetsPlanetIdOk
      */
-    public function getUniversePlanetsPlanetId($planet_id, $datasource = null)
+    public function getUniversePlanetsPlanetId($planetId, $datasource = null)
     {
-        list($response) = $this->getUniversePlanetsPlanetIdWithHttpInfo($planet_id, $datasource);
+        list($response) = $this->getUniversePlanetsPlanetIdWithHttpInfo($planetId, $datasource);
         return $response;
     }
 
@@ -635,16 +635,16 @@ class DummyApi
      *
      * Get planet information
      *
-     * @param int $planet_id An Eve planet ID (required)
+     * @param int $planetId An Eve planet ID (required)
      * @param string $datasource The server name you would like data from (optional, default to tranquility)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\GetUniversePlanetsPlanetIdOk, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ESI\ApiException on non-2xx response
+     * @return array of \ESI\Model\GetUniversePlanetsPlanetIdOk, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUniversePlanetsPlanetIdWithHttpInfo($planet_id, $datasource = null)
+    public function getUniversePlanetsPlanetIdWithHttpInfo($planetId, $datasource = null)
     {
-        // verify the required parameter 'planet_id' is set
-        if ($planet_id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $planet_id when calling getUniversePlanetsPlanetId');
+        // verify the required parameter 'planetId' is set
+        if ($planetId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $planetId when calling getUniversePlanetsPlanetId');
         }
         // parse inputs
         $resourcePath = "/universe/planets/{planet_id}/";
@@ -663,10 +663,10 @@ class DummyApi
             $queryParams['datasource'] = $this->apiClient->getSerializer()->toQueryValue($datasource);
         }
         // path params
-        if ($planet_id !== null) {
+        if ($planetId !== null) {
             $resourcePath = str_replace(
                 "{" . "planet_id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($planet_id),
+                $this->apiClient->getSerializer()->toPathValue($planetId),
                 $resourcePath
             );
         }
@@ -688,19 +688,19 @@ class DummyApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\GetUniversePlanetsPlanetIdOk',
+                '\ESI\Model\GetUniversePlanetsPlanetIdOk',
                 '/universe/planets/{planet_id}/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\GetUniversePlanetsPlanetIdOk', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ESI\Model\GetUniversePlanetsPlanetIdOk', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniversePlanetsPlanetIdOk', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniversePlanetsPlanetIdOk', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 500:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\GetUniversePlanetsPlanetIdInternalServerError', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ESI\Model\GetUniversePlanetsPlanetIdInternalServerError', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description skill object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,9 +67,9 @@ class GetCharactersCharacterIdSkillsSkill implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'current_skill_level' => 'int',
-        'skill_id' => 'int',
-        'skillpoints_in_skill' => 'int'
+        'currentSkillLevel' => 'int',
+        'skillId' => 'int',
+        'skillpointsInSkill' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -82,9 +82,9 @@ class GetCharactersCharacterIdSkillsSkill implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'current_skill_level' => 'current_skill_level',
-        'skill_id' => 'skill_id',
-        'skillpoints_in_skill' => 'skillpoints_in_skill'
+        'currentSkillLevel' => 'current_skill_level',
+        'skillId' => 'skill_id',
+        'skillpointsInSkill' => 'skillpoints_in_skill'
     ];
 
 
@@ -93,9 +93,9 @@ class GetCharactersCharacterIdSkillsSkill implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'current_skill_level' => 'setCurrentSkillLevel',
-        'skill_id' => 'setSkillId',
-        'skillpoints_in_skill' => 'setSkillpointsInSkill'
+        'currentSkillLevel' => 'setCurrentSkillLevel',
+        'skillId' => 'setSkillId',
+        'skillpointsInSkill' => 'setSkillpointsInSkill'
     ];
 
 
@@ -104,9 +104,9 @@ class GetCharactersCharacterIdSkillsSkill implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'current_skill_level' => 'getCurrentSkillLevel',
-        'skill_id' => 'getSkillId',
-        'skillpoints_in_skill' => 'getSkillpointsInSkill'
+        'currentSkillLevel' => 'getCurrentSkillLevel',
+        'skillId' => 'getSkillId',
+        'skillpointsInSkill' => 'getSkillpointsInSkill'
     ];
 
     public static function attributeMap()
@@ -140,9 +140,9 @@ class GetCharactersCharacterIdSkillsSkill implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['current_skill_level'] = isset($data['current_skill_level']) ? $data['current_skill_level'] : null;
-        $this->container['skill_id'] = isset($data['skill_id']) ? $data['skill_id'] : null;
-        $this->container['skillpoints_in_skill'] = isset($data['skillpoints_in_skill']) ? $data['skillpoints_in_skill'] : null;
+        $this->container['currentSkillLevel'] = isset($data['currentSkillLevel']) ? $data['currentSkillLevel'] : null;
+        $this->container['skillId'] = isset($data['skillId']) ? $data['skillId'] : null;
+        $this->container['skillpointsInSkill'] = isset($data['skillpointsInSkill']) ? $data['skillpointsInSkill'] : null;
     }
 
     /**
@@ -169,64 +169,64 @@ class GetCharactersCharacterIdSkillsSkill implements ArrayAccess
 
 
     /**
-     * Gets current_skill_level
+     * Gets currentSkillLevel
      * @return int
      */
     public function getCurrentSkillLevel()
     {
-        return $this->container['current_skill_level'];
+        return $this->container['currentSkillLevel'];
     }
 
     /**
-     * Sets current_skill_level
-     * @param int $current_skill_level current_skill_level integer
+     * Sets currentSkillLevel
+     * @param int $currentSkillLevel current_skill_level integer
      * @return $this
      */
-    public function setCurrentSkillLevel($current_skill_level)
+    public function setCurrentSkillLevel($currentSkillLevel)
     {
-        $this->container['current_skill_level'] = $current_skill_level;
+        $this->container['currentSkillLevel'] = $currentSkillLevel;
 
         return $this;
     }
 
     /**
-     * Gets skill_id
+     * Gets skillId
      * @return int
      */
     public function getSkillId()
     {
-        return $this->container['skill_id'];
+        return $this->container['skillId'];
     }
 
     /**
-     * Sets skill_id
-     * @param int $skill_id skill_id integer
+     * Sets skillId
+     * @param int $skillId skill_id integer
      * @return $this
      */
-    public function setSkillId($skill_id)
+    public function setSkillId($skillId)
     {
-        $this->container['skill_id'] = $skill_id;
+        $this->container['skillId'] = $skillId;
 
         return $this;
     }
 
     /**
-     * Gets skillpoints_in_skill
+     * Gets skillpointsInSkill
      * @return int
      */
     public function getSkillpointsInSkill()
     {
-        return $this->container['skillpoints_in_skill'];
+        return $this->container['skillpointsInSkill'];
     }
 
     /**
-     * Sets skillpoints_in_skill
-     * @param int $skillpoints_in_skill skillpoints_in_skill integer
+     * Sets skillpointsInSkill
+     * @param int $skillpointsInSkill skillpoints_in_skill integer
      * @return $this
      */
-    public function setSkillpointsInSkill($skillpoints_in_skill)
+    public function setSkillpointsInSkill($skillpointsInSkill)
     {
-        $this->container['skillpoints_in_skill'] = $skillpoints_in_skill;
+        $this->container['skillpointsInSkill'] = $skillpointsInSkill;
 
         return $this;
     }
@@ -282,9 +282,9 @@ class GetCharactersCharacterIdSkillsSkill implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

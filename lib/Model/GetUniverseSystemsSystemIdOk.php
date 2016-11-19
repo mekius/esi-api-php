@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,7 +67,7 @@ class GetUniverseSystemsSystemIdOk implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'solar_system_name' => 'string'
+        'solarSystemName' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class GetUniverseSystemsSystemIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'solar_system_name' => 'solar_system_name'
+        'solarSystemName' => 'solar_system_name'
     ];
 
 
@@ -89,7 +89,7 @@ class GetUniverseSystemsSystemIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'solar_system_name' => 'setSolarSystemName'
+        'solarSystemName' => 'setSolarSystemName'
     ];
 
 
@@ -98,7 +98,7 @@ class GetUniverseSystemsSystemIdOk implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'solar_system_name' => 'getSolarSystemName'
+        'solarSystemName' => 'getSolarSystemName'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class GetUniverseSystemsSystemIdOk implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['solar_system_name'] = isset($data['solar_system_name']) ? $data['solar_system_name'] : null;
+        $this->container['solarSystemName'] = isset($data['solarSystemName']) ? $data['solarSystemName'] : null;
     }
 
     /**
@@ -159,22 +159,22 @@ class GetUniverseSystemsSystemIdOk implements ArrayAccess
 
 
     /**
-     * Gets solar_system_name
+     * Gets solarSystemName
      * @return string
      */
     public function getSolarSystemName()
     {
-        return $this->container['solar_system_name'];
+        return $this->container['solarSystemName'];
     }
 
     /**
-     * Sets solar_system_name
-     * @param string $solar_system_name the full name of the system
+     * Sets solarSystemName
+     * @param string $solarSystemName the full name of the system
      * @return $this
      */
-    public function setSolarSystemName($solar_system_name)
+    public function setSolarSystemName($solarSystemName)
     {
-        $this->container['solar_system_name'] = $solar_system_name;
+        $this->container['solarSystemName'] = $solarSystemName;
 
         return $this;
     }
@@ -230,9 +230,9 @@ class GetUniverseSystemsSystemIdOk implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

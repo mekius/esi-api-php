@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description event
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -67,9 +67,9 @@ class GetCharactersCharacterIdCalendar200Ok implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'event_date' => '\DateTime',
-        'event_id' => 'int',
-        'event_response' => 'string',
+        'eventDate' => '\DateTime',
+        'eventId' => 'int',
+        'eventResponse' => 'string',
         'importance' => 'int',
         'title' => 'string'
     ];
@@ -84,9 +84,9 @@ class GetCharactersCharacterIdCalendar200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'event_date' => 'event_date',
-        'event_id' => 'event_id',
-        'event_response' => 'event_response',
+        'eventDate' => 'event_date',
+        'eventId' => 'event_id',
+        'eventResponse' => 'event_response',
         'importance' => 'importance',
         'title' => 'title'
     ];
@@ -97,9 +97,9 @@ class GetCharactersCharacterIdCalendar200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'event_date' => 'setEventDate',
-        'event_id' => 'setEventId',
-        'event_response' => 'setEventResponse',
+        'eventDate' => 'setEventDate',
+        'eventId' => 'setEventId',
+        'eventResponse' => 'setEventResponse',
         'importance' => 'setImportance',
         'title' => 'setTitle'
     ];
@@ -110,9 +110,9 @@ class GetCharactersCharacterIdCalendar200Ok implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'event_date' => 'getEventDate',
-        'event_id' => 'getEventId',
-        'event_response' => 'getEventResponse',
+        'eventDate' => 'getEventDate',
+        'eventId' => 'getEventId',
+        'eventResponse' => 'getEventResponse',
         'importance' => 'getImportance',
         'title' => 'getTitle'
     ];
@@ -166,9 +166,9 @@ class GetCharactersCharacterIdCalendar200Ok implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['event_date'] = isset($data['event_date']) ? $data['event_date'] : null;
-        $this->container['event_id'] = isset($data['event_id']) ? $data['event_id'] : null;
-        $this->container['event_response'] = isset($data['event_response']) ? $data['event_response'] : null;
+        $this->container['eventDate'] = isset($data['eventDate']) ? $data['eventDate'] : null;
+        $this->container['eventId'] = isset($data['eventId']) ? $data['eventId'] : null;
+        $this->container['eventResponse'] = isset($data['eventResponse']) ? $data['eventResponse'] : null;
         $this->container['importance'] = isset($data['importance']) ? $data['importance'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
     }
@@ -182,8 +182,8 @@ class GetCharactersCharacterIdCalendar200Ok implements ArrayAccess
     {
         $invalid_properties = [];
         $allowed_values = ["declined", "not_responded", "accepted", "tentative"];
-        if (!in_array($this->container['event_response'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'event_response', must be one of #{allowed_values}.";
+        if (!in_array($this->container['eventResponse'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'eventResponse', must be one of #{allowed_values}.";
         }
 
         return $invalid_properties;
@@ -198,7 +198,7 @@ class GetCharactersCharacterIdCalendar200Ok implements ArrayAccess
     public function valid()
     {
         $allowed_values = ["declined", "not_responded", "accepted", "tentative"];
-        if (!in_array($this->container['event_response'], $allowed_values)) {
+        if (!in_array($this->container['eventResponse'], $allowed_values)) {
             return false;
         }
         return true;
@@ -206,68 +206,68 @@ class GetCharactersCharacterIdCalendar200Ok implements ArrayAccess
 
 
     /**
-     * Gets event_date
+     * Gets eventDate
      * @return \DateTime
      */
     public function getEventDate()
     {
-        return $this->container['event_date'];
+        return $this->container['eventDate'];
     }
 
     /**
-     * Sets event_date
-     * @param \DateTime $event_date event_date string
+     * Sets eventDate
+     * @param \DateTime $eventDate event_date string
      * @return $this
      */
-    public function setEventDate($event_date)
+    public function setEventDate($eventDate)
     {
-        $this->container['event_date'] = $event_date;
+        $this->container['eventDate'] = $eventDate;
 
         return $this;
     }
 
     /**
-     * Gets event_id
+     * Gets eventId
      * @return int
      */
     public function getEventId()
     {
-        return $this->container['event_id'];
+        return $this->container['eventId'];
     }
 
     /**
-     * Sets event_id
-     * @param int $event_id event_id integer
+     * Sets eventId
+     * @param int $eventId event_id integer
      * @return $this
      */
-    public function setEventId($event_id)
+    public function setEventId($eventId)
     {
-        $this->container['event_id'] = $event_id;
+        $this->container['eventId'] = $eventId;
 
         return $this;
     }
 
     /**
-     * Gets event_response
+     * Gets eventResponse
      * @return string
      */
     public function getEventResponse()
     {
-        return $this->container['event_response'];
+        return $this->container['eventResponse'];
     }
 
     /**
-     * Sets event_response
-     * @param string $event_response event_response string
+     * Sets eventResponse
+     * @param string $eventResponse event_response string
      * @return $this
      */
-    public function setEventResponse($event_response)
+    public function setEventResponse($eventResponse)
     {
         $allowed_values = array('declined', 'not_responded', 'accepted', 'tentative');
-        if (!is_null($event_response) && (!in_array($event_response, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'event_response', must be one of 'declined', 'not_responded', 'accepted', 'tentative'");
+        if (!is_null($eventResponse) && (!in_array($eventResponse, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'eventResponse', must be one of 'declined', 'not_responded', 'accepted', 'tentative'");
         }
-        $this->container['event_response'] = $event_response;
+        $this->container['eventResponse'] = $eventResponse;
 
         return $this;
     }
@@ -365,9 +365,9 @@ class GetCharactersCharacterIdCalendar200Ok implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -1,4 +1,4 @@
-# Swagger\Client\LocationApi
+# ESI\LocationApi
 
 All URIs are relative to *https://esi.tech.ccp.is/latest*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getCharactersCharacterIdLocation**
-> \Swagger\Client\Model\GetCharactersCharacterIdLocationOk getCharactersCharacterIdLocation($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdLocationOk getCharactersCharacterIdLocation($characterId, $datasource)
 
 Get character location
 
@@ -21,14 +21,14 @@ Information about the characters current location. Returns the current solar sys
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LocationApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LocationApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdLocation($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdLocation($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationApi->getCharactersCharacterIdLocation: ', $e->getMessage(), PHP_EOL;
@@ -40,12 +40,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdLocationOk**](../Model/GetCharactersCharacterIdLocationOk.md)
+[**\ESI\Model\GetCharactersCharacterIdLocationOk**](../Model/GetCharactersCharacterIdLocationOk.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdShip**
-> \Swagger\Client\Model\GetCharactersCharacterIdShipOk getCharactersCharacterIdShip($character_id, $datasource)
+> \ESI\Model\GetCharactersCharacterIdShipOk getCharactersCharacterIdShip($characterId, $datasource)
 
 Get current ship
 
@@ -71,14 +71,14 @@ Get the current ship type, name and id  ---  Alternate route: `/v1/characters/{c
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new Swagger\Client\Api\LocationApi();
-$character_id = 56; // int | An EVE character ID
+$api_instance = new ESI\Api\LocationApi();
+$characterId = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdShip($character_id, $datasource);
+    $result = $api_instance->getCharactersCharacterIdShip($characterId, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LocationApi->getCharactersCharacterIdShip: ', $e->getMessage(), PHP_EOL;
@@ -90,12 +90,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **character_id** | **int**| An EVE character ID |
+ **characterId** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\Swagger\Client\Model\GetCharactersCharacterIdShipOk**](../Model/GetCharactersCharacterIdShipOk.md)
+[**\ESI\Model\GetCharactersCharacterIdShipOk**](../Model/GetCharactersCharacterIdShipOk.md)
 
 ### Authorization
 

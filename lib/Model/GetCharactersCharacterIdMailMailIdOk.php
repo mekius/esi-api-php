@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ESI
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -39,7 +39,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ESI\Model;
 
 use \ArrayAccess;
 
@@ -49,7 +49,7 @@ use \ArrayAccess;
  * @category    Class */
  // @description 200 ok object
 /**
- * @package     Swagger\Client
+ * @package     ESI
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache License v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -71,7 +71,7 @@ class GetCharactersCharacterIdMailMailIdOk implements ArrayAccess
         'from' => 'int',
         'labels' => 'int[]',
         'read' => 'bool',
-        'recipients' => '\Swagger\Client\Model\GetCharactersCharacterIdMailMailIdRecipient[]',
+        'recipients' => '\ESI\Model\GetCharactersCharacterIdMailMailIdRecipient[]',
         'subject' => 'string',
         'timestamp' => '\DateTime'
     ];
@@ -274,7 +274,7 @@ class GetCharactersCharacterIdMailMailIdOk implements ArrayAccess
 
     /**
      * Gets recipients
-     * @return \Swagger\Client\Model\GetCharactersCharacterIdMailMailIdRecipient[]
+     * @return \ESI\Model\GetCharactersCharacterIdMailMailIdRecipient[]
      */
     public function getRecipients()
     {
@@ -283,7 +283,7 @@ class GetCharactersCharacterIdMailMailIdOk implements ArrayAccess
 
     /**
      * Sets recipients
-     * @param \Swagger\Client\Model\GetCharactersCharacterIdMailMailIdRecipient[] $recipients Recipients of the mail
+     * @param \ESI\Model\GetCharactersCharacterIdMailMailIdRecipient[] $recipients Recipients of the mail
      * @return $this
      */
     public function setRecipients($recipients)
@@ -386,9 +386,9 @@ class GetCharactersCharacterIdMailMailIdOk implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ESI\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
