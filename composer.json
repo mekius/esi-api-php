@@ -1,13 +1,11 @@
 {
-    "name": "mekius/esi-api-php",
-    "description": "EVE Online API Library for PHP",
+    "name": "GIT_USER_ID/GIT_REPO_ID",
+    "description": "",
     "keywords": [
         "swagger",
         "php",
         "sdk",
-        "api",
-        "eve",
-        "esi"
+        "api"
     ],
     "homepage": "http://swagger.io",
     "license": "Apache-2.0",
@@ -30,9 +28,9 @@
         "friendsofphp/php-cs-fixer": "~1.12"
     },
     "autoload": {
-        "psr-4": { "ESI\\" : "lib/" }
+        "psr-4": { "Swagger\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "ESI\\" : "test/" }
+        "psr-4": { "Swagger\\Client\\" : "test/" }
     }
 }

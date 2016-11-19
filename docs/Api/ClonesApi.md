@@ -1,4 +1,4 @@
-# ESI\ClonesApi
+# Swagger\Client\ClonesApi
 
 All URIs are relative to *https://esi.tech.ccp.is/latest*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **getCharactersCharacterIdClones**
-> \ESI\Model\GetCharactersCharacterIdClonesOk getCharactersCharacterIdClones($characterId, $datasource)
+> \Swagger\Client\Model\GetCharactersCharacterIdClonesOk getCharactersCharacterIdClones($character_id, $datasource)
 
 Get clones
 
@@ -20,14 +20,14 @@ A list of the character's clones  ---  Alternate route: `/v2/characters/{charact
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ESI\Api\ClonesApi();
-$characterId = 56; // int | An EVE character ID
+$api_instance = new Swagger\Client\Api\ClonesApi();
+$character_id = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdClones($characterId, $datasource);
+    $result = $api_instance->getCharactersCharacterIdClones($character_id, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClonesApi->getCharactersCharacterIdClones: ', $e->getMessage(), PHP_EOL;
@@ -39,12 +39,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int**| An EVE character ID |
+ **character_id** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\ESI\Model\GetCharactersCharacterIdClonesOk**](../Model/GetCharactersCharacterIdClonesOk.md)
+[**\Swagger\Client\Model\GetCharactersCharacterIdClonesOk**](../Model/GetCharactersCharacterIdClonesOk.md)
 
 ### Authorization
 

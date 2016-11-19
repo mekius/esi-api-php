@@ -1,4 +1,4 @@
-# ESI\MailApi
+# Swagger\Client\MailApi
 
 All URIs are relative to *https://esi.tech.ccp.is/latest*
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **deleteCharactersCharacterIdMailMailId**
-> deleteCharactersCharacterIdMailMailId($characterId, $mailId, $datasource)
+> deleteCharactersCharacterIdMailMailId($character_id, $mail_id, $datasource)
 
 Delete a mail
 
@@ -27,15 +27,15 @@ Delete a mail  ---  Alternate route: `/v1/characters/{character_id}/mail/{mail_i
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ESI\Api\MailApi();
-$characterId = 56; // int | An EVE character ID
-$mailId = 56; // int | An EVE mail ID
+$api_instance = new Swagger\Client\Api\MailApi();
+$character_id = 56; // int | An EVE character ID
+$mail_id = 56; // int | An EVE mail ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $api_instance->deleteCharactersCharacterIdMailMailId($characterId, $mailId, $datasource);
+    $api_instance->deleteCharactersCharacterIdMailMailId($character_id, $mail_id, $datasource);
 } catch (Exception $e) {
     echo 'Exception when calling MailApi->deleteCharactersCharacterIdMailMailId: ', $e->getMessage(), PHP_EOL;
 }
@@ -46,8 +46,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int**| An EVE character ID |
- **mailId** | **int**| An EVE mail ID |
+ **character_id** | **int**| An EVE character ID |
+ **mail_id** | **int**| An EVE mail ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
@@ -66,7 +66,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdMail**
-> \ESI\Model\GetCharactersCharacterIdMail200OkObject[] getCharactersCharacterIdMail($characterId, $labels, $lastMailId, $datasource)
+> \Swagger\Client\Model\GetCharactersCharacterIdMail200Ok[] getCharactersCharacterIdMail($character_id, $labels, $last_mail_id, $datasource)
 
 Return mail headers
 
@@ -78,16 +78,16 @@ Return the 50 most recent mail headers belonging to the character that match the
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ESI\Api\MailApi();
-$characterId = 56; // int | An EVE character ID
+$api_instance = new Swagger\Client\Api\MailApi();
+$character_id = 56; // int | An EVE character ID
 $labels = array(56); // int[] | Fetch only mails that match one or more of the given labels
-$lastMailId = 56; // int | List only mail with an ID lower than the given ID, if present
+$last_mail_id = 56; // int | List only mail with an ID lower than the given ID, if present
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdMail($characterId, $labels, $lastMailId, $datasource);
+    $result = $api_instance->getCharactersCharacterIdMail($character_id, $labels, $last_mail_id, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MailApi->getCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
@@ -99,14 +99,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int**| An EVE character ID |
+ **character_id** | **int**| An EVE character ID |
  **labels** | [**int[]**](../Model/int.md)| Fetch only mails that match one or more of the given labels | [optional]
- **lastMailId** | **int**| List only mail with an ID lower than the given ID, if present | [optional]
+ **last_mail_id** | **int**| List only mail with an ID lower than the given ID, if present | [optional]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\ESI\Model\GetCharactersCharacterIdMail200OkObject[]**](../Model/GetCharactersCharacterIdMail200OkObject.md)
+[**\Swagger\Client\Model\GetCharactersCharacterIdMail200Ok[]**](../Model/GetCharactersCharacterIdMail200Ok.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdMailLabels**
-> \ESI\Model\GetCharactersCharacterIdMailLabelsOk getCharactersCharacterIdMailLabels($characterId, $datasource)
+> \Swagger\Client\Model\GetCharactersCharacterIdMailLabelsOk getCharactersCharacterIdMailLabels($character_id, $datasource)
 
 Get mail labels and unread counts
 
@@ -132,14 +132,14 @@ Return a list of the users mail labels, unread counts for each label and a total
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ESI\Api\MailApi();
-$characterId = 56; // int | An EVE character ID
+$api_instance = new Swagger\Client\Api\MailApi();
+$character_id = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdMailLabels($characterId, $datasource);
+    $result = $api_instance->getCharactersCharacterIdMailLabels($character_id, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MailApi->getCharactersCharacterIdMailLabels: ', $e->getMessage(), PHP_EOL;
@@ -151,12 +151,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int**| An EVE character ID |
+ **character_id** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\ESI\Model\GetCharactersCharacterIdMailLabelsOk**](../Model/GetCharactersCharacterIdMailLabelsOk.md)
+[**\Swagger\Client\Model\GetCharactersCharacterIdMailLabelsOk**](../Model/GetCharactersCharacterIdMailLabelsOk.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdMailLists**
-> \ESI\Model\GetCharactersCharacterIdMailLists200OkObject[] getCharactersCharacterIdMailLists($characterId, $datasource)
+> \Swagger\Client\Model\GetCharactersCharacterIdMailLists200Ok[] getCharactersCharacterIdMailLists($character_id, $datasource)
 
 Return mailing list subscriptions
 
@@ -182,14 +182,14 @@ Return all mailing lists that the character is subscribed to   ---  Alternate ro
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ESI\Api\MailApi();
-$characterId = 56; // int | An EVE character ID
+$api_instance = new Swagger\Client\Api\MailApi();
+$character_id = 56; // int | An EVE character ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdMailLists($characterId, $datasource);
+    $result = $api_instance->getCharactersCharacterIdMailLists($character_id, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MailApi->getCharactersCharacterIdMailLists: ', $e->getMessage(), PHP_EOL;
@@ -201,12 +201,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int**| An EVE character ID |
+ **character_id** | **int**| An EVE character ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\ESI\Model\GetCharactersCharacterIdMailLists200OkObject[]**](../Model/GetCharactersCharacterIdMailLists200OkObject.md)
+[**\Swagger\Client\Model\GetCharactersCharacterIdMailLists200Ok[]**](../Model/GetCharactersCharacterIdMailLists200Ok.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharactersCharacterIdMailMailId**
-> \ESI\Model\GetCharactersCharacterIdMailMailIdOk getCharactersCharacterIdMailMailId($characterId, $mailId, $datasource)
+> \Swagger\Client\Model\GetCharactersCharacterIdMailMailIdOk getCharactersCharacterIdMailMailId($character_id, $mail_id, $datasource)
 
 Return a mail
 
@@ -232,15 +232,15 @@ Return the contents of an EVE mail  ---  Alternate route: `/v1/characters/{chara
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ESI\Api\MailApi();
-$characterId = 56; // int | An EVE character ID
-$mailId = 56; // int | An EVE mail ID
+$api_instance = new Swagger\Client\Api\MailApi();
+$character_id = 56; // int | An EVE character ID
+$mail_id = 56; // int | An EVE mail ID
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->getCharactersCharacterIdMailMailId($characterId, $mailId, $datasource);
+    $result = $api_instance->getCharactersCharacterIdMailMailId($character_id, $mail_id, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MailApi->getCharactersCharacterIdMailMailId: ', $e->getMessage(), PHP_EOL;
@@ -252,13 +252,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int**| An EVE character ID |
- **mailId** | **int**| An EVE mail ID |
+ **character_id** | **int**| An EVE character ID |
+ **mail_id** | **int**| An EVE mail ID |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
 
-[**\ESI\Model\GetCharactersCharacterIdMailMailIdOk**](../Model/GetCharactersCharacterIdMailMailIdOk.md)
+[**\Swagger\Client\Model\GetCharactersCharacterIdMailMailIdOk**](../Model/GetCharactersCharacterIdMailMailIdOk.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postCharactersCharacterIdMail**
-> int postCharactersCharacterIdMail($characterId, $mail, $datasource)
+> int postCharactersCharacterIdMail($character_id, $mail, $datasource)
 
 Send a new mail
 
@@ -284,15 +284,15 @@ Create and send a new mail  ---  Alternate route: `/v1/characters/{character_id}
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ESI\Api\MailApi();
-$characterId = 56; // int | The sender's character ID
-$mail = new \ESI\Model\PostCharactersCharacterIdMailMail(); // \ESI\Model\PostCharactersCharacterIdMailMail | The mail to send
+$api_instance = new Swagger\Client\Api\MailApi();
+$character_id = 56; // int | The sender's character ID
+$mail = new \Swagger\Client\Model\PostCharactersCharacterIdMailMail(); // \Swagger\Client\Model\PostCharactersCharacterIdMailMail | The mail to send
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->postCharactersCharacterIdMail($characterId, $mail, $datasource);
+    $result = $api_instance->postCharactersCharacterIdMail($character_id, $mail, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MailApi->postCharactersCharacterIdMail: ', $e->getMessage(), PHP_EOL;
@@ -304,8 +304,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int**| The sender&#39;s character ID |
- **mail** | [**\ESI\Model\PostCharactersCharacterIdMailMail**](../Model/\ESI\Model\PostCharactersCharacterIdMailMail.md)| The mail to send |
+ **character_id** | **int**| The sender&#39;s character ID |
+ **mail** | [**\Swagger\Client\Model\PostCharactersCharacterIdMailMail**](../Model/\Swagger\Client\Model\PostCharactersCharacterIdMailMail.md)| The mail to send |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postCharactersCharacterIdMailLabels**
-> int postCharactersCharacterIdMailLabels($characterId, $label, $datasource)
+> int postCharactersCharacterIdMailLabels($character_id, $label, $datasource)
 
 Create a mail label
 
@@ -336,15 +336,15 @@ Create a mail label  ---  Alternate route: `/v2/characters/{character_id}/mail/l
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ESI\Api\MailApi();
-$characterId = 56; // int | An EVE character ID
-$label = new \ESI\Model\PostCharactersCharacterIdMailLabelsLabel(); // \ESI\Model\PostCharactersCharacterIdMailLabelsLabel | Label to create
+$api_instance = new Swagger\Client\Api\MailApi();
+$character_id = 56; // int | An EVE character ID
+$label = new \Swagger\Client\Model\PostCharactersCharacterIdMailLabelsLabel(); // \Swagger\Client\Model\PostCharactersCharacterIdMailLabelsLabel | Label to create
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $result = $api_instance->postCharactersCharacterIdMailLabels($characterId, $label, $datasource);
+    $result = $api_instance->postCharactersCharacterIdMailLabels($character_id, $label, $datasource);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MailApi->postCharactersCharacterIdMailLabels: ', $e->getMessage(), PHP_EOL;
@@ -356,8 +356,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int**| An EVE character ID |
- **label** | [**\ESI\Model\PostCharactersCharacterIdMailLabelsLabel**](../Model/\ESI\Model\PostCharactersCharacterIdMailLabelsLabel.md)| Label to create | [optional]
+ **character_id** | **int**| An EVE character ID |
+ **label** | [**\Swagger\Client\Model\PostCharactersCharacterIdMailLabelsLabel**](../Model/\Swagger\Client\Model\PostCharactersCharacterIdMailLabelsLabel.md)| Label to create | [optional]
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putCharactersCharacterIdMailMailId**
-> putCharactersCharacterIdMailMailId($characterId, $mailId, $contents, $datasource)
+> putCharactersCharacterIdMailMailId($character_id, $mail_id, $contents, $datasource)
 
 Update metadata about a mail
 
@@ -388,16 +388,16 @@ Update metadata about a mail  ---  Alternate route: `/v1/characters/{character_i
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: evesso
-ESI\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ESI\Api\MailApi();
-$characterId = 56; // int | An EVE character ID
-$mailId = 56; // int | An EVE mail ID
-$contents = new \ESI\Model\PutCharactersCharacterIdMailMailIdContents(); // \ESI\Model\PutCharactersCharacterIdMailMailIdContents | Data used to update the mail
+$api_instance = new Swagger\Client\Api\MailApi();
+$character_id = 56; // int | An EVE character ID
+$mail_id = 56; // int | An EVE mail ID
+$contents = new \Swagger\Client\Model\PutCharactersCharacterIdMailMailIdContents(); // \Swagger\Client\Model\PutCharactersCharacterIdMailMailIdContents | Data used to update the mail
 $datasource = "tranquility"; // string | The server name you would like data from
 
 try {
-    $api_instance->putCharactersCharacterIdMailMailId($characterId, $mailId, $contents, $datasource);
+    $api_instance->putCharactersCharacterIdMailMailId($character_id, $mail_id, $contents, $datasource);
 } catch (Exception $e) {
     echo 'Exception when calling MailApi->putCharactersCharacterIdMailMailId: ', $e->getMessage(), PHP_EOL;
 }
@@ -408,9 +408,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **characterId** | **int**| An EVE character ID |
- **mailId** | **int**| An EVE mail ID |
- **contents** | [**\ESI\Model\PutCharactersCharacterIdMailMailIdContents**](../Model/\ESI\Model\PutCharactersCharacterIdMailMailIdContents.md)| Data used to update the mail |
+ **character_id** | **int**| An EVE character ID |
+ **mail_id** | **int**| An EVE mail ID |
+ **contents** | [**\Swagger\Client\Model\PutCharactersCharacterIdMailMailIdContents**](../Model/\Swagger\Client\Model\PutCharactersCharacterIdMailMailIdContents.md)| Data used to update the mail |
  **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
 
 ### Return type
