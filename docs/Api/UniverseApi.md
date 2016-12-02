@@ -4,7 +4,6 @@ All URIs are relative to *https://esi.tech.ccp.is/latest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getUniversePlanetsPlanetId**](UniverseApi.md#getUniversePlanetsPlanetId) | **GET** /universe/planets/{planet_id}/ | Get planet information
 [**getUniverseStationsStationId**](UniverseApi.md#getUniverseStationsStationId) | **GET** /universe/stations/{station_id}/ | Get station information
 [**getUniverseStructures**](UniverseApi.md#getUniverseStructures) | **GET** /universe/structures/ | List all public structures
 [**getUniverseStructuresStructureId**](UniverseApi.md#getUniverseStructuresStructureId) | **GET** /universe/structures/{structure_id}/ | Get structure information
@@ -12,53 +11,6 @@ Method | HTTP request | Description
 [**getUniverseTypesTypeId**](UniverseApi.md#getUniverseTypesTypeId) | **GET** /universe/types/{type_id}/ | Get type information
 [**postUniverseNames**](UniverseApi.md#postUniverseNames) | **POST** /universe/names/ | Get names and categories for a set of ID&#39;s
 
-
-# **getUniversePlanetsPlanetId**
-> \ESI\Model\GetUniversePlanetsPlanetIdOk getUniversePlanetsPlanetId($planetId, $datasource)
-
-Get planet information
-
-Information on a planet  ---  Alternate route: `/v1/universe/planets/{planet_id}/`  Alternate route: `/legacy/universe/planets/{planet_id}/`  Alternate route: `/dev/universe/planets/{planet_id}/`
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new ESI\Api\UniverseApi();
-$planetId = 56; // int | An Eve planet ID
-$datasource = "tranquility"; // string | The server name you would like data from
-
-try {
-    $result = $api_instance->getUniversePlanetsPlanetId($planetId, $datasource);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UniverseApi->getUniversePlanetsPlanetId: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **planetId** | **int**| An Eve planet ID |
- **datasource** | **string**| The server name you would like data from | [optional] [default to tranquility]
-
-### Return type
-
-[**\ESI\Model\GetUniversePlanetsPlanetIdOk**](../Model/GetUniversePlanetsPlanetIdOk.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUniverseStationsStationId**
 > \ESI\Model\GetUniverseStationsStationIdOk getUniverseStationsStationId($stationId, $datasource)
